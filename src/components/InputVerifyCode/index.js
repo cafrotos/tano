@@ -15,7 +15,8 @@ const InputVerifyCode = ({
   onChangeText,
   codeLength,
   status,
-  caption
+  caption,
+  onSubmit
 }) => {
   const ref = useBlurOnFulfill({ value, cellCount: codeLength });
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
@@ -35,6 +36,7 @@ const InputVerifyCode = ({
         keyboardType="number-pad"
         cellCount={codeLength}
         rootStyle={styles.rootStyle}
+        onEndEditing={onSubmit}
         textContentType="oneTimeCode"
         renderCell={({ index, symbol, isFocused }) => (
           <Space

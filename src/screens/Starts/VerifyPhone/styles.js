@@ -1,4 +1,5 @@
 import { BASE_SIZE } from 'configs/styles';
+import themes from 'configs/themes';
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
@@ -23,15 +24,21 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+  resendWrapper: {
+    alignItems: "baseline"
+  },
   icon: {
     height: BASE_SIZE * 6,
     width: BASE_SIZE * 6
-  }, 
+  },
   titlePage: {
     textAlign: "center",
     fontWeight: "bold",
     fontSize: BASE_SIZE * 4,
     color: "black",
     textTransform: "uppercase"
-  }
+  },
+  textButton: {
+    color: themes['color-primary-500']
+  },
 });

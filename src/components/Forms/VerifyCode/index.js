@@ -6,7 +6,8 @@ import React from "react";
 import styles from "./styles"
 
 export default ({
-  form
+  form,
+  onSubmit
 }) => {
   return (
     <FormItem
@@ -22,6 +23,7 @@ export default ({
     >
       <InputVerifyCode
         codeLength={6}
+        onSubmit={form.submit(onSubmit)}
       />
     </FormItem>
   )

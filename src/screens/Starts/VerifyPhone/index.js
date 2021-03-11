@@ -3,7 +3,8 @@ import VerifyCode from 'components/Forms/VerifyCode';
 import Space from 'components/Space';
 import TanoButton from 'components/TanoButton';
 import themes from 'configs/themes';
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import useAuthByPhone from 'services/hooks/useAuthByPhone';
@@ -11,8 +12,15 @@ import useForm from 'services/hooks/useForm';
 import styles from './styles';
 
 export default () => {
-  const { confirmation } = useAuthByPhone()
+  const { confirmation, signIn: handleResendCode } = useAuthByPhone()
+  const [isResendConfirm, setIsResendConfirm] = useState(false)
   const form = useForm()
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsResendConfirm(true)
+    }, 3000);
+  }, [])
 
   const handleSubmit = async ({ code }) => {
     if (confirmation?.confirm) {
@@ -43,10 +51,29 @@ export default () => {
               style={styles.icon}
             />
           </View>
-          <VerifyCode form={form} />
-          <TanoButton onPress={form.submit(handleSubmit)}>
-            {"Xác nhận"}
-          </TanoButton>
+          <VerifyCode
+            form={form}
+            onSubmit={handleSubmit}
+          />
+          {
+            isResendConfirm ? (
+              <Space style={styles.resendWrapper}>
+                <Text>
+                  {"Cô/chú không nhận được mã?"}
+                </Text>
+                <TanoButton
+                  size="tiny"
+                  appearance="ghost"
+                  onPress={handleResendCode}
+                >
+                  {
+                    () => <Text style={styles.textButton}>{"Gửi lại"}</Text>
+                  }
+                </TanoButton>
+              </Space>
+            ) :
+              null
+          }
         </Space>
       </View>
     </SafeAreaView >

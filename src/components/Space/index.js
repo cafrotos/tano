@@ -9,6 +9,7 @@ import styles from './styles';
  * @param {{  
  *  children: import('react').ReactChildren,  
  *  direction: "horizontal" | "vertical",
+ *  style: import("react-native").ViewStyle;
  *  size?: Number,
  *  viewProps?: import('react-native').ViewProps 
  * }} props

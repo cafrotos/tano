@@ -9,8 +9,8 @@ import _ from "lodash";
 
 const useForm = () => {
   const [data, setData] = useState({});
-  const [rules, setRules] = useState({})
-  const [errors, setErrors] = useState({})
+  const [rules, setRules] = useState({});
+  const [errors, setErrors] = useState({});
 
   /**
    * 
