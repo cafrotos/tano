@@ -28,6 +28,7 @@ build/
 .gradle
 local.properties
 *.iml
+google-services.json
 
 # node.js
 #
@@ -57,5 +58,3 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
-
-android/app/google-services.json
