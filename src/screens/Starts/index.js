@@ -37,9 +37,7 @@ const screens = [
   },
 ]
 
-export default ({
-  Screen
-}) => (
+export default (Screen) => (
   <>
     {
       screens.map((screen, index) => (

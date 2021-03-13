@@ -15,7 +15,7 @@ export default ({
       name="code"
       label={(
         <Text style={styles.label}>
-          {"Cô chú vui lòng nhập Mã Xác Nhận Tano đã gửi vào tin nhắn để tiếp tục"}
+          {"Cô/chú vui lòng nhập Mã Xác Nhận Tano đã gửi vào tin nhắn để tiếp tục"}
         </Text>
       )}
       rules={inputCode}
