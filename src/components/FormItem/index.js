@@ -11,6 +11,8 @@ import React, { cloneElement, useMemo } from "react"
 import { Text } from "@ui-kitten/components"
 import Space from "components/Space"
 import { useEffect } from "react"
+import moment from "moment"
+import { Keyboard } from "react-native"
 
 /**
  * 
@@ -51,7 +53,6 @@ const FormItem = ({
       return {}
     }
     const props = {
-      [valuePropsName]: form.data[name],
       onBlur: () => form.validateFields([name])
     }
     switch (children?.type?.displayName) {
@@ -62,12 +63,36 @@ const FormItem = ({
           props.caption = form.errors[name]
         }
         break;
-
+      case "Select":
+        props.onSelect = (select) => {
+          form.setFiedlsValue({
+            [name]: children.props.children.find((child, index) => index === select.row)?.props?.title,
+          })
+        }
+        if (form.errors[name]) {
+          props.status = "danger"
+          props.caption = form.errors[name]
+        }
+      case "Datepicker":
+        valuePropsName = "date"
+        props.min = moment("01/01/1960", "DD/MM/YYYY").toDate()
+        props.max = moment("01/01/2200", "DD/MM/YYYY").toDate()
+        props.onSelect = (date) => {
+          form.setFiedlsValue({
+            [name]: date,
+          })
+        }
+        props.onFocus = () => Keyboard.dismiss()
+        if (form.errors[name]) {
+          props.status = "danger"
+          props.caption = form.errors[name]
+        }
       default:
         break;
     }
+    props[valuePropsName] = form.data[name]
     return props
-  }, [getValueFromEvent, name, form, children])
+  }, [getValueFromEvent, name, form.data[name], form.errors[name], children])
 
   return (
     <Space
@@ -81,8 +106,8 @@ const FormItem = ({
             {label}
           </Text>
         ) : (
-            label
-          )
+          label
+        )
       }
       {
         children instanceof Array ?

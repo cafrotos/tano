@@ -21,6 +21,7 @@
     "@ui-kitten/eva-icons": "^5.0.0",
     "async-validator": "^3.5.1",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-confirmation-code-field": "^6.5.1",

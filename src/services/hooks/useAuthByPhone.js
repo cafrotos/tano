@@ -13,6 +13,5 @@ export default () => ({
     }
     return configs["confirmation"]
   },
-
   confirmation: configs["confirmation"]
 })

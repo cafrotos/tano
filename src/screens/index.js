@@ -6,7 +6,8 @@ import { NAMES } from 'configs/screens';
 import { getContext } from 'utils';
 import { CONTEXTS } from 'configs';
 import BlankHeader from 'components/BlankHeader';
-import renderStartScreens from './Starts';
+import renderStartScreens from './starts';
+import renderAppScreen from "./applications"
 import Registration from './Registration';
 
 const MainContext = getContext(CONTEXTS.MAIN)
@@ -16,6 +17,7 @@ export default () => {
   const { user } = useContext(MainContext)
 
   const startScreens = useMemo(() => renderStartScreens(MainStack.Screen), [])
+  const applicationsScreens = useMemo(() => renderAppScreen(MainStack.Screen))
 
   const renderScreens = useMemo(() => {
     if (!user) {
@@ -34,7 +36,7 @@ export default () => {
       )
     }
 
-    return startScreens
+    return applicationsScreens
   }, [user, startScreens])
   return (
     <NavigationContainer>
