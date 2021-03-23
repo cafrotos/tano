@@ -15,7 +15,7 @@ export default () => {
     <View
       style={[
         commonStyles.flexHorizontalBetween,
-        commonStyles.flexHorizontalMiddle
+        commonStyles.flexHorizontalMiddle,
       ]}
     >
       <Text style={[commonStyles.textColorWhite]}>

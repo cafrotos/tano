@@ -11,10 +11,10 @@ export default () => {
         
       ]}
     >
-      <Item icon="clipboard-outline" label={"Sổ  hàng"} />
-      <Item icon="clipboard-outline" label={"Sổ  hàng"} />
-      <Item icon="clipboard-outline" label={"Sổ  hàng"} />
-      <Item icon="clipboard-outline" label={"Sổ  hàng"} />
+      <Item icon="clipboard" label={"Sổ  hàng"} />
+      <Item icon="book" label={"Công nợ"} />
+      <Item icon="list" label={"Lịch sử"} />
+      <Item icon="plus" label={"Tiền hàng"} />
     </View>
   )
 }

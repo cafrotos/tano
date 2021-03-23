@@ -25,7 +25,10 @@ export default () => {
           styles.mainWrapper,
         ]}
       >
-        <Space direction="vertical">
+        <Space
+          direction="vertical"
+          size={8}
+        >
           <WellCome />
           <QuickReport />
           <Menu />
