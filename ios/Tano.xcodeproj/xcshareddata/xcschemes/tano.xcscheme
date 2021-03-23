@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "tano.app"
-               BlueprintName = "tano"
-               ReferencedContainer = "container:tano.xcodeproj">
+               BuildableName = "Tano.app"
+               BlueprintName = "Tano"
+               ReferencedContainer = "container:Tano.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "tanoTests.xctest"
-               BlueprintName = "tanoTests"
-               ReferencedContainer = "container:tano.xcodeproj">
+               BuildableName = "TanoTests.xctest"
+               BlueprintName = "TanoTests"
+               ReferencedContainer = "container:Tano.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "tano.app"
-            BlueprintName = "tano"
-            ReferencedContainer = "container:tano.xcodeproj">
+            BuildableName = "Tano.app"
+            BlueprintName = "Tano"
+            ReferencedContainer = "container:Tano.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "tano.app"
-            BlueprintName = "tano"
-            ReferencedContainer = "container:tano.xcodeproj">
+            BuildableName = "Tano.app"
+            BlueprintName = "Tano"
+            ReferencedContainer = "container:Tano.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
