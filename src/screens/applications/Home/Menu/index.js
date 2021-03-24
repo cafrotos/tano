@@ -1,20 +1,23 @@
+import { useNavigation } from "@react-navigation/core";
 import { commonStyles } from "assets/styles";
+import { NAMES } from "configs/screens";
 import React from "react";
 import { View } from "react-native";
 import Item from "./Item";
 
 export default () => {
+  const navigation = useNavigation();
+
   return (
     <View
       style={[
         commonStyles.flexHorizontalEvenly,
-        
       ]}
     >
-      <Item icon="clipboard" label={"Sổ  hàng"} />
-      <Item icon="book" label={"Công nợ"} />
-      <Item icon="list" label={"Lịch sử"} />
-      <Item icon="plus" label={"Tiền hàng"} />
+      <Item icon="pie-chart-2" label={"Báo cáo"} />
+      <Item icon="layers" label={"Kế hoạch"} />
+      <Item icon="award" label={"Thành tích"} />
+      <Item icon="plus" label={"Giao dịch"} onPress={() => navigation.navigate(NAMES.CREATE_TRANSACTION)} />
     </View>
   )
 }

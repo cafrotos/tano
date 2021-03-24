@@ -6,5 +6,13 @@ export default StyleSheet.create({
     padding: BASE_SIZE * 3,
     backgroundColor: "#ffffff",
     borderRadius: BASE_SIZE * 3
+  },
+  itemWrapper: {
+    width: BASE_SIZE * 19,
+  },
+  itemButton: {
+    borderRadius: 16,
+    height: BASE_SIZE * 15,
+    width: BASE_SIZE * 15
   }
 })

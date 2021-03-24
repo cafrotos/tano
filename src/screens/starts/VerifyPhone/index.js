@@ -34,48 +34,46 @@ export default () => {
   }
 
   return (
-    <SafeAreaView style={{ height: "100%" }}>
-      <View style={styles.mainWrapper} >
-        <Space
-          size={8}
-          direction="vertical"
-          style={styles.formWrapper}
-        >
-          <Text style={styles.titlePage}>
-            {"Xác nhận số điện thoại"}
-          </Text>
-          <View style={styles.iconWrapper}>
-            <Icon
-              name="message-circle-outline"
-              fill={themes['color-primary-500']}
-              style={styles.icon}
-            />
-          </View>
-          <VerifyCode
-            form={form}
-            onSubmit={handleSubmit}
+    <View style={styles.mainWrapper} >
+      <Space
+        size={8}
+        direction="vertical"
+        style={styles.formWrapper}
+      >
+        <Text style={styles.titlePage}>
+          {"Xác nhận số điện thoại"}
+        </Text>
+        <View style={styles.iconWrapper}>
+          <Icon
+            name="message-circle-outline"
+            fill={themes['color-primary-500']}
+            style={styles.icon}
           />
-          {
-            isResendConfirm ? (
-              <Space style={styles.resendWrapper}>
-                <Text>
-                  {"Cô/chú không nhận được mã?"}
-                </Text>
-                <TanoButton
-                  size="tiny"
-                  appearance="ghost"
-                  onPress={handleResendCode}
-                >
-                  {
-                    () => <Text style={styles.textButton}>{"Gửi lại"}</Text>
-                  }
-                </TanoButton>
-              </Space>
-            ) :
-              null
-          }
-        </Space>
-      </View>
-    </SafeAreaView >
+        </View>
+        <VerifyCode
+          form={form}
+          onSubmit={handleSubmit}
+        />
+        {
+          isResendConfirm ? (
+            <Space style={styles.resendWrapper}>
+              <Text>
+                {"Cô/chú không nhận được mã?"}
+              </Text>
+              <TanoButton
+                size="tiny"
+                appearance="ghost"
+                onPress={handleResendCode}
+              >
+                {
+                  () => <Text style={styles.textButton}>{"Gửi lại"}</Text>
+                }
+              </TanoButton>
+            </Space>
+          ) :
+            null
+        }
+      </Space>
+    </View>
   )
 }

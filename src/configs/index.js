@@ -5,3 +5,10 @@ export const REGEX = {
 export const CONTEXTS = {
   MAIN: "MAIN"
 }
+
+export const FORMAT_NUMBER_OPTIONS = {
+  "vi-VN": {
+    style: 'currency',
+    currency: 'VND'
+  }
+}

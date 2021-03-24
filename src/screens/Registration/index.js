@@ -12,22 +12,20 @@ export default () => {
   const form = useForm()
 
   return (
-    <SafeAreaView style={{ height: "100%" }}>
-      <Layout
-        level="1"
-        style={[
-          commonStyles.mainWrapper
-        ]}
-      >
-        <Space direction="vertical">
-          <Text style={styles.title}>
-            {"Cô/chú vui lòng điền thông tin cá nhân"}
-          </Text>
-          <UserProfile
-            form={form}
-          />
-        </Space>
-      </Layout>
-    </SafeAreaView>
+    <Layout
+      level="1"
+      style={[
+        commonStyles.mainWrapper
+      ]}
+    >
+      <Space direction="vertical">
+        <Text style={styles.title}>
+          {"Cô/chú vui lòng điền thông tin cá nhân"}
+        </Text>
+        <UserProfile
+          form={form}
+        />
+      </Space>
+    </Layout>
   )
 }

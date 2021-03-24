@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios:IPX": "yarn ios --udid 82D117FC-0104-4521-B02B-9CA9E20A8275",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."

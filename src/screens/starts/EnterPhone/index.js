@@ -25,13 +25,11 @@ export default () => {
   }
 
   return (
-    <SafeAreaView style={{ height: "100%" }}>
-      <Layout level="1" style={styles.mainWrapper}>
-        <InputPhone form={form} />
-        <TanoButton onPress={form.submit(handleSubmit)}>
-          {"Tiếp tục"}
-        </TanoButton>
-      </Layout>
-    </SafeAreaView>
+    <Layout level="1" style={styles.mainWrapper}>
+      <InputPhone form={form} />
+      <TanoButton onPress={form.submit(handleSubmit)}>
+        {"Tiếp tục"}
+      </TanoButton>
+    </Layout>
   )
 }

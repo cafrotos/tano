@@ -15,36 +15,34 @@ export default () => {
   const handlePressEnterPhone = () => navigation.navigate(NAMES.ENTER_PHONE)
 
   return (
-    <SafeAreaView style={{ height: "100%" }}>
-      <ImageBackground
-        source={background}
-        resizeMode="cover"
-        style={styles.mainWrapper}
-      >
-        <View style={styles.sloganWrapper} >
-          <Text
-            style={styles.title}
-          >
-            {"TANO"}
+    <ImageBackground
+      source={background}
+      resizeMode="cover"
+      style={styles.mainWrapper}
+    >
+      <View style={styles.sloganWrapper} >
+        <Text
+          style={styles.title}
+        >
+          {"TANO"}
+        </Text>
+        <Text style={styles.slogan} >
+          {"Người giúp việc tận tình"}
+        </Text>
+      </View>
+      <View style={styles.actionWrapper} >
+        <Space
+          direction="vertical"
+          size={5}
+        >
+          <Text style={styles.hint}>
+            {"Cô Chú Vui lòng điền số điện thoại ĐỂ BẮT ĐẦU"}
           </Text>
-          <Text style={styles.slogan} >
-            {"Người giúp việc tận tình"}
-          </Text>
-        </View>
-        <View style={styles.actionWrapper} >
-          <Space
-            direction="vertical"
-            size={5}
-          >
-            <Text style={styles.hint}>
-              {"Cô Chú Vui lòng điền số điện thoại ĐỂ BẮT ĐẦU"}
-            </Text>
-            <Button onPress={handlePressEnterPhone}>
-              {"Nhập Số Điện Thoại"}
-            </Button>
-          </Space>
-        </View>
-      </ImageBackground>
-    </SafeAreaView>
+          <Button onPress={handlePressEnterPhone}>
+            {"Nhập Số Điện Thoại"}
+          </Button>
+        </Space>
+      </View>
+    </ImageBackground>
   )
 }

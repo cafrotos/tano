@@ -14,7 +14,7 @@ export default StyleSheet.create({
     width: "100%",
   },
   horizontalSpaceItem: {
-    marginLeft: BASE_SIZE * 4
+    marginRight: BASE_SIZE * 4
   },
   verticalSpaceItem: {
     marginBottom: BASE_SIZE * 4,

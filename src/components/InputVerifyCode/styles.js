@@ -5,7 +5,7 @@ export default StyleSheet.create({
   rootStyle: {
     position: "relative",
     alignItems: "center",
-  },  
+  },
   cellRoot: {
     width: BASE_SIZE * 12,
     height: BASE_SIZE * 12,

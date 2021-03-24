@@ -6,7 +6,7 @@ export default StyleSheet.create({
     fontWeight: "700",
     fontSize: BASE_SIZE * 4,
     textTransform: "uppercase"
-  }, 
+  },
   input: {
     width: "100%"
   }

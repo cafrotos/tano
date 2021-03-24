@@ -40,7 +40,12 @@ export default () => {
   }, [user, startScreens])
   return (
     <NavigationContainer>
-      <MainStack.Navigator>
+      <MainStack.Navigator
+        screenOptions={{
+          headerBackTitle: `${"Quay lại"}`
+        }}
+        initialRouteName={NAMES.CREATE_TRANSACTION}
+      >
         {renderScreens}
       </MainStack.Navigator>
     </NavigationContainer>

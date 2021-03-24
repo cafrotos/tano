@@ -42,22 +42,22 @@ export default () => {
         {...eva}
         theme={{ ...eva.light, ...themes }}
       >
-        {
-          loadingUserProfile ? (
-            <SafeAreaView style={{ height: "100%", alignItems: "center", justifyContent: "center" }}>
+        <SafeAreaView style={{ height: "100%" }}>
+          {
+            loadingUserProfile ? (
               <Spinner size="large" status="info" />
-            </SafeAreaView>
-          ) : (
-            <MainContext.Provider
-              value={{
-                ...appState,
-                updateAppState
-              }}
-            >
-              <Screens />
-            </MainContext.Provider>
-          )
-        }
+            ) : (
+              <MainContext.Provider
+                value={{
+                  ...appState,
+                  updateAppState
+                }}
+              >
+                <Screens />
+              </MainContext.Provider>
+            )
+          }
+        </SafeAreaView>
       </ApplicationProvider>
     </SafeAreaProvider >
   )

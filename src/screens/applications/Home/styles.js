@@ -32,6 +32,12 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    fontWeight: "bold"
+    fontWeight: "bold",
+  },
+  titlePositive: {
+    color: themes["color-success-500"]
+  },
+  titleNegative: {
+    color: themes["color-danger-500"]
   }
 })

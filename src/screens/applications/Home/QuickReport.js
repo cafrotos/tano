@@ -4,7 +4,10 @@ import Space from "components/Space";
 import { BASE_SIZE } from "configs/styles";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";
+import { getFormatNumber } from "utils";
 import styles from "./styles";
+
+const _mockTotalCash = 100000
 
 export default () => {
   return (
@@ -25,25 +28,37 @@ export default () => {
             styles.reportWraper
           ]}
         >
-          <Icon
-            name="bar-chart-outline"
-            fill="#606060"
-            style={commonStyles.icon}
-          />
+          <Space
+            style={[
+              commonStyles.flexHorizontalMiddle,
+            ]}
+          >
+            <Icon
+              name="bar-chart-outline"
+              fill="#303030"
+              style={commonStyles.icon}
+            />
+            <Text>
+              {"Dư nợ"}
+            </Text>
+          </Space>
           <Text
-            style={styles.title}
+            style={[
+              styles.title,
+              styles[_mockTotalCash > 0 ? "titlePositive" : "titleNegative"]
+            ]}
           >
             {
               /**
                * @fixme thay thế giá trị dưới bằng value thực tế
                */
             }
-            {"100.100"}
+            {getFormatNumber("vi-VN", _mockTotalCash)}
           </Text>
         </Space>
         <Icon
           name="arrowhead-right-outline"
-          fill="#606060"
+          fill="#303030"
           style={styles.icon}
         />
       </View>
