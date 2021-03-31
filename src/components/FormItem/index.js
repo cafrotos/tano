@@ -26,6 +26,7 @@ import { Keyboard } from "react-native"
  * @param {Function} props.getValueFromEvent
  * @param {Number} props.spaceSize
  * @param {import("react-native").ViewStyle} props.style
+ * @param {*} props.defaultValue
  */
 const FormItem = ({
   form,
@@ -36,16 +37,18 @@ const FormItem = ({
   valuePropsName,
   getValueFromEvent,
   spaceSize,
-  style
+  style,
 }) => {
   if (!form) {
     throw new Error("Props `form` is required!")
   }
 
   useEffect(() => {
-    form.addrules({
-      [name]: rules
-    })
+    if (rules) {
+      form.addrules({
+        [name]: rules
+      })
+    }
   }, [])
 
   const childrenProps = useMemo(() => {
@@ -57,10 +60,11 @@ const FormItem = ({
     }
     switch (children?.type?.displayName) {
       case "Input":
-        props.onChangeText = (value) => form.setFiedlsValue({ [name]: value })
-        if (form.errors[name]) {
-          props.status = "danger"
-          props.caption = form.errors[name]
+        props.onChangeText = (value) => {
+          const formatValue = typeof children.props?.onFormat === "function" ?
+            children.props.onFormat(value) :
+            value
+          form.setFiedlsValue({ [name]: formatValue })
         }
         break;
       case "Select":
@@ -68,10 +72,6 @@ const FormItem = ({
           form.setFiedlsValue({
             [name]: children.props.children.find((child, index) => index === select.row)?.props?.title,
           })
-        }
-        if (form.errors[name]) {
-          props.status = "danger"
-          props.caption = form.errors[name]
         }
       case "Datepicker":
         valuePropsName = "date"
@@ -83,16 +83,18 @@ const FormItem = ({
           })
         }
         props.onFocus = () => Keyboard.dismiss()
-        if (form.errors[name]) {
-          props.status = "danger"
-          props.caption = form.errors[name]
-        }
       default:
         break;
     }
-    props[valuePropsName] = form.data[name]
+    if (form.errors[name]) {
+      props.status = "danger"
+      props.caption = form.errors[name]
+    }
+    if(form.data[name]) {
+      props[valuePropsName] = form.data[name]
+    }
     return props
-  }, [getValueFromEvent, name, form.data[name], form.errors[name], children])
+  }, [form.data, form.errors])
 
   return (
     <Space

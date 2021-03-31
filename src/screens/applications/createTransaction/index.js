@@ -1,11 +1,10 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import Stack from "components/Stack";
 import { NAMES } from "configs/screens";
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React, { useCallback } from "react";
 import CreateTransaction from "./CreateTransaction";
 import InputMoney from "./InputMoney"
+import SelectGroup from "./SelectGroup";
 
-const CreateTransactionStack = createStackNavigator();
 
 const screens = [
   {
@@ -15,24 +14,25 @@ const screens = [
   {
     name: NAMES.INPUT_MONEY,
     component: InputMoney
-  }
+  },
+  {
+    name: NAMES.SELECT_GROUP,
+    component: SelectGroup
+  },
 ]
 
 export default () => {
+  const handleRenderScreens = useCallback((Screen) => screens.map((screen, index) => (
+    <Screen {...screen} key={index} />
+  )), [])
+
   return (
-    <CreateTransactionStack.Navigator
+    <Stack
+      onRenderScreens={handleRenderScreens}
       screenOptions={{
-        headerBackTitle: `${"Quay lại"}`
+        headerStyle: {
+        }
       }}
-    >
-      {
-        screens.map((screen, index) => (
-          <CreateTransactionStack.Screen
-            {...screen}
-            key={index}
-          />
-        ))
-      }
-    </CreateTransactionStack.Navigator>
+    />
   )
 }

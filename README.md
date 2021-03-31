@@ -11,11 +11,16 @@
 |Android Studio| Android API 29 (Andrdoi 10)|
 
 
-**App Name:** Ứng dụng quản lý chi tiêu cá nhân cho người nội trợ trong gia đình
+## App Name
+Ứng dụng quản lý chi tiêu cá nhân cho người nội trợ trong gia đình
 
-**Users:** Người nội trợ trong gia đình
+## Users
+Người nội trợ trong gia đình
 
-**Giải quyết vấn đề:**
+## Ý tưởng
+Ý tưởng ban đầu là sử áp dụng các phương pháp quản lý chi tiêu như phương pháp 50/20/30 và việc kê khai thu chi nhằm nâng cao khả năng quản lý và sử dụng nguồn tiền, giúp người dùng tạo thói quen về ghi chép thu chi, sử dụng ngân sách hợp lý và đồng thời nhắc nhở người dùng khi phát sinh những khoản chi tiêu bất thường.
+
+## Giải quyết vấn đề:
   * Quản lý các khoản thu nhập:
     * Lương
     * Chu cấp
@@ -66,7 +71,7 @@
   * Lập kế hoạch
     * Tạo khoản ngân sách(tạo mặc định theo kế hoạch 50/20/30)
 
-Concept ứng dụng
+## Concept ứng dụng
   * Quản lý tài chính dựa trên các phương pháp mặc định hoặc tư tạo:
     + Tạo ví
     + Chọn phương pháp (6 hũ, 50/30/20, khác)
@@ -114,5 +119,11 @@ Concept ứng dụng
     + Các chi phí khác
     + <Nhóm chi phí mới>
     
-Thông báo cho người dùng: chưa làm
-
+## Chức năng chính
+### 1. Đăng ký/đăng nhập
+Sử dụng sđt/email/social network
+### 2. Tạo ví, chọn phương pháp
+### 3. Ghi chép giao dịch
+Ghi chép các thông tin về giao dịch: số tiền, loại giao dịch(nhóm giao dịch: thu/chi), nội dung
+### 4. Báo cáo
+### 5. Lập kế hoạch(các sự kiện: )

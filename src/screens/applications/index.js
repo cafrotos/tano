@@ -4,6 +4,7 @@ import { NAMES } from 'configs/screens';
 import React from 'react';
 import createTransaction from './createTransaction';
 import Home from './Home';
+import transactionBook from './transactionBook';
 
 const screens = [
   {
@@ -16,6 +17,13 @@ const screens = [
   {
     name: NAMES.CREATE_TRANSACTION,
     component: createTransaction,
+    options: {
+      header: BlankHeader
+    }
+  },
+  {
+    name: NAMES.TRANSACTION_BOOK,
+    component: transactionBook,
     options: {
       header: BlankHeader
     }

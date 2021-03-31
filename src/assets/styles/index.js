@@ -1,4 +1,5 @@
 import { BASE_SIZE } from "configs/styles";
+import themes from "configs/themes";
 import { StyleSheet } from "react-native";
 
 export const commonStyles = StyleSheet.create({
@@ -64,6 +65,9 @@ export const commonStyles = StyleSheet.create({
   },
   textColorWhite: {
     color: "#ffffff"
+  },
+  textColorDanger: {
+    color: themes["color-danger-400"]
   },
   icon: {
     height: BASE_SIZE * 6,

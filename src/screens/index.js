@@ -1,6 +1,5 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 import { NAMES } from 'configs/screens';
 import { getContext } from 'utils';
@@ -9,45 +8,45 @@ import BlankHeader from 'components/BlankHeader';
 import renderStartScreens from './starts';
 import renderAppScreen from "./applications"
 import Registration from './Registration';
+import Stack from 'components/Stack';
 
 const MainContext = getContext(CONTEXTS.MAIN)
-const MainStack = createStackNavigator();
 
 export default () => {
   const { user } = useContext(MainContext)
 
-  const startScreens = useMemo(() => renderStartScreens(MainStack.Screen), [])
-  const applicationsScreens = useMemo(() => renderAppScreen(MainStack.Screen))
-
-  const renderScreens = useMemo(() => {
+  const handleRenderScreens = useCallback((Screen) => {
     if (!user) {
-      return startScreens
+      return renderStartScreens(Screen)
     }
 
     if (!user.displayName) {
       return (
-        <MainStack.Screen
+        <Screen
           name={NAMES.REGISTRATION}
           component={Registration}
           options={{
-            header: BlankHeader
+            header: BlankHeader,
           }}
         />
       )
     }
 
-    return applicationsScreens
-  }, [user, startScreens])
+    return renderAppScreen(Screen)
+  }, [user])
+
   return (
     <NavigationContainer>
-      <MainStack.Navigator
+      <Stack
+        onRenderScreens={handleRenderScreens}
         screenOptions={{
-          headerBackTitle: `${"Quay lại"}`
+          headerStyle: {
+          }
         }}
-        initialRouteName={NAMES.CREATE_TRANSACTION}
-      >
-        {renderScreens}
-      </MainStack.Navigator>
+        navigatorOptions={{
+          // initialRouteName: NAMES.TRANSACTION_BOOK
+        }}
+      />
     </NavigationContainer>
   )
 }

@@ -10,6 +10,7 @@ import themes from 'configs/themes'
 import { onAuthStateChanged } from 'services/firebase/auth';
 import { getContext } from 'utils';
 import { CONTEXTS } from 'configs';
+import { KeyboardAvoidingView, Platform } from 'react-native';
 
 const MainContext = getContext(CONTEXTS.MAIN)
 
@@ -43,20 +44,29 @@ export default () => {
         theme={{ ...eva.light, ...themes }}
       >
         <SafeAreaView style={{ height: "100%" }}>
-          {
-            loadingUserProfile ? (
-              <Spinner size="large" status="info" />
-            ) : (
-              <MainContext.Provider
-                value={{
-                  ...appState,
-                  updateAppState
-                }}
-              >
-                <Screens />
-              </MainContext.Provider>
-            )
-          }
+          <KeyboardAvoidingView
+            behavior={
+              Platform.OS === "android" ?
+                "position" :
+                "padding"
+            }
+            style={{ height: "100%" }}
+          >
+            {
+              loadingUserProfile ? (
+                <Spinner size="large" status="info" />
+              ) : (
+                <MainContext.Provider
+                  value={{
+                    ...appState,
+                    updateAppState
+                  }}
+                >
+                  <Screens />
+                </MainContext.Provider>
+              )
+            }
+          </KeyboardAvoidingView>
         </SafeAreaView>
       </ApplicationProvider>
     </SafeAreaProvider >

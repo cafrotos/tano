@@ -1,7 +1,8 @@
+import { useNavigation } from "@react-navigation/core";
 import { Icon, Text } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Space from "components/Space";
-import { BASE_SIZE } from "configs/styles";
+import { NAMES } from "configs/screens";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";
 import { getFormatNumber } from "utils";
@@ -10,10 +11,12 @@ import styles from "./styles";
 const _mockTotalCash = 100000
 
 export default () => {
+  const navigation = useNavigation()
+
   return (
     <TouchableHighlight
       style={styles.touchableReportWrapper}
-      onPress={() => { }}
+      onPress={() => navigation.navigate(NAMES.TRANSACTION_BOOK)}
     >
       <View
         style={[
@@ -53,7 +56,7 @@ export default () => {
                * @fixme thay thế giá trị dưới bằng value thực tế
                */
             }
-            {getFormatNumber("vi-VN", _mockTotalCash)}
+            {getFormatNumber("vi-VN", Math.abs(_mockTotalCash))}
           </Text>
         </Space>
         <Icon

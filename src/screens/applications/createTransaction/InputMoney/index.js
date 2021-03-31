@@ -1,10 +1,32 @@
+import { Layout } from "@ui-kitten/components";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
+import Numpad from "./Numpad";
 
 export default () => {
   return (
-    <SafeAreaView style={{ height: "100%" }}>
+    <Layout
+      level="1"
+      style={{
+        height: "100%",
+        justifyContent: "space-between"
+      }}
+    >
+      <Layout
+        style={{
+          flex: 5
+        }}
+      >
 
-    </SafeAreaView>
+      </Layout>
+      <Layout
+        level="1"
+        style={{
+          flex: 4
+        }}
+      >
+        <Numpad />
+      </Layout>
+    </Layout>
   )
 }

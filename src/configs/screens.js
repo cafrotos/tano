@@ -8,7 +8,9 @@ export const NAMES = {
   // Đăng nhập thành công
   HOME: "Màn hình chính",
   // Nhóm tạo giao dịch
-  TRANSACTION: "Giao dịch",
   CREATE_TRANSACTION: "Tạo giao dịch",
-  INPUT_MONEY: "Nhập số tiền"
+  INPUT_MONEY: "Nhập số tiền",
+  SELECT_GROUP: "Chọn nhóm",
+  // Nhóm sổ giao dịch
+  TRANSACTION_BOOK: "Sổ giao dịch"
 }
