@@ -51,6 +51,7 @@ export default {
       shadowOffset: {
         height: 0,
       },
+      elevation:0
     },
     headerTintColor: '#fff',
     headerRight: ButtonCreateTrans,

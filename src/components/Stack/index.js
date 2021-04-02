@@ -28,6 +28,7 @@ const Stack = ({
       {...navigatorOptions}
       screenOptions={{
         headerBackTitle: `${"Quay lại"}`,
+        headerTitleAlign: "center",
         ...screenOptions,
       }}
     >

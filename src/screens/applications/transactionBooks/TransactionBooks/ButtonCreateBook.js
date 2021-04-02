@@ -4,7 +4,7 @@ import { commonStyles } from "assets/styles";
 import Space from "components/Space";
 import { NAMES } from "configs/screens";
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableNativeFeedback } from "react-native";
 
 export default () => {
   const navigation = useNavigation();
@@ -12,14 +12,14 @@ export default () => {
   const handlePressCreateBook = () => navigation.navigate(NAMES.CREATE_TRANS_BOOK)
 
   return (
-    <TouchableOpacity
+    <TouchableNativeFeedback
       onPress={handlePressCreateBook}
     >
       <Space
         style={[
           commonStyles.flexHorizontalMiddle,
           {
-            marginRight: 8
+            marginRight: 8,
           }
         ]}
         size={0.5}
@@ -33,6 +33,6 @@ export default () => {
           {"Tạo sổ"}
         </Text>
       </Space>
-    </TouchableOpacity>
+    </TouchableNativeFeedback>
   )
 }

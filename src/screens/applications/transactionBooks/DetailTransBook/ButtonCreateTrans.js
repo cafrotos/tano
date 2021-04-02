@@ -4,7 +4,7 @@ import { commonStyles } from "assets/styles";
 import Space from "components/Space";
 import { NAMES } from "configs/screens";
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableNativeFeedback } from "react-native";
 
 export default () => {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ export default () => {
   const handlePressCreateTrans = () => navigation.navigate(NAMES.CREATE_TRANSACTION)
 
   return (
-    <TouchableOpacity
+    <TouchableNativeFeedback
       onPress={handlePressCreateTrans}
     >
       <Space
@@ -33,6 +33,6 @@ export default () => {
           {"Tạo GD"}
         </Text>
       </Space>
-    </TouchableOpacity>
+    </TouchableNativeFeedback>
   )
 }

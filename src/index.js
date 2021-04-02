@@ -47,7 +47,7 @@ export default () => {
           <KeyboardAvoidingView
             behavior={
               Platform.OS === "android" ?
-                "position" :
+                null :
                 "padding"
             }
             style={{ height: "100%" }}
