@@ -1,4 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import themes from "configs/themes";
 import React, { useMemo } from "react";
 
 /**

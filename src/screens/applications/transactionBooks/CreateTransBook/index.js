@@ -1,10 +1,8 @@
 import { Layout } from "@ui-kitten/components";
+import { NAMES } from "configs/screens";
 import React from "react";
-import TotalAmount from "./TotalAmount";
 
-import { _mockDetailReport } from "configs/mockups"
-
-export default () => {
+const CreateTransBook = () => {
   return (
     <Layout
       level="1"
@@ -12,9 +10,12 @@ export default () => {
         height: "100%"
       }}
     >
-      <TotalAmount
-        total={_mockDetailReport.total}
-      />
+
     </Layout>
   )
+}
+
+export default {
+  name: NAMES.CREATE_TRANS_BOOK,
+  component: CreateTransBook,
 }

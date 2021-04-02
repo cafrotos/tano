@@ -32,7 +32,7 @@ export default () => {
       <Button
         size="large"
         style={styles.logoutButton}
-        accessoryLeft={renderIcon({ name: "log-out-outline", fill: "#ffffff" })}
+        accessoryLeft={renderIcon({ name: "settings", fill: "#ffffff" })}
       />
     </View>
   )

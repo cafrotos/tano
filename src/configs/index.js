@@ -12,3 +12,5 @@ export const FORMAT_NUMBER_OPTIONS = {
     currency: 'VND'
   }
 }
+
+export const REALM_PATH = "com.cafrotos.kltn.tano"

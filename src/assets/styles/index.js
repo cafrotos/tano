@@ -74,3 +74,11 @@ export const commonStyles = StyleSheet.create({
     width: BASE_SIZE * 6
   },
 })
+
+export const buttonStyle = StyleSheet.create({
+  circle32: {
+    borderRadius: 32,
+    width: 32,
+    height: 32
+  }
+})

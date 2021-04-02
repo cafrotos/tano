@@ -1,11 +1,11 @@
 import { useNavigation } from "@react-navigation/core";
 import { Icon, Text } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
+import Amount from "components/Amount";
 import Space from "components/Space";
 import { NAMES } from "configs/screens";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";
-import { getFormatNumber } from "utils";
 import styles from "./styles";
 
 const _mockTotalCash = 100000
@@ -45,19 +45,12 @@ export default () => {
               {"Dư nợ"}
             </Text>
           </Space>
-          <Text
+          <Amount
+            amount={_mockTotalCash}
             style={[
-              styles.title,
-              styles[_mockTotalCash > 0 ? "titlePositive" : "titleNegative"]
+              styles.title
             ]}
-          >
-            {
-              /**
-               * @fixme thay thế giá trị dưới bằng value thực tế
-               */
-            }
-            {getFormatNumber("vi-VN", Math.abs(_mockTotalCash))}
-          </Text>
+          />
         </Space>
         <Icon
           name="arrowhead-right-outline"

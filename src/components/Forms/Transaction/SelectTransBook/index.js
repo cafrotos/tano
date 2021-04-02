@@ -49,7 +49,7 @@ export default ({
               }}
             />
             <Text>
-              {"Chọn nhóm chi tiêu"}
+              {"Chọn sổ giao dịch"}
             </Text>
           </Space>
         </Layout>

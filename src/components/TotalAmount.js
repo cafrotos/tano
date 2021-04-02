@@ -45,7 +45,7 @@ export default ({
             }
           ]}
         >
-          {getFormatNumber("vi-VN", Math.abs(total))}
+          {getFormatNumber("vi-VN", total)}
         </Text>
       </Space>
     </View>

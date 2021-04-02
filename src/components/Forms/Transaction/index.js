@@ -8,6 +8,7 @@ import { View } from "react-native";
 import { getFormatNumber } from "utils";
 import InputMoney from "./InputMoney";
 import SelectGroup from "./SelectGroup";
+import SelectTransBook from "./SelectTransBook";
 
 export default ({
   form,
@@ -28,6 +29,19 @@ export default ({
       {/**
        * @fixme move rule to configs
        */}
+      <FormItem
+        form={form}
+        name="transBook"
+        rules={[
+          {
+            required: true,
+            message: "Hãy chọn sổ giao dịch nào!"
+          }
+        ]}
+      >
+        <SelectTransBook
+        />
+      </FormItem>
       <FormItem
         form={form}
         rules={[
