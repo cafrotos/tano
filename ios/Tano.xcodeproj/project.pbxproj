@@ -16,16 +16,16 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TanoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TanoTests.m */; };
-		42197ECAE24845F8FE9E5D33 /* libPods-Tano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 610019B88B0B14C764ACC04E /* libPods-Tano.a */; };
 		4763797B260A5C0500F1637E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4763797A260A5C0500F1637E /* GoogleService-Info.plist */; };
 		52F5155DEC5A402F8DD4FF5F /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8117500274C40729E91A440 /* RobotoSlab-Medium.ttf */; };
 		63FB6545C6BB4A758D14FD91 /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB2994882A6847A39C9EBF6A /* RobotoSlab-Bold.ttf */; };
 		6957349708EF4BD3B9B332E0 /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F4534C9A094007A749A77F /* RobotoSlab-Thin.ttf */; };
-		69E048EBC6822F7D77AF3094 /* libPods-Tano-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC58F2C77220E24D8127BB1 /* libPods-Tano-tvOS.a */; };
-		6BC6650969574BC10D49ECCD /* libPods-Tano-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B45715FE02503419D1D630F /* libPods-Tano-tvOSTests.a */; };
+		806FBBB52B14EF4A02AB7BD9 /* libPods-Tano-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C50350069EEB26F0118225 /* libPods-Tano-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		BC41C4221B7D6D9421A8E5C3 /* libPods-Tano-TanoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54285044FB3B60C89BC4CAF8 /* libPods-Tano-TanoTests.a */; };
+		88A06E6CD750B1E084DB02EB /* libPods-Tano-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E75BBC5B8E6F636637D07B /* libPods-Tano-tvOS.a */; };
+		A3801F1B40F2B63AD972EC9E /* libPods-Tano-TanoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F539CD04A0F33EDC3A1B33E /* libPods-Tano-TanoTests.a */; };
 		BCA2346102B640C89285D58E /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9530DC5C4B6046ABBB658031 /* RobotoSlab-Light.ttf */; };
+		C21D5985ED794CC7F6B8829C /* libPods-Tano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F96BE638D125F5E8A6AD048 /* libPods-Tano.a */; };
 		E28CE3390605455E9CD2BD86 /* RobotoSlab.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 034DDF153D8F4531A889DBC8 /* RobotoSlab.ttf */; };
 /* End PBXBuildFile section */
 
@@ -53,34 +53,34 @@
 		00E356F21AD99517003FC87E /* TanoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TanoTests.m; sourceTree = "<group>"; };
 		034DDF153D8F4531A889DBC8 /* RobotoSlab.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = RobotoSlab.ttf; path = ../src/assets/fonts/RobotoSlab.ttf; sourceTree = "<group>"; };
 		0C5831C4CA1343759704438B /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Regular.ttf"; path = "../src/assets/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
+		12ADEC21EB20007A0518CC4D /* Pods-Tano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano.debug.xcconfig"; path = "Target Support Files/Pods-Tano/Pods-Tano.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Tano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Tano/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Tano/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tano/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tano/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tano/main.m; sourceTree = "<group>"; };
-		1E39BC45EB94822226AF2D11 /* Pods-Tano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano.debug.xcconfig"; path = "Target Support Files/Pods-Tano/Pods-Tano.debug.xcconfig"; sourceTree = "<group>"; };
+		14D3DECE12C9E04A6F2E46B9 /* Pods-Tano-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Tano-tvOSTests/Pods-Tano-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Tano-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tano-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Tano-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tano-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CFAC7B098D6C93A6E606FB5 /* Pods-Tano-TanoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-TanoTests.release.xcconfig"; path = "Target Support Files/Pods-Tano-TanoTests/Pods-Tano-TanoTests.release.xcconfig"; sourceTree = "<group>"; };
+		3F539CD04A0F33EDC3A1B33E /* libPods-Tano-TanoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-TanoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4763797A260A5C0500F1637E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Tano/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		54285044FB3B60C89BC4CAF8 /* libPods-Tano-TanoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-TanoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E75BBC5B8E6F636637D07B /* libPods-Tano-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F4534C9A094007A749A77F /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Thin.ttf"; path = "../src/assets/fonts/RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
-		57AB91465E371BA47FEE54D0 /* Pods-Tano-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Tano-tvOSTests/Pods-Tano-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		610019B88B0B14C764ACC04E /* libPods-Tano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		641DD2D52B5152FBF3AF1E6E /* Pods-Tano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano.release.xcconfig"; path = "Target Support Files/Pods-Tano/Pods-Tano.release.xcconfig"; sourceTree = "<group>"; };
-		68FD2DFEAC0E3B56E684193D /* Pods-Tano-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Tano-tvOS/Pods-Tano-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		7B45715FE02503419D1D630F /* libPods-Tano-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CD680B76E3867BE3E31296D /* Pods-Tano-TanoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-TanoTests.release.xcconfig"; path = "Target Support Files/Pods-Tano-TanoTests/Pods-Tano-TanoTests.release.xcconfig"; sourceTree = "<group>"; };
-		7FC58F2C77220E24D8127BB1 /* libPods-Tano-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C50350069EEB26F0118225 /* libPods-Tano-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F96BE638D125F5E8A6AD048 /* libPods-Tano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F8FF2B94D15F9B4C79FDBB /* Pods-Tano-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Tano-tvOS/Pods-Tano-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		78F1B993AC9E8D5E245968DE /* Pods-Tano-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Tano-tvOS/Pods-Tano-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Tano/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		81FCF47A1ECD4B0435C1B639 /* Pods-Tano-TanoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-TanoTests.debug.xcconfig"; path = "Target Support Files/Pods-Tano-TanoTests/Pods-Tano-TanoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9530DC5C4B6046ABBB658031 /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Light.ttf"; path = "../src/assets/fonts/RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
+		9AC99EBCA8A3014A7A9A391A /* Pods-Tano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano.release.xcconfig"; path = "Target Support Files/Pods-Tano/Pods-Tano.release.xcconfig"; sourceTree = "<group>"; };
 		A8117500274C40729E91A440 /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Medium.ttf"; path = "../src/assets/fonts/RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
 		AB2994882A6847A39C9EBF6A /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Bold.ttf"; path = "../src/assets/fonts/RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
-		CB7C93FA9B3858F30C6B1425 /* Pods-Tano-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Tano-tvOS/Pods-Tano-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		CE6F11ACE2FEB6829E871E50 /* Pods-Tano-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Tano-tvOSTests/Pods-Tano-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E33A36E7F76E5AD6AD482A7B /* Pods-Tano-TanoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-TanoTests.debug.xcconfig"; path = "Target Support Files/Pods-Tano-TanoTests/Pods-Tano-TanoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F3CE1E0E9B43CF0A57393696 /* Pods-Tano-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Tano-tvOSTests/Pods-Tano-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC41C4221B7D6D9421A8E5C3 /* libPods-Tano-TanoTests.a in Frameworks */,
+				A3801F1B40F2B63AD972EC9E /* libPods-Tano-TanoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42197ECAE24845F8FE9E5D33 /* libPods-Tano.a in Frameworks */,
+				C21D5985ED794CC7F6B8829C /* libPods-Tano.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E048EBC6822F7D77AF3094 /* libPods-Tano-tvOS.a in Frameworks */,
+				88A06E6CD750B1E084DB02EB /* libPods-Tano-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BC6650969574BC10D49ECCD /* libPods-Tano-tvOSTests.a in Frameworks */,
+				806FBBB52B14EF4A02AB7BD9 /* libPods-Tano-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,10 +156,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				610019B88B0B14C764ACC04E /* libPods-Tano.a */,
-				54285044FB3B60C89BC4CAF8 /* libPods-Tano-TanoTests.a */,
-				7FC58F2C77220E24D8127BB1 /* libPods-Tano-tvOS.a */,
-				7B45715FE02503419D1D630F /* libPods-Tano-tvOSTests.a */,
+				6F96BE638D125F5E8A6AD048 /* libPods-Tano.a */,
+				3F539CD04A0F33EDC3A1B33E /* libPods-Tano-TanoTests.a */,
+				50E75BBC5B8E6F636637D07B /* libPods-Tano-tvOS.a */,
+				62C50350069EEB26F0118225 /* libPods-Tano-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,14 +214,14 @@
 		AAF9543099D79B46C3ABE51E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E39BC45EB94822226AF2D11 /* Pods-Tano.debug.xcconfig */,
-				641DD2D52B5152FBF3AF1E6E /* Pods-Tano.release.xcconfig */,
-				81FCF47A1ECD4B0435C1B639 /* Pods-Tano-TanoTests.debug.xcconfig */,
-				7CD680B76E3867BE3E31296D /* Pods-Tano-TanoTests.release.xcconfig */,
-				CB7C93FA9B3858F30C6B1425 /* Pods-Tano-tvOS.debug.xcconfig */,
-				68FD2DFEAC0E3B56E684193D /* Pods-Tano-tvOS.release.xcconfig */,
-				CE6F11ACE2FEB6829E871E50 /* Pods-Tano-tvOSTests.debug.xcconfig */,
-				57AB91465E371BA47FEE54D0 /* Pods-Tano-tvOSTests.release.xcconfig */,
+				12ADEC21EB20007A0518CC4D /* Pods-Tano.debug.xcconfig */,
+				9AC99EBCA8A3014A7A9A391A /* Pods-Tano.release.xcconfig */,
+				E33A36E7F76E5AD6AD482A7B /* Pods-Tano-TanoTests.debug.xcconfig */,
+				3CFAC7B098D6C93A6E606FB5 /* Pods-Tano-TanoTests.release.xcconfig */,
+				78F1B993AC9E8D5E245968DE /* Pods-Tano-tvOS.debug.xcconfig */,
+				70F8FF2B94D15F9B4C79FDBB /* Pods-Tano-tvOS.release.xcconfig */,
+				14D3DECE12C9E04A6F2E46B9 /* Pods-Tano-tvOSTests.debug.xcconfig */,
+				F3CE1E0E9B43CF0A57393696 /* Pods-Tano-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -233,11 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TanoTests" */;
 			buildPhases = (
-				2BCA9DDF8BA9BB98BD905828 /* [CP] Check Pods Manifest.lock */,
+				C199962777C12CDCC57E96C4 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				38D6EF38A8417B5B7D913A7B /* [CP] Copy Pods Resources */,
+				21E3B451EFC25BE18A7FAFD2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,14 +253,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Tano" */;
 			buildPhases = (
-				A8FEF0AA81CDAC4FBBBE46DD /* [CP] Check Pods Manifest.lock */,
+				CE72C24906152BF6F7B280B4 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				43F2C49A497D50995B71F831 /* [CP] Copy Pods Resources */,
-				0F329D119C64246859833F57 /* [CP-User] [RNFB] Core Configuration */,
+				7C19E18D01F375D6F78E8424 /* [CP] Copy Pods Resources */,
+				DA7C84ABEEBC14D8351A6562 /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -275,7 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Tano-tvOS" */;
 			buildPhases = (
-				129E617E3314F8B6E50E872A /* [CP] Check Pods Manifest.lock */,
+				05AF7E5FBBEE1B2D88F49807 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -295,7 +295,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Tano-tvOSTests" */;
 			buildPhases = (
-				701C967BC0A2A65AEB0E203F /* [CP] Check Pods Manifest.lock */,
+				26F5B85D0DE308E3CAB8C547 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -413,17 +413,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		0F329D119C64246859833F57 /* [CP-User] [RNFB] Core Configuration */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP-User] [RNFB] Core Configuration";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    _JSON_OUTPUT_BASE64=$(python -c 'import json,sys,base64;print(base64.b64encode(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"').read())['${_JSON_ROOT}'])))' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\n\n  # config.admob_delay_app_measurement_init\n  _ADMOB_DELAY_APP_MEASUREMENT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_delay_app_measurement_init\")\n  if [[ $_ADMOB_DELAY_APP_MEASUREMENT == \"true\" ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADDelayAppMeasurementInit\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"YES\")\n  fi\n\n  # config.admob_ios_app_id\n  _ADMOB_IOS_APP_ID=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_ios_app_id\")\n  if [[ $_ADMOB_IOS_APP_ID ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADApplicationIdentifier\")\n    _PLIST_ENTRY_TYPES+=(\"string\")\n    _PLIST_ENTRY_VALUES+=(\"$_ADMOB_IOS_APP_ID\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
-		};
-		129E617E3314F8B6E50E872A /* [CP] Check Pods Manifest.lock */ = {
+		05AF7E5FBBEE1B2D88F49807 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -445,43 +435,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2BCA9DDF8BA9BB98BD905828 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Tano-TanoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		38D6EF38A8417B5B7D913A7B /* [CP] Copy Pods Resources */ = {
+		21E3B451EFC25BE18A7FAFD2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -499,25 +453,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tano-TanoTests/Pods-Tano-TanoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		43F2C49A497D50995B71F831 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tano/Pods-Tano-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tano/Pods-Tano-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		701C967BC0A2A65AEB0E203F /* [CP] Check Pods Manifest.lock */ = {
+		26F5B85D0DE308E3CAB8C547 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -539,7 +475,61 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A8FEF0AA81CDAC4FBBBE46DD /* [CP] Check Pods Manifest.lock */ = {
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		7C19E18D01F375D6F78E8424 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tano/Pods-Tano-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tano/Pods-Tano-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C199962777C12CDCC57E96C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tano-TanoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE72C24906152BF6F7B280B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -560,6 +550,16 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DA7C84ABEEBC14D8351A6562 /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    _JSON_OUTPUT_BASE64=$(python -c 'import json,sys,base64;print(base64.b64encode(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"').read())['${_JSON_ROOT}'])))' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\n\n  # config.admob_delay_app_measurement_init\n  _ADMOB_DELAY_APP_MEASUREMENT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_delay_app_measurement_init\")\n  if [[ $_ADMOB_DELAY_APP_MEASUREMENT == \"true\" ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADDelayAppMeasurementInit\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"YES\")\n  fi\n\n  # config.admob_ios_app_id\n  _ADMOB_IOS_APP_ID=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_ios_app_id\")\n  if [[ $_ADMOB_IOS_APP_ID ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADApplicationIdentifier\")\n    _PLIST_ENTRY_TYPES+=(\"string\")\n    _PLIST_ENTRY_VALUES+=(\"$_ADMOB_IOS_APP_ID\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -654,7 +654,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81FCF47A1ECD4B0435C1B639 /* Pods-Tano-TanoTests.debug.xcconfig */;
+			baseConfigurationReference = E33A36E7F76E5AD6AD482A7B /* Pods-Tano-TanoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -677,7 +677,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CD680B76E3867BE3E31296D /* Pods-Tano-TanoTests.release.xcconfig */;
+			baseConfigurationReference = 3CFAC7B098D6C93A6E606FB5 /* Pods-Tano-TanoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -697,7 +697,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E39BC45EB94822226AF2D11 /* Pods-Tano.debug.xcconfig */;
+			baseConfigurationReference = 12ADEC21EB20007A0518CC4D /* Pods-Tano.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -721,7 +721,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 641DD2D52B5152FBF3AF1E6E /* Pods-Tano.release.xcconfig */;
+			baseConfigurationReference = 9AC99EBCA8A3014A7A9A391A /* Pods-Tano.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -743,7 +743,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB7C93FA9B3858F30C6B1425 /* Pods-Tano-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 78F1B993AC9E8D5E245968DE /* Pods-Tano-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -771,7 +771,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68FD2DFEAC0E3B56E684193D /* Pods-Tano-tvOS.release.xcconfig */;
+			baseConfigurationReference = 70F8FF2B94D15F9B4C79FDBB /* Pods-Tano-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -799,7 +799,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE6F11ACE2FEB6829E871E50 /* Pods-Tano-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 14D3DECE12C9E04A6F2E46B9 /* Pods-Tano-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -826,7 +826,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57AB91465E371BA47FEE54D0 /* Pods-Tano-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = F3CE1E0E9B43CF0A57393696 /* Pods-Tano-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -883,6 +883,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -943,6 +944,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
