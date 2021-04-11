@@ -7,21 +7,18 @@ import Space from "components/Space";
 import React, { useEffect } from "react";
 import { View } from "react-native";
 import { getFormatNumber } from "utils";
-import InputMoney from "./InputMoney";
-import SelectGroup from "./SelectGroup";
-import SelectTransBook from "./SelectTransBook";
+import SelectIcon from "./SelectIcon";
 
 export default ({
   form,
-  onPressInputMoney,
-  onPressSelectGroup
+  onSelectIcon
 }) => {
   const { params } = useRoute()
 
   useEffect(() => {
-    if (params?.transGroup) {
+    if (params?.icon) {
       form.setFiedlsValue({
-        transGroup: params.transGroup.id
+        icon: params.icon
       })
     }
   }, [params])
@@ -42,13 +39,7 @@ export default ({
        */}
       <FormItem
         form={form}
-        rules={[
-          {
-            required: true,
-            message: "Hãy nhập số tiền đã giao dịch nào!"
-          }
-        ]}
-        name="money"
+        name="icon"
         label={(
           <View
             style={[
@@ -56,7 +47,7 @@ export default ({
               commonStyles.flexHorizontalCenter
             ]}
           >
-            <Text>{"Nhập số tiền"}</Text>
+            <Text>{"Chọn biểu tượng"}</Text>
           </View>
         )}
       >
@@ -66,68 +57,42 @@ export default ({
         {/* <InputMoney
           onPress={onPressInputMoney}
         /> */}
+        <SelectIcon
+          onSelectIcon={onSelectIcon}
+        />
+      </FormItem>
+      <FormItem
+        form={form}
+        name="name"
+        rules={[
+          {
+            required: true,
+            message: "Bạn hãy nhập tên ví!"
+          }
+        ]}
+      >
         <Input
+          placeholder={"Tên ví"}
+        />
+      </FormItem>
+      <FormItem
+        form={form}
+        name="amount"
+      >
+        <Input
+          defaultValue={"0"}
+          placeholder={"Số tiền ban đầu"}
           onFormat={handleFormat}
-          textAlign="center"
-          textStyle={{
-            fontSize: 40,
-            padding: 16
-          }}
-        />
-      </FormItem>
-      {/**
-       * @fixme move rule to configs
-       */}
-      <FormItem
-        form={form}
-        name="transGroup"
-        rules={[
-          {
-            required: true,
-            message: "Hãy chọn nhóm đã giao dịch nào!"
-          }
-        ]}
-      >
-        <SelectGroup
-          onPress={onPressSelectGroup}
         />
       </FormItem>
       <FormItem
         form={form}
-        name="transBook"
-        rules={[
-          {
-            required: true,
-            message: "Hãy chọn sổ giao dịch nào!"
-          }
-        ]}
-      >
-        <SelectTransBook
-        />
-      </FormItem>
-      <FormItem
-        form={form}
-        name="content"
-        rules={[
-          {
-            required: true,
-            message: "Bạn chắc chắn sẽ muốn xem lại mình đã tiêu những gì đó!"
-          }
-        ]}
+        name="description"
       >
         <Input
-          placeholder="Nội dung"
           multiline
+          placeholder={"Mô tả"}
           textStyle={{ minHeight: 64 }}
-        />
-      </FormItem>
-      <FormItem
-        form={form}
-        name="date"
-      >
-        <Datepicker
-          date={new Date()}
-          accessoryRight={renderIcon({ name: "calendar" })}
         />
       </FormItem>
     </Space>

@@ -107,3 +107,11 @@ const useForm = (() => {
 })()
 
 export default useForm
+
+/**
+ * 
+ * @param {typeof useForm()} form 
+ */
+const a = (form) => {
+  form
+}

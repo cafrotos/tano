@@ -1,3 +1,4 @@
+import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
 import { FORMAT_NUMBER_OPTIONS } from "configs";
 import { createContext } from "react";
 
@@ -22,3 +23,24 @@ export const getFormatNumber = (() => {
     return locales[locale].format(number)
   }
 })()
+
+/**
+ * 
+ * @param {FirebaseFirestoreTypes.DocumentSnapshot} doc
+ */
+export const getDocData = (doc) => ({
+  id: doc.id,
+  ...doc.data()
+})
+
+/**
+ * 
+ * @param {FirebaseFirestoreTypes.QuerySnapshot<FirebaseFirestoreTypes.DocumentData>} docs 
+ */
+export const docsDataToArray = (docs) => {
+  const array = []
+  docs.forEach(doc => {
+    array.push(getDocData(doc))
+  })
+  return array
+}

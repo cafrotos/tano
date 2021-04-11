@@ -1,7 +1,8 @@
+import { useRoute } from "@react-navigation/core";
 import { Icon, Layout, Text, useTheme } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Space from "components/Space";
-import React from "react";
+import React, { useEffect } from "react";
 import { TouchableHighlight } from "react-native";
 /**
  * @fixme move style to styles.js
@@ -13,6 +14,8 @@ export default ({
   caption
 }) => {
   const themes = useTheme()
+  const { params } = useRoute()
+
   return (
     <Space
       direction="vertical"
@@ -41,7 +44,8 @@ export default ({
             ]}
           >
             <Icon
-              name="question-mark-circle"
+              {...params?.transGroup?.icon}
+              name={params?.transGroup?.icon.name || "question-mark-circle"}
               fill={themes["color-primary-500"]}
               style={{
                 height: 32,
@@ -49,7 +53,7 @@ export default ({
               }}
             />
             <Text>
-              {"Chọn nhóm chi tiêu"}
+              {params?.transGroup?.title || "Chọn nhóm giao dịch"}
             </Text>
           </Space>
         </Layout>

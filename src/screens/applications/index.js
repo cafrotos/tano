@@ -4,6 +4,7 @@ import { NAMES } from 'configs/screens';
 import React from 'react';
 import createTransaction from './createTransaction';
 import Home from './Home';
+import Icons from './Icons';
 import transactionBooks from './transactionBooks';
 
 const screens = [
@@ -28,6 +29,7 @@ const screens = [
       header: BlankHeader
     }
   },
+  Icons,
 ]
 
 export default (Screen) => (

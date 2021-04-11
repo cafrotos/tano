@@ -90,9 +90,11 @@ const FormItem = ({
       props.status = "danger"
       props.caption = form.errors[name]
     }
-    if(form.data[name]) {
-      props[valuePropsName] = form.data[name]
-    }
+    props[valuePropsName] = form.data[name] || (
+      typeof children.props?.onFormat === "function" ?
+        children.props.onFormat(children.props.defaultValue) :
+        children.props.defaultValue
+    )
     return props
   }, [form.data, form.errors])
 

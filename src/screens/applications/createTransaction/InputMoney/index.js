@@ -1,9 +1,12 @@
-import { Layout } from "@ui-kitten/components";
+import { Layout, Text } from "@ui-kitten/components";
 import React from "react";
-import { View } from "react-native";
+
+import useCalc from "services/hooks/useCalc";
 import Numpad from "./Numpad";
 
 export default () => {
+  const { string, handlePressPad } = useCalc();
+
   return (
     <Layout
       level="1"
@@ -17,7 +20,9 @@ export default () => {
           flex: 5
         }}
       >
-
+        <Text>
+          {string}
+        </Text>
       </Layout>
       <Layout
         level="1"
@@ -25,7 +30,7 @@ export default () => {
           flex: 4
         }}
       >
-        <Numpad />
+        <Numpad onPress={handlePressPad} />
       </Layout>
     </Layout>
   )

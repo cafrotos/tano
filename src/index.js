@@ -11,7 +11,7 @@ import { onAuthStateChanged } from 'services/firebase/auth';
 import { getContext } from 'utils';
 import { CONTEXTS } from 'configs';
 import { KeyboardAvoidingView, Platform } from 'react-native';
-
+import { MaterialCommunityIconsPack, MaterialIconsPack } from 'components/3rdIcon';
 const MainContext = getContext(CONTEXTS.MAIN)
 
 export default () => {
@@ -38,7 +38,7 @@ export default () => {
 
   return (
     <SafeAreaProvider>
-      <IconRegistry icons={EvaIconsPack} />
+      <IconRegistry icons={[EvaIconsPack, MaterialIconsPack, MaterialCommunityIconsPack]} />
       <ApplicationProvider
         {...eva}
         theme={{ ...eva.light, ...themes }}

@@ -7,10 +7,12 @@ export const NAMES = {
   REGISTRATION: "Đăng ký thông tin",
   // Đăng nhập thành công
   HOME: "Màn hình chính",
+  ICON: "Biểu tượng",
   // Nhóm tạo giao dịch
   CREATE_TRANSACTION: "Tạo giao dịch",
   INPUT_MONEY: "Nhập số tiền",
   SELECT_GROUP: "Chọn nhóm",
+  SEARCH_GROUP: "Tìm nhóm",
   // Nhóm sổ giao dịch
   TRANSACTION_BOOK: "Sổ giao dịch",
   DETAIL_TRANS_BOOK: "Chi tiết sổ GD",

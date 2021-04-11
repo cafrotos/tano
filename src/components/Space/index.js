@@ -28,7 +28,7 @@ const Space = ({
       ...styles[`${direction || "horizontal"}SpaceItem`]
     };
     const styleKey = direction === "vertical" ? "marginBottom" : "marginRight"
-    if (size) {
+    if (size !== null && size !== undefined) {
       style[styleKey] = size * BASE_SIZE
     }
     return style

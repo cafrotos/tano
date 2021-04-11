@@ -14,3 +14,20 @@ export const FORMAT_NUMBER_OPTIONS = {
 }
 
 export const REALM_PATH = "com.cafrotos.kltn.tano"
+
+export const ICON_PACKS = {
+  MATERIAL_COMMUNITY: "materialcommunity",
+  MATERIAL: "material"
+}
+
+export const TRANS_TYPE = {
+  OUTPUT: {
+    title: "Khoản chi",
+    value: "output"
+  },
+  INPUT: {
+    title: "Khoản thu",
+    value: "input"
+  },
+  LOAN: "loan"
+}
