@@ -4,6 +4,6 @@ const instance = firestore()
 
 export default instance;
 
-export const transBooksCollection = instance.collection("transBooks")
-export const transGroupsCollection = instance.collection("transGroups")
-export const transactions = instance.collection("transactions")
+// export const transBooksCollection = instance.collection("transBooks")
+// export const transGroupsCollection = instance.collection("transGroups")
+// export const transactions = instance.collection("transactions")

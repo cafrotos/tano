@@ -67,24 +67,25 @@ export default ({
         rules={[
           {
             required: true,
-            message: "Bạn hãy nhập tên ví!"
+            message: "Bạn hãy nhập tên sổ!"
           }
         ]}
       >
         <Input
-          placeholder={"Tên ví"}
+          placeholder={"Tên sổ"}
         />
       </FormItem>
-      <FormItem
+      {/* <FormItem
         form={form}
         name="amount"
+        label={"Số tiền ban đầu"}
       >
         <Input
           defaultValue={"0"}
           placeholder={"Số tiền ban đầu"}
           onFormat={handleFormat}
         />
-      </FormItem>
+      </FormItem> */}
       <FormItem
         form={form}
         name="description"

@@ -66,6 +66,9 @@ const FormItem = ({
             value
           form.setFiedlsValue({ [name]: formatValue })
         }
+        if (children.props.selectionTail !== null) {
+          
+        }
         break;
       case "Select":
         props.onSelect = (select) => {

@@ -27,10 +27,10 @@ export default ({
   }, [params])
 
   const handleFormat = (value) => {
-    if (!value.includes("₫")) {
+    if (value && !value.includes("₫")) {
       value = value.slice(0, -2)
     }
-    return getFormatNumber("vi-VN", value.replace(/\D/g, ""))
+    return getFormatNumber("vi-VN", value?.replace(/\D/g, "") || 0)
   }
 
   return (
@@ -73,6 +73,7 @@ export default ({
             fontSize: 40,
             padding: 16
           }}
+          selectionTail={2}
         />
       </FormItem>
       {/**

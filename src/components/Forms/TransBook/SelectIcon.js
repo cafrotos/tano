@@ -24,12 +24,12 @@ export default ({
       <Button
         accessoryLeft={renderIcon(params?.icon || { name: "question-mark" })}
         onPress={onSelectIcon}
-        size="large"
         appearance="outline"
         style={{
-          borderRadius: 40,
-          height: 40,
-          width: 40,
+          borderRadius: 50,
+          height: 50,
+          width: 50,
+          padding: 0
         }}
       />
     </View>

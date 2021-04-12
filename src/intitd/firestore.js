@@ -1,5 +1,5 @@
 import { _mockTransGroups } from "configs/mockups"
-import firestore, { transGroupsCollection } from "services/firebase/firestore"
+import transGroupsCollection from "repositories/transGroups"
 
 const initialTransGroups = async () => {
   const { docs } = await transGroupsCollection.get()
