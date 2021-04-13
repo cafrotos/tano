@@ -49,6 +49,11 @@ const FormItem = ({
         [name]: rules
       })
     }
+    if(children?.props?.defaultValue) {
+      form.setFiedlsValue({
+        [valuePropsName]: children.props.defaultValue
+      })
+    }
   }, [])
 
   const childrenProps = useMemo(() => {
@@ -61,13 +66,13 @@ const FormItem = ({
     switch (children?.type?.displayName) {
       case "Input":
         props.onChangeText = (value) => {
-          const formatValue = typeof children.props?.onFormat === "function" ?
-            children.props.onFormat(value) :
+          const formatValue = typeof children.props?.onChangeValue === "function" ?
+            children.props.onChangeValue(value) :
             value
           form.setFiedlsValue({ [name]: formatValue })
         }
         if (children.props.selectionTail !== null) {
-          
+
         }
         break;
       case "Select":
@@ -93,10 +98,10 @@ const FormItem = ({
       props.status = "danger"
       props.caption = form.errors[name]
     }
-    props[valuePropsName] = form.data[name] || (
+    props[valuePropsName] = (
       typeof children.props?.onFormat === "function" ?
-        children.props.onFormat(children.props.defaultValue) :
-        children.props.defaultValue
+        children.props.onFormat(form.data[name] || children.props.defaultValue) :
+        form.data[name] || children.props.defaultValue
     )
     return props
   }, [form.data, form.errors])

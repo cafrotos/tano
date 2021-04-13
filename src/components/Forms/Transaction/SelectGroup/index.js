@@ -1,6 +1,7 @@
 import { useRoute } from "@react-navigation/core";
-import { Icon, Layout, Text, useTheme } from "@ui-kitten/components";
+import { Icon, Layout, ListItem, Text, useTheme } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
+import { renderIcon } from "components";
 import Space from "components/Space";
 import React, { useEffect } from "react";
 import { TouchableHighlight } from "react-native";
@@ -21,43 +22,19 @@ export default ({
       direction="vertical"
       size={1}
     >
-      <TouchableHighlight
+      <ListItem
         onPress={onPress}
+        title={params?.transGroup?.title || "Chọn nhóm giao dịch"}
+        accessoryLeft={renderIcon({ name: "question-mark-circle", ...params?.transGroup?.icon })}
         style={{
-          borderRadius: 4
+          borderWidth: 1,
+          borderRadius: 4,
+          borderColor: status === "danger" ?
+            themes["color-danger-400"] :
+            themes["color-basic-400"],
+          backgroundColor: themes["color-basic-200"]
         }}
-      >
-        <Layout
-          level="2"
-          style={{
-            padding: 4 * 2,
-            borderWidth: 1,
-            borderRadius: 4,
-            borderColor: status === "danger" ?
-              themes["color-danger-400"] :
-              themes["color-basic-400"]
-          }}
-        >
-          <Space
-            style={[
-              commonStyles.flexHorizontalMiddle
-            ]}
-          >
-            <Icon
-              {...params?.transGroup?.icon}
-              name={params?.transGroup?.icon.name || "question-mark-circle"}
-              fill={themes["color-primary-500"]}
-              style={{
-                height: 32,
-                width: 32
-              }}
-            />
-            <Text>
-              {params?.transGroup?.title || "Chọn nhóm giao dịch"}
-            </Text>
-          </Space>
-        </Layout>
-      </TouchableHighlight>
+      />
       {
         caption && (
           <Text

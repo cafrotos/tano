@@ -24,7 +24,8 @@ export default ({
       const fieldsValue = {}
       if (params?.transGroup) {
         Object.assign(fieldsValue, {
-          transGroup: params.transGroup.id
+          transGroup: params.transGroup.id,
+          type: params.transGroup.type
         })
       }
       if (params?.transBook) {
@@ -36,12 +37,8 @@ export default ({
     }
   }, [params])
 
-  const handleFormat = (value) => {
-    if (value && !value.includes("₫")) {
-      value = value.slice(0, -2)
-    }
-    return getFormatNumber("vi-VN", value?.replace(/\D/g, "") || 0)
-  }
+  const handleFormat = (value) => getFormatNumber("vi-VN", value || 0)
+  const handleChange = (value) => value?.replace(/\D/g, "")
 
   return (
     <Space
@@ -58,7 +55,7 @@ export default ({
             message: "Hãy nhập số tiền đã giao dịch nào!"
           }
         ]}
-        name="money"
+        name="amount"
         label={(
           <View
             style={[
@@ -78,6 +75,7 @@ export default ({
         /> */}
         <Input
           onFormat={handleFormat}
+          onChangeValue={handleChange}
           textAlign="center"
           textStyle={{
             fontSize: 40,
@@ -138,7 +136,7 @@ export default ({
         name="date"
       >
         <Datepicker
-          date={new Date()}
+          defaultValue={new Date()}
           accessoryRight={renderIcon({ name: "calendar" })}
         />
       </FormItem>

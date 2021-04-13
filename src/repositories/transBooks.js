@@ -5,17 +5,9 @@ const transBooksCollection = firestore.collection("transBooks");
 
 export default transBooksCollection
 
-
 /**
  * 
- * @callback cbQuery
- * @param {typeof transBooksCollection} transBooksCollection 
- * @returns {FirebaseFirestoreTypes.QuerySnapshot<FirebaseFirestoreTypes.DocumentData>}
- */
-
-/**
- * 
- * @param {cbQuery} callback 
+ * @param {import("repositories").cbQuery} callback 
  */
 export const getTransBooks = async (cbQuery) => {
   const data = await (
@@ -24,4 +16,12 @@ export const getTransBooks = async (cbQuery) => {
       transBooksCollection.get()
   )
   return docsDataToArray(data)
+}
+
+export const getTransBookByDoc = async (doc) => {
+  const transBook = await transBooksCollection.doc(doc).get();
+  return {
+    id: transBook.id,
+    ...transBook.data()
+  }
 }

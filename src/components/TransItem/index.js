@@ -1,36 +1,22 @@
-import { ListItem, Text } from "@ui-kitten/components";
+import { ListItem } from "@ui-kitten/components";
 import { renderIcon } from "components";
 import Amount from "components/Amount";
-import Space from "components/Space";
-import React, { useCallback } from "react";
+import React from "react";
 
 const TransItem = ({
   item,
-}) => {
-  const renderDesc = useCallback((descProps) => (
-    <Space direction="vertical" size={0.25} >
-      <Text {...descProps}>
-        {item.date.format("LL")}
-      </Text>
-      <Text {...descProps}>
-        {item.description}
-      </Text>
-    </Space>
-  ), [])
-
-  return (
-    <ListItem
-      title={item.group.title}
-      accessoryLeft={renderIcon(item.group.icon)}
-      accessoryRight={() => (
-        <Amount
-          amount={item.amount}
-        />
-      )}
-      description={renderDesc}
-      onPress={item.handlePress}
-    />
-  )
-}
+}) => (
+  <ListItem
+    title={item.transGroup.title}
+    accessoryLeft={renderIcon(item.transGroup.icon)}
+    accessoryRight={() => (
+      <Amount
+        amount={item.amount}
+      />
+    )}
+    description={item.content}
+    onPress={item.handlePress}
+  />
+)
 
 export default (props) => <TransItem {...props} />

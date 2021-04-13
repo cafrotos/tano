@@ -1,10 +1,12 @@
 import { useNavigation } from "@react-navigation/core";
-import { Button, Layout } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Transaction from "components/Forms/Transaction";
+import TanoButton from "components/TanoButton";
 import { NAMES } from "configs/screens";
 import React from "react";
 import { ScrollView, View } from "react-native";
+import transactionCollection, { createTransaction } from "repositories/transactions";
 import useForm from "services/hooks/useForm";
 import styles from "./styles"
 
@@ -12,8 +14,20 @@ export default () => {
   const form = useForm();
   const navigation = useNavigation();
 
-  const handleSubmit = (formData) => {
-    console.log(formData)
+  const handleSubmit = async (formData) => {
+    try {
+      await createTransaction(formData)
+      navigation.navigate(NAMES.TRANSACTION_BOOK, {
+        screen: NAMES.DETAIL_TRANS_BOOK,
+        params: {
+          transBook: {
+            id: formData.transBook
+          }
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -47,9 +61,9 @@ export default () => {
           styles.saveButtonWrapper
         ]}
       >
-        <Button onPress={form.submit(handleSubmit)}>
+        <TanoButton onPress={form.submit(handleSubmit)}>
           {"Lưu"}
-        </Button>
+        </TanoButton>
       </View>
     </Layout>
   )

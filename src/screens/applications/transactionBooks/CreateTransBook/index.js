@@ -22,7 +22,10 @@ const CreateTransBook = () => {
 
   const handleSubmit = async (formData) => {
     try {
-      await transBooksCollection.add(formData)
+      await transBooksCollection.add({
+        ...formData,
+        amount: 0
+      })
       navigation.goBack()
     } catch (error) {
       console.log(error)

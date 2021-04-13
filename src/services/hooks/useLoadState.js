@@ -29,9 +29,16 @@ export default ({
     }
   }
 
+  const setDataSource = (dataSource) => {
+    setState({
+      loading: false,
+      dataSource
+    })
+  }
+
   return [
     state,
-    setState,
+    setDataSource,
     loadState
   ]
 }

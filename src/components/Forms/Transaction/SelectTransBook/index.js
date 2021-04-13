@@ -1,6 +1,7 @@
 import { useRoute } from "@react-navigation/core";
-import { Icon, Layout, Text, useTheme } from "@ui-kitten/components";
+import { Icon, Layout, ListItem, Text, useTheme } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
+import { renderIcon } from "components";
 import Space from "components/Space";
 import React from "react";
 import { TouchableHighlight } from "react-native";
@@ -16,6 +17,40 @@ export default ({
   const themes = useTheme()
   const { params } = useRoute()
 
+
+
+  return (
+    <Space
+      direction="vertical"
+      size={1}
+    >
+      <ListItem
+        onPress={onPress}
+        title={params?.transBook?.name || "Chọn sổ giao dịch"}
+        accessoryLeft={renderIcon({ name: "question-mark-circle", ...params?.transBook?.icon })}
+        style={{
+          borderWidth: 1,
+          borderRadius: 4,
+          borderColor: status === "danger" ?
+            themes["color-danger-400"] :
+            themes["color-basic-400"],
+          backgroundColor: themes["color-basic-200"]
+        }}
+      />
+      {
+        caption && (
+          <Text
+            category="c1"
+            style={[
+              status === "danger" && commonStyles.textColorDanger
+            ]}
+          >
+            {caption}
+          </Text>
+        )
+      }
+    </Space>
+  )
   return (
     <Space
       direction="vertical"
@@ -45,15 +80,15 @@ export default ({
           >
             <Icon
               name="question-mark-circle"
+              {...params?.transBook?.icon}
               fill={themes["color-primary-500"]}
               style={{
                 height: 32,
                 width: 32
               }}
-              {...params?.transBook?.icon}
             />
             <Text>
-              {params?.transBook.name || "Chọn sổ giao dịch"}
+              {params?.transBook?.name || "Chọn sổ giao dịch"}
             </Text>
           </Space>
         </Layout>

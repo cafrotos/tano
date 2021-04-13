@@ -1,4 +1,3 @@
-import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
 import firestore from "services/firebase/firestore"
 import { docsDataToArray } from "utils";
 
@@ -6,16 +5,9 @@ const  transGroupsCollection = firestore.collection("transGroups")
 
 /**
  * 
- * @callback cbGetTransGroups
- * @param {typeof transGroupsCollection} transGroupsCollection 
- * @returns {FirebaseFirestoreTypes.QuerySnapshot<FirebaseFirestoreTypes.DocumentData>}
+ * @param {import("repositories").cbQuery} cbQuery 
  */
-
-/**
- * 
- * @param {cbGetTransGroups} callback 
- */
-export const getTransGroupsHierarchy = async (callback) => {
+export const getTransGroupsHierarchy = async (cbQuery) => {
   /**
    * 
    * @param {Array} _transGroups
@@ -47,8 +39,8 @@ export const getTransGroupsHierarchy = async (callback) => {
     return _transGroupsWithDisplay.filter(_value => _value.title)
   }
   const transGroupsDocs = await (
-    typeof callback === "function" ?
-      callback(transGroupsCollection) :
+    typeof cbQuery === "function" ?
+    cbQuery(transGroupsCollection) :
       transGroupsCollection.get()
   );
   return addDisplayProperties(docsDataToArray(transGroupsDocs))

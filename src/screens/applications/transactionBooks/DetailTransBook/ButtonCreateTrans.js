@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/core";
+import { useNavigation, useRoute } from "@react-navigation/core";
 import { Icon, Text } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Space from "components/Space";
@@ -8,8 +8,12 @@ import { TouchableNativeFeedback } from "react-native";
 
 export default () => {
   const navigation = useNavigation();
+  const { params } = useRoute()
 
-  const handlePressCreateTrans = () => navigation.navigate(NAMES.CREATE_TRANSACTION)
+  const handlePressCreateTrans = () => navigation.navigate(NAMES.CREATE_TRANSACTION, {
+    screen: NAMES.CREATE_TRANSACTION,
+    params
+  })
 
   return (
     <TouchableNativeFeedback
