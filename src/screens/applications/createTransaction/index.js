@@ -5,6 +5,7 @@ import CreateTransaction from "./CreateTransaction";
 import InputMoney from "./InputMoney"
 import SearchGroup from "./SearchGroup";
 import SelectGroup from "./SelectGroup";
+import SelectTransBook from "./SelectTransBook";
 
 
 const screens = [
@@ -17,7 +18,8 @@ const screens = [
     component: InputMoney
   },
   SelectGroup,
-  SearchGroup
+  SearchGroup,
+  SelectTransBook
 ]
 
 export default () => {

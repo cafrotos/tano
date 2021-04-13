@@ -12,6 +12,7 @@ export const NAMES = {
   CREATE_TRANSACTION: "Tạo giao dịch",
   INPUT_MONEY: "Nhập số tiền",
   SELECT_GROUP: "Chọn nhóm",
+  SELECT_TRANS_BOOK: "Chọn sổ GD",
   SEARCH_GROUP: "Tìm nhóm",
   // Nhóm sổ giao dịch
   TRANSACTION_BOOK: "Sổ giao dịch",

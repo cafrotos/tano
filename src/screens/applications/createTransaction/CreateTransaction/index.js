@@ -32,6 +32,7 @@ export default () => {
           form={form}
           onPressInputMoney={() => navigation.navigate(NAMES.INPUT_MONEY)}
           onPressSelectGroup={() => navigation.navigate(NAMES.SELECT_GROUP)}
+          onPressSelectTransBook={() => navigation.navigate(NAMES.SELECT_TRANS_BOOK)}
         />
         <View
           style={{

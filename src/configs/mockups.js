@@ -10,7 +10,7 @@ export const _mockDetailReport = {
         name: "archive"
       },
       description: "Tiền ăn chi tiêu hằng ngày",
-      totalAmount: 1500000,
+      amount: 1500000,
       title: "Tiền mặt"
     },
     {
@@ -18,7 +18,7 @@ export const _mockDetailReport = {
         name: "credit-card"
       },
       description: "Nhận lương và chi tiêu online",
-      totalAmount: 500000,
+      amount: 500000,
       title: "Techcombank"
     },
   ]

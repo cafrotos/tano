@@ -1,3 +1,4 @@
+import { useRoute } from "@react-navigation/core";
 import { Icon, Layout, Text, useTheme } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Space from "components/Space";
@@ -13,6 +14,8 @@ export default ({
   caption
 }) => {
   const themes = useTheme()
+  const { params } = useRoute()
+
   return (
     <Space
       direction="vertical"
@@ -47,9 +50,10 @@ export default ({
                 height: 32,
                 width: 32
               }}
+              {...params?.transBook?.icon}
             />
             <Text>
-              {"Chọn sổ giao dịch"}
+              {params?.transBook.name || "Chọn sổ giao dịch"}
             </Text>
           </Space>
         </Layout>

@@ -7,6 +7,7 @@ import React from "react";
 import { ScrollView, View, Alert } from "react-native";
 import useForm from "services/hooks/useForm";
 import transBooksCollection from "repositories/transBooks"
+import TanoButton from "components/TanoButton";
 
 const CreateTransBook = () => {
   const navigation = useNavigation();
@@ -19,9 +20,13 @@ const CreateTransBook = () => {
     }
   })
 
-  const handleSubmit = (formData) => {
-    // transBooksCollection.add(formData)
-    Alert.alert("Hello")
+  const handleSubmit = async (formData) => {
+    try {
+      await transBooksCollection.add(formData)
+      navigation.goBack()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -52,9 +57,11 @@ const CreateTransBook = () => {
           }
         ]}
       >
-        <Button onPress={form.submit(handleSubmit)}>
+        <TanoButton
+          onPress={form.submit(handleSubmit)}
+        >
           {"Lưu"}
-        </Button>
+        </TanoButton>
       </View>
     </Layout>
   )

@@ -14,15 +14,25 @@ import SelectTransBook from "./SelectTransBook";
 export default ({
   form,
   onPressInputMoney,
-  onPressSelectGroup
+  onPressSelectGroup,
+  onPressSelectTransBook,
 }) => {
   const { params } = useRoute()
 
   useEffect(() => {
-    if (params?.transGroup) {
-      form.setFiedlsValue({
-        transGroup: params.transGroup.id
-      })
+    if (params) {
+      const fieldsValue = {}
+      if (params?.transGroup) {
+        Object.assign(fieldsValue, {
+          transGroup: params.transGroup.id
+        })
+      }
+      if (params?.transBook) {
+        Object.assign(fieldsValue, {
+          transBook: params.transBook.id
+        })
+      }
+      form.setFiedlsValue(fieldsValue)
     }
   }, [params])
 
@@ -104,6 +114,7 @@ export default ({
         ]}
       >
         <SelectTransBook
+          onPress={onPressSelectTransBook}
         />
       </FormItem>
       <FormItem

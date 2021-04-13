@@ -8,11 +8,11 @@ export default ({
   item,
 }) => (
   <ListItem
-    title={item.title}
+    title={item.name}
     accessoryLeft={renderIcon(item.icon)}
     accessoryRight={() => (
       <Amount
-        amount={item.totalAmount}
+        amount={item.amount || 0}
       />
     )}
     description={item.description}

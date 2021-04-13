@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AsyncValidator from 'async-validator'
 import _ from "lodash";
 
@@ -16,7 +16,18 @@ const useForm = (() => {
     const [data, setData] = useState({});
     // const [rules, setRules] = useState({});
     const [errors, setErrors] = useState({});
-  
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+      return () => {
+        const keys = Object.keys(rules);
+        keys.map(key => {
+          delete rules[key]
+          return key
+        })
+      }
+    }, [])
+
     /**
      * 
      * @param {(dataCallback|Object)} _data 
@@ -42,7 +53,7 @@ const useForm = (() => {
           break;
       }
     }
-  
+
     /**
      * 
      * @param {Object.<string, import("async-validator").Rules>} _rules
@@ -53,7 +64,7 @@ const useForm = (() => {
         ..._rules
       })
     }
-  
+
     /**
      * 
      * @param {Array>} fields 
@@ -62,16 +73,16 @@ const useForm = (() => {
       if (!Array.isArray(fields) || (Array.isArray(fields) && !fields.length)) {
         fields = Object.keys(rules)
       }
-  
+
       const subData = _.pick(data, fields);
       const subRules = _.pick(rules, fields);
-  
+
       if (!Object.keys(subRules).length) {
         return true
       }
-  
+
       const validator = new AsyncValidator(subRules)
-  
+
       try {
         await validator.validate(subData)
         return true
@@ -86,7 +97,7 @@ const useForm = (() => {
         return false
       }
     }
-  
+
     const submit = (_handleSubmit) => async () => {
       const isValidate = await validateFields()
       if (!isValidate) {
@@ -94,9 +105,10 @@ const useForm = (() => {
       }
       return await _handleSubmit(_.pickBy(data, _.identity))
     }
-  
+
     return {
       data,
+      loading,
       errors,
       setFiedlsValue,
       addrules,
@@ -107,11 +119,3 @@ const useForm = (() => {
 })()
 
 export default useForm
-
-/**
- * 
- * @param {typeof useForm()} form 
- */
-const a = (form) => {
-  form
-}
