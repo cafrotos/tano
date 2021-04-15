@@ -29,9 +29,7 @@ export default () => {
 
   const handleChangeAuth = (user) => {
     updateAppState({
-      user: {
-        displayName: "Phương"
-      }
+      user
     })
     setLoadingUserProfile(false)
   }

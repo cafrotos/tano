@@ -6,10 +6,9 @@ import React from "react";
 import { View } from "react-native";
 
 export default ({
-  onSelectIcon
+  onSelectIcon,
+  value
 }) => {
-  const { params } = useRoute();
-
   return (
     <View
       style={[
@@ -22,7 +21,7 @@ export default ({
       ]}
     >
       <Button
-        accessoryLeft={renderIcon(params?.icon || { name: "question-mark" })}
+        accessoryLeft={renderIcon(value || { name: "question-mark" })}
         onPress={onSelectIcon}
         appearance="outline"
         style={{

@@ -1,17 +1,30 @@
-import { useNavigation } from "@react-navigation/core";
+import { useFocusEffect, useNavigation } from "@react-navigation/core";
 import { Icon, Text } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Amount from "components/Amount";
 import Space from "components/Space";
 import { NAMES } from "configs/screens";
-import React from "react";
+import _ from "lodash";
+import React, { useCallback } from "react";
 import { TouchableHighlight, View } from "react-native";
+import { getTransBooks } from "repositories/transBooks";
+import useLoadState from "services/hooks/useLoadState";
 import styles from "./styles";
 
 const _mockTotalCash = 100000
 
 export default () => {
   const navigation = useNavigation()
+  const [transBooks, , loadTransBooks] = useLoadState({
+    onGetState: getTransBooks,
+    mapping: (dataSource) => _.sumBy(dataSource, (value) => Number(value.amount || 0))
+  })
+
+  useFocusEffect(
+    useCallback(() => {
+      loadTransBooks()
+    }, [])
+  );
 
   return (
     <TouchableHighlight
@@ -46,7 +59,7 @@ export default () => {
             </Text>
           </Space>
           <Amount
-            amount={_mockTotalCash}
+            amount={transBooks.dataSource}
             style={[
               styles.title
             ]}

@@ -1,4 +1,4 @@
-import { Divider, Layout, List, Text } from "@ui-kitten/components";
+import { Button, Divider, ListItem, Text } from "@ui-kitten/components";
 import React, { useCallback } from "react";
 import TotalAmount from "components/TotalAmount";
 
@@ -7,7 +7,6 @@ import TransItem from "components/TransItem";
 import { useFocusEffect, useNavigation, useRoute } from "@react-navigation/core";
 import { NAMES } from "configs/screens";
 import themes from "configs/themes";
-import ButtonCreateTrans from "./ButtonCreateTrans";
 import Space from "components/Space";
 import { commonStyles } from "assets/styles";
 import useLoadState from "services/hooks/useLoadState";
@@ -16,11 +15,13 @@ import { getTransactions } from "repositories/transactions";
 import { RefreshControl, SectionList, View } from "react-native";
 import moment from "moment";
 import _ from "lodash";
+import { useEffect } from "react/cjs/react.development";
+import ButtonEditTransBook from "./ButtonEditTransBook";
 
 const DetailTransBook = () => {
   const navigation = useNavigation()
   const { params } = useRoute(params)
-  const [transBook, setTransBook, loadTransBook] = useLoadState({
+  const [transBook, , loadTransBook] = useLoadState({
     onGetState: () => getTransBookByDoc(params?.transBook?.id)
   })
   const [transactions, , loadTransactions] = useLoadState({
@@ -43,39 +44,33 @@ const DetailTransBook = () => {
       }))
   })
 
+  useEffect(() => {
+    navigation.setParams({
+      ...params,
+      transBook: transBook.dataSource
+    })
+  }, [transBook])
+
   useFocusEffect(
     useCallback(() => {
       loadData()
     }, [])
   );
 
-  const loadData = () => {
-    const promisesLoadData = [loadTransactions()];
-    if (!params?.transBook?.amount) {
-      promisesLoadData.push(loadTransBook())
-    }
-    else {
-      setTransBook(params.transBook)
-    }
-    return Promise.all(promisesLoadData)
-  }
+  const loadData = () => Promise.all([
+    loadTransactions(),
+    loadTransBook()
+  ])
+  const handlePressCreateTrans = () => navigation.navigate(NAMES.CREATE_TRANSACTION, {
+    screen: NAMES.CREATE_TRANSACTION,
+    params
+  })
 
   return (
     <>
       <TotalAmount
         total={transBook.dataSource?.amount || 0}
       />
-      {/* <List
-        refreshControl={
-          <RefreshControl
-            refreshing={transBook.loading || transactions.loading}
-            onRefresh={loadData}
-          />
-        }
-        data={transactions.dataSource}
-        ItemSeparatorComponent={Divider}
-        renderItem={TransItem}
-      /> */}
       <SectionList
         refreshControl={
           <RefreshControl
@@ -86,15 +81,31 @@ const DetailTransBook = () => {
         sections={transactions.dataSource}
         keyExtractor={(item, index) => item + index}
         renderItem={TransItem}
-        SectionSeparatorComponent={() => <Divider style={{ height: 8 }} />}
+        stickySectionHeadersEnabled={true}
         renderSectionHeader={({ section: { title } }) => (
-          <Layout level="1" style={{ position: "relative", height: 30 }}>
-            <Layout level="1" style={{ position: "absolute", width: "100%", bottom: -8, height: 38, justifyContent: "center" }}>
-              <Text>{title}</Text>
-            </Layout>
-          </Layout>
+          <ListItem
+            title={title}
+            disabled={true}
+          />
         )}
+        renderSectionFooter={() => <Divider style={{ height: 8, backgroundColor: "transparent" }} />}
+        ListFooterComponent={() => <Divider style={{ height: 52, backgroundColor: "transparent" }} />}
       />
+      <View
+        style={[
+          commonStyles.flexHorizontalCenter,
+          {
+            position: "absolute",
+            bottom: 8
+          }
+        ]}
+      >
+        <Button
+          onPress={handlePressCreateTrans}
+        >
+          {"Tạo giao dịch"}
+        </Button>
+      </View>
     </>
   )
 }
@@ -112,7 +123,7 @@ export default {
       elevation: 0
     },
     headerTintColor: '#fff',
-    headerRight: ButtonCreateTrans,
+    headerRight: ButtonEditTransBook,
     headerTitle: (
       <Space
         direction="vertical"
@@ -126,7 +137,7 @@ export default {
           {route.name}
         </Text>
         <Text category="c2" style={[commonStyles.textColorWhite]}>
-          {route.params.transBook.name}
+          {route.params?.transBook?.name}
         </Text>
       </Space>
     )

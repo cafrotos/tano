@@ -17,6 +17,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TanoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TanoTests.m */; };
 		4763797B260A5C0500F1637E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4763797A260A5C0500F1637E /* GoogleService-Info.plist */; };
+		4B560343262710530073A67B /* empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B560342262710530073A67B /* empty.swift */; };
 		52F5155DEC5A402F8DD4FF5F /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8117500274C40729E91A440 /* RobotoSlab-Medium.ttf */; };
 		63FB6545C6BB4A758D14FD91 /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB2994882A6847A39C9EBF6A /* RobotoSlab-Bold.ttf */; };
 		6957349708EF4BD3B9B332E0 /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F4534C9A094007A749A77F /* RobotoSlab-Thin.ttf */; };
@@ -66,6 +67,8 @@
 		3CFAC7B098D6C93A6E606FB5 /* Pods-Tano-TanoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tano-TanoTests.release.xcconfig"; path = "Target Support Files/Pods-Tano-TanoTests/Pods-Tano-TanoTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F539CD04A0F33EDC3A1B33E /* libPods-Tano-TanoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-TanoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4763797A260A5C0500F1637E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Tano/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B560341262710530073A67B /* Tano-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tano-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B560342262710530073A67B /* empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empty.swift; sourceTree = "<group>"; };
 		50E75BBC5B8E6F636637D07B /* libPods-Tano-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F4534C9A094007A749A77F /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Thin.ttf"; path = "../src/assets/fonts/RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
 		62C50350069EEB26F0118225 /* libPods-Tano-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tano-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +177,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				4B560342262710530073A67B /* empty.swift */,
 				13B07FAE1A68108700A75B9A /* Tano */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TanoTests */,
@@ -181,6 +185,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				954738BED69D452BA231F179 /* Resources */,
 				AAF9543099D79B46C3ABE51E /* Pods */,
+				4B560341262710530073A67B /* Tano-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -323,7 +328,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -442,6 +447,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tano-TanoTests/Pods-Tano-TanoTests-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -463,6 +469,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -530,6 +537,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tano/Pods-Tano-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -551,6 +559,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -684,6 +693,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				4B560343262710530073A67B /* empty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +734,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E33A36E7F76E5AD6AD482A7B /* Pods-Tano-TanoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -747,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CFAC7B098D6C93A6E606FB5 /* Pods-Tano-TanoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = TanoTests/Info.plist;
@@ -781,6 +793,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cafrotos.Tano;
 				PRODUCT_NAME = Tano;
+				SWIFT_OBJC_BRIDGING_HEADER = "Tano-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -804,6 +817,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cafrotos.Tano;
 				PRODUCT_NAME = Tano;
+				SWIFT_OBJC_BRIDGING_HEADER = "Tano-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

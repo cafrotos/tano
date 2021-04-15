@@ -8,11 +8,15 @@ import styles from './styles';
 import Space from 'components/Space'
 import { useNavigation } from '@react-navigation/native';
 import { NAMES } from 'configs/screens';
+import { renderIcon } from 'components';
+import { loginWithFacebook } from 'services/firebase/auth';
 
 export default () => {
   const navigation = useNavigation();
 
   const handlePressEnterPhone = () => navigation.navigate(NAMES.ENTER_PHONE)
+  const handleLoginWithFacebook = () => loginWithFacebook()
+  const handleLoginWithGoogle = () => navigation.navigate(NAMES.ENTER_PHONE)
 
   return (
     <ImageBackground
@@ -36,8 +40,20 @@ export default () => {
           size={5}
         >
           <Text style={styles.hint}>
-            {"Cô Chú Vui lòng điền số điện thoại ĐỂ BẮT ĐẦU"}
+            {"Bạn vui lòng chọn các mục sau ĐỂ BẮT ĐẦU"}
           </Text>
+          <Button
+            accessoryLeft={renderIcon({ name: "facebook" })}
+            onPress={handleLoginWithFacebook}
+          >
+            {"Đăng nhập với Facebook"}
+          </Button>
+          <Button
+            accessoryLeft={renderIcon({ name: "google" })}
+            onPress={handleLoginWithGoogle}
+          >
+            {"Đăng nhập với Google"}
+          </Button>
           <Button onPress={handlePressEnterPhone}>
             {"Nhập Số Điện Thoại"}
           </Button>

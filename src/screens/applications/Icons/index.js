@@ -24,7 +24,15 @@ const Icons = () => {
 
   const handlePressItem = (item) => () => {
     if (params?.from) {
-      navigation.navigate(params.from, { icon: item })
+      if (typeof params.from === "string") {
+        return navigation.navigate(params.from, { icon: item })
+      }
+      navigation.navigate(params.from.screen, {
+        ...params.from.params,
+        params: {
+          icon: item
+        }
+      })
     }
   }
   const handleRenderIcons = () => {

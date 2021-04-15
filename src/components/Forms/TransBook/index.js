@@ -23,13 +23,6 @@ export default ({
     }
   }, [params])
 
-  const handleFormat = (value) => {
-    if (!value.includes("₫")) {
-      value = value.slice(0, -2)
-    }
-    return getFormatNumber("vi-VN", value.replace(/\D/g, ""))
-  }
-
   return (
     <Space
       direction="vertical"

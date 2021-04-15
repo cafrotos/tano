@@ -1,6 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import { Icon } from "@ui-kitten/components";
+import { commonStyles } from "assets/styles";
+import { renderIcon } from "components";
 import themes from "configs/themes";
 import React, { useMemo } from "react";
+import { Platform, View } from "react-native";
 
 /**
  * @callback onRenderScreens
@@ -27,7 +31,25 @@ const Stack = ({
     <MainStack.Navigator
       {...navigatorOptions}
       screenOptions={{
-        headerBackTitle: `${"Quay lại"}`,
+        headerBackTitleVisible: false,
+        headerTintColor: '#000000',
+        headerBackImage: ({ tintColor }) => (
+          <View
+            style={{
+              marginLeft: Platform.OS === "android" ? 0 : 12
+            }}
+          >
+            <Icon
+              name="arrow-back"
+              style={{
+                height: 32,
+                width: 32,
+              }}
+              fill={tintColor}
+            />
+          </View>
+        ),
+        // headerBackTitle: `${"Quay lại"}`,
         headerTitleAlign: "center",
         ...screenOptions,
       }}

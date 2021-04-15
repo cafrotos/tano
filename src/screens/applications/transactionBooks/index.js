@@ -2,12 +2,14 @@ import Stack from "components/Stack";
 import React, { useCallback } from "react";
 import CreateTransBook from "./CreateTransBook";
 import DetailTransBook from "./DetailTransBook";
+import EditTransBook from "./EditTransBook";
 import TransactionBooks from "./TransactionBooks";
 
 const screens = [
   TransactionBooks,
   CreateTransBook,
-  DetailTransBook
+  DetailTransBook,
+  EditTransBook
 ]
 
 export default () => {

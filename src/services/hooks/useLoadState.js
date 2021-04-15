@@ -1,13 +1,21 @@
-import { useState } from "react"
+import { useRef, useState, useEffect } from "react"
 
 export default ({
   onGetState,
   mapping
 }) => {
+  const isUnmount = useRef(false)
   const [state, setState] = useState({
     loading: true,
     dataSource: []
   })
+
+  useEffect(() => {
+    isUnmount.current = false
+    return () => {
+      isUnmount.current = true
+    }
+  }, [])
 
   const loadState = async (...args) => {
     setState({
@@ -16,16 +24,18 @@ export default ({
     })
     try {
       const dataSource = await onGetState(...args);
-      setState({
-        ...state,
-        loading: false,
-        dataSource: typeof mapping === "function" ? mapping(dataSource) : dataSource
-      })
+      if (!isUnmount.current)
+        setState({
+          ...state,
+          loading: false,
+          dataSource: typeof mapping === "function" ? mapping(dataSource) : dataSource
+        })
     } catch (error) {
-      setState({
-        ...state,
-        loading: false
-      })
+      if (!isUnmount.current)
+        setState({
+          ...state,
+          loading: false
+        })
     }
   }
 

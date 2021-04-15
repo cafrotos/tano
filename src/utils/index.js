@@ -18,9 +18,9 @@ export const getFormatNumber = (() => {
   const locales = {};
   return (locale, number) => {
     if (!locales[locale]) {
-      locales[locale] = new Intl.NumberFormat(locale, FORMAT_NUMBER_OPTIONS[locale])
+      locales[locale] = new Intl.NumberFormat(locale)
     }
-    return locales[locale].format(number)
+    return locales[locale].format(number) + " ₫"
   }
 })()
 

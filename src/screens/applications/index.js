@@ -5,6 +5,7 @@ import React from 'react';
 import createTransaction from './createTransaction';
 import Home from './Home';
 import Icons from './Icons';
+import Settings from './Settings';
 import transactionBooks from './transactionBooks';
 
 const screens = [
@@ -30,6 +31,7 @@ const screens = [
     }
   },
   Icons,
+  Settings
 ]
 
 export default (Screen) => (

@@ -1,4 +1,4 @@
-import { Divider, Layout, List } from "@ui-kitten/components";
+import { Button, Divider, Layout, List } from "@ui-kitten/components";
 import React, { useCallback } from "react";
 import TotalAmount from "components/TotalAmount";
 
@@ -7,11 +7,11 @@ import TransBookItem from "components/TransBookItem";
 import { useFocusEffect, useNavigation } from "@react-navigation/core";
 import { NAMES } from "configs/screens";
 import themes from "configs/themes";
-import ButtonCreateBook from "./ButtonCreateBook";
 import { getTransBooks } from "repositories/transBooks";
 import useLoadState from "services/hooks/useLoadState";
 import _ from "lodash";
-import { RefreshControl } from "react-native";
+import { RefreshControl, View } from "react-native";
+import { commonStyles } from "assets/styles";
 
 const TransactionBooks = () => {
   const navigation = useNavigation()
@@ -36,6 +36,8 @@ const TransactionBooks = () => {
     }, [])
   );
 
+  const handlePressCreateBook = () => navigation.navigate(NAMES.CREATE_TRANS_BOOK)
+
   return (
     <Layout
       level="1"
@@ -57,6 +59,21 @@ const TransactionBooks = () => {
         ItemSeparatorComponent={Divider}
         renderItem={TransBookItem}
       />
+      <View
+        style={[
+          commonStyles.flexHorizontalCenter,
+          {
+            position: "absolute",
+            bottom: 8
+          }
+        ]}
+      >
+        <Button
+          onPress={handlePressCreateBook}
+        >
+          {"Tạo sổ giao dịch"}
+        </Button>
+      </View>
     </Layout>
   )
 }
@@ -74,6 +91,5 @@ export default {
       elevation: 0
     },
     headerTintColor: '#fff',
-    headerRight: ButtonCreateBook
   }
 }

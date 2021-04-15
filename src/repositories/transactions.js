@@ -34,9 +34,15 @@ export const getTransactions = async (cbQuery) => {
 }
 
 export const createTransaction = async (data) => {
+  if (data.type === TRANS_TYPE.OUTPUT.value) {
+    Object.assign(data, {
+      amount: 0 - Number(data.amount)
+    })
+  }
   const transBook = await transBooksCollection
     .doc(data.transBook)
     .get()
+  console.log(Number(transBook.data().amount || 0), Number(transBook.data().amount || 0) + data.amount, data.amount)
   const [transaction] = await Promise.all([
     transactionCollection.add({
       ...data,
@@ -46,9 +52,7 @@ export const createTransaction = async (data) => {
     transBooksCollection
       .doc(data.transBook)
       .update({
-        amount: Number(transBook.data().amount || 0) + (
-          data.type === TRANS_TYPE.OUTPUT ? - Number(data.amount) : Number(data.amount)
-        )
+        amount: Number(transBook.data().amount || 0) + data.amount
       })
   ])
   return transaction

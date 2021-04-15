@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { NAMES } from 'configs/screens';
@@ -15,7 +15,12 @@ const MainContext = getContext(CONTEXTS.MAIN)
 export default () => {
   const { user } = useContext(MainContext)
 
+  useEffect(() => {
+    console.log(user)
+  }, [user])
+
   const handleRenderScreens = useCallback((Screen) => {
+    console.log(user);
     if (!user) {
       return renderStartScreens(Screen)
     }

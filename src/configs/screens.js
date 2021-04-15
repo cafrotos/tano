@@ -17,5 +17,8 @@ export const NAMES = {
   // Nhóm sổ giao dịch
   TRANSACTION_BOOK: "Sổ giao dịch",
   DETAIL_TRANS_BOOK: "Chi tiết sổ GD",
-  CREATE_TRANS_BOOK: "Tạo sổ GD"
+  CREATE_TRANS_BOOK: "Tạo sổ GD",
+  EDIT_TRANS_BOOK: "Sửa thông tin sổ GD",
+  // Cài đặt
+  SETTINGS: "Cài đặt"
 }
