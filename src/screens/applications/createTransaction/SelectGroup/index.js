@@ -10,6 +10,7 @@ import ButtonSearchGroup from "./ButtonSearchGroup";
 import TopTabs from "components/TopTabs";
 import { TRANS_TYPE } from "configs";
 import { useNavigation } from "@react-navigation/core";
+import { RefreshControl } from "react-native";
 
 
 const SelectGroup = () => {
@@ -31,13 +32,18 @@ const SelectGroup = () => {
   }, [])
 
   return (
-    <TopTabs loading={transGroups.loading}>
+    <TopTabs>
       <Layout
         title={TRANS_TYPE.OUTPUT.title}
         level="1"
         style={{ height: "100%" }}
       >
         <List
+          refreshControl={
+            <RefreshControl
+              refreshing={transGroups.loading}
+            />
+          }
           title={TRANS_TYPE.OUTPUT.title}
           data={transGroups.dataSource[TRANS_TYPE.OUTPUT.value]}
           renderItem={ListItemGroup}
@@ -49,6 +55,11 @@ const SelectGroup = () => {
         style={{ height: "100%" }}
       >
         <List
+          refreshControl={
+            <RefreshControl
+              refreshing={transGroups.loading}
+            />
+          }
           data={transGroups.dataSource[TRANS_TYPE.INPUT.value]}
           renderItem={ListItemGroup}
         />

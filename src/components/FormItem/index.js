@@ -83,8 +83,8 @@ const FormItem = ({
         }
       case "Datepicker":
         valuePropsName = "date"
-        props.min = moment("01/01/1960", "DD/MM/YYYY").toDate()
-        props.max = moment("01/01/2200", "DD/MM/YYYY").toDate()
+        props.min = children.props.min ||moment("01/01/1960", "DD/MM/YYYY").toDate()
+        props.max = children.props.max || moment("01/01/2200", "DD/MM/YYYY").toDate()
         props.onSelect = (date) => {
           form.setFiedlsValue({
             [name]: date,

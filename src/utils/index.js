@@ -1,6 +1,27 @@
 import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
-import { FORMAT_NUMBER_OPTIONS } from "configs";
 import { createContext } from "react";
+import numeral from "numeral"
+
+numeral.register('locale', 'vi-VN', {
+  delimiters: {
+      thousands: '.',
+      decimal: ','
+  },
+  abbreviations: {
+      thousand: 'K',
+      million: 'M',
+      billion: 'B',
+      trillion: 'KB'
+  },
+  ordinal: function () {
+      return '.';
+  },
+  currency: {
+      symbol: '₫'
+  }
+});
+
+numeral.locale("vi-VN")
 
 export const getContext = (() => {
   const contexts = {};
@@ -14,15 +35,7 @@ export const getContext = (() => {
   }
 })()
 
-export const getFormatNumber = (() => {
-  const locales = {};
-  return (locale, number) => {
-    if (!locales[locale]) {
-      locales[locale] = new Intl.NumberFormat(locale)
-    }
-    return locales[locale].format(number) + " ₫"
-  }
-})()
+export const formatNumber = (number, format = "0,0[.]00 $") => numeral(number).format(format)
 
 /**
  * 

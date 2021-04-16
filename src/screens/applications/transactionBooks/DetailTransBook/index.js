@@ -8,7 +8,7 @@ import { useFocusEffect, useNavigation, useRoute } from "@react-navigation/core"
 import { NAMES } from "configs/screens";
 import themes from "configs/themes";
 import Space from "components/Space";
-import { commonStyles } from "assets/styles";
+import { buttonStyle, commonStyles } from "assets/styles";
 import useLoadState from "services/hooks/useLoadState";
 import { getTransBookByDoc } from "repositories/transBooks";
 import { getTransactions } from "repositories/transactions";
@@ -17,7 +17,7 @@ import moment from "moment";
 import _ from "lodash";
 import { useEffect } from "react/cjs/react.development";
 import ButtonEditTransBook from "./ButtonEditTransBook";
-import { getFormatNumber } from "utils";
+import { formatNumber } from "utils";
 
 const DetailTransBook = () => {
   const navigation = useNavigation()
@@ -41,7 +41,7 @@ const DetailTransBook = () => {
       ))
       .map(data => ({
         title: data[0].date,
-        totalAmount: getFormatNumber("vi-VN", _.sumBy(data, (item) => Number(item.amount || 0))),
+        totalAmount: formatNumber(_.sumBy(data, (item) => Number(item.amount || 0))),
         data
       }))
   })
@@ -92,19 +92,20 @@ const DetailTransBook = () => {
           />
         )}
         renderSectionFooter={() => <Divider style={{ height: 8, backgroundColor: "transparent" }} />}
-        ListFooterComponent={() => <Divider style={{ height: 52, backgroundColor: "transparent" }} />}
+        ListFooterComponent={() => <Divider style={{ height: 64, backgroundColor: "transparent" }} />}
       />
       <View
         style={[
           commonStyles.flexHorizontalCenter,
           {
             position: "absolute",
-            bottom: 8
+            bottom: 16
           }
         ]}
       >
         <Button
           onPress={handlePressCreateTrans}
+          style={buttonStyle.shadowBorder}
         >
           {"Tạo giao dịch"}
         </Button>

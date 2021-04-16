@@ -80,5 +80,17 @@ export const buttonStyle = StyleSheet.create({
     borderRadius: 32,
     width: 32,
     height: 32
+  },
+  shadowBorder: {
+    borderRadius: 40,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   }
 })

@@ -8,7 +8,16 @@ export default StyleSheet.create({
   },
   touchableReportWrapper: {
     backgroundColor: "#ffffff",
-    borderRadius: BASE_SIZE * 3
+    borderRadius: BASE_SIZE * 3,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
   quickReportWrapper: {
     padding: BASE_SIZE * 4,

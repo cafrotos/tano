@@ -127,3 +127,31 @@ Sử dụng sđt/email/social network
 Ghi chép các thông tin về giao dịch: số tiền, loại giao dịch(nhóm giao dịch: thu/chi), nội dung
 ### 4. Báo cáo
 ### 5. Lập kế hoạch(các sự kiện: )
+
+
+
+Cấu trúc KLTN: 
+Mở đầu: 
+  - giới thiệu
+  - Mục đích
+  - kết quả đạt đc
+
+Giới thiệu
+  - yêu cầu
+  - đưa ra vấn đề và phương pháp giải quyết => ứng dụng của mình
+  - nêu ra bài toán: làm về gì, áp dụng trong scope nào, kết quả đạt được là gì
+  - Mô tả cấu trúc khoá luận
+
+Các phần liên quan
+  - Các ứng dụng đã phát triển để giải quyết vấn đề đó, ưu nhược điểm
+  - Các công nghệ có thể sử dụng, => chọn 1 và lý do
+
+Quy trình xây dựng ứng dụng
+
+Triển khai thực nghiệm(ko có, hoặc unit test, đội tester)
+
+Kết luận: 
+  - Đã trình bày về cái gì
+  - Đã học được thêm kiến thức gì
+  - Kết quả thực tiễn đạt được của ứng dụng
+  - Tài liệu tham khảo

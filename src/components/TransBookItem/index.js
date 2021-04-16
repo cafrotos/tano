@@ -17,5 +17,6 @@ export default ({
     )}
     description={item.description}
     onPress={item.handlePress}
+    onLongPress={item.handleLongPress}
   />
 )

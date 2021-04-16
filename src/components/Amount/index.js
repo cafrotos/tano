@@ -1,6 +1,6 @@
 import { Text } from "@ui-kitten/components";
 import React from "react";
-import { getFormatNumber } from "utils";
+import { formatNumber } from "utils";
 import styles from "./styles"
 
 export default ({
@@ -15,6 +15,6 @@ export default ({
       style
     ]}
   >
-    {getFormatNumber("vi-VN", Math.abs(amount))}
+    {formatNumber(Math.abs(amount))}
   </Text>
 )

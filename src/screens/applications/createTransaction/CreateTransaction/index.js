@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/core";
 import { Layout } from "@ui-kitten/components";
-import { commonStyles } from "assets/styles";
+import { buttonStyle, commonStyles } from "assets/styles";
 import Transaction from "components/Forms/Transaction";
 import TanoButton from "components/TanoButton";
 import { NAMES } from "configs/screens";
@@ -61,7 +61,10 @@ export default () => {
           styles.saveButtonWrapper
         ]}
       >
-        <TanoButton onPress={form.submit(handleSubmit)}>
+        <TanoButton
+          onPress={form.submit(handleSubmit)}
+          style={buttonStyle.shadowBorder}
+        >
           {"Lưu"}
         </TanoButton>
       </View>

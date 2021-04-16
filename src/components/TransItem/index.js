@@ -16,6 +16,7 @@ const TransItem = ({
     )}
     description={item.content}
     onPress={item.handlePress}
+    onLongPress={item.handleLongPress}
   />
 )
 

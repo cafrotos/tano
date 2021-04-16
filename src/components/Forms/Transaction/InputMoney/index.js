@@ -3,7 +3,7 @@ import { commonStyles } from "assets/styles";
 import Space from "components/Space";
 import React from "react";
 import { TouchableHighlight } from "react-native";
-import { getFormatNumber } from "utils";
+import { formatNumber } from "utils";
 
 const InputMoney = ({
   value,
@@ -44,7 +44,7 @@ const InputMoney = ({
               textAlign: "center"
             }}
           >
-            {getFormatNumber("vi-VN", value || 0)}
+            {formatNumber(value || 0)}
           </Text>
         </Layout>
       </TouchableHighlight>

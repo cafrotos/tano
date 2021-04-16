@@ -4,9 +4,10 @@ import { commonStyles } from "assets/styles";
 import { renderIcon } from "components";
 import FormItem from "components/FormItem";
 import Space from "components/Space";
+import moment from "moment";
 import React, { useEffect } from "react";
 import { View } from "react-native";
-import { getFormatNumber } from "utils";
+import { formatNumber } from "utils";
 import InputMoney from "./InputMoney";
 import SelectGroup from "./SelectGroup";
 import SelectTransBook from "./SelectTransBook";
@@ -37,7 +38,7 @@ export default ({
     }
   }, [params])
 
-  const handleFormat = (value) => getFormatNumber("vi-VN", value || 0)
+  const handleFormat = (value) => formatNumber(value || 0)
   const handleChange = (value) => value?.replace(/\D/g, "")
 
   return (
@@ -138,6 +139,7 @@ export default ({
         <Datepicker
           defaultValue={new Date()}
           accessoryRight={renderIcon({ name: "calendar" })}
+          max={moment().toDate()}
         />
       </FormItem>
     </Space>

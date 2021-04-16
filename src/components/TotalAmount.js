@@ -1,15 +1,18 @@
+import { useNavigation } from "@react-navigation/core";
 import { Button, Icon, Text, useTheme } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import { renderIcon } from "components";
 import Space from "components/Space";
+import { NAMES } from "configs/screens";
 import React from "react";
 import { View } from "react-native";
-import { getFormatNumber } from "utils";
+import { formatNumber } from "utils";
 
 export default ({
   total
 }) => {
   const themes = useTheme();
+  const navigation = useNavigation()
 
   return (
     <View
@@ -47,7 +50,7 @@ export default ({
             }
           ]}
         >
-          {getFormatNumber("vi-VN", total || 0)}
+          {formatNumber(total || 0)}
         </Text>
       </Space>
       <Button
@@ -58,6 +61,7 @@ export default ({
         style={{
           borderRadius: 40
         }}
+        onPress={() => navigation.navigate(NAMES.REPORTS)}
       >
         {"Báo cáo"}
       </Button>

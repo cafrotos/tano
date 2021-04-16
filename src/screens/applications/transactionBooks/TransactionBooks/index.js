@@ -7,11 +7,11 @@ import TransBookItem from "components/TransBookItem";
 import { useFocusEffect, useNavigation } from "@react-navigation/core";
 import { NAMES } from "configs/screens";
 import themes from "configs/themes";
-import { getTransBooks } from "repositories/transBooks";
+import transBooksCollection, { getTransBooks } from "repositories/transBooks";
 import useLoadState from "services/hooks/useLoadState";
 import _ from "lodash";
-import { RefreshControl, View } from "react-native";
-import { commonStyles } from "assets/styles";
+import { ActionSheetIOS, RefreshControl, View } from "react-native";
+import { buttonStyle, commonStyles } from "assets/styles";
 
 const TransactionBooks = () => {
   const navigation = useNavigation()
@@ -25,6 +25,38 @@ const TransactionBooks = () => {
           navigation.navigate(NAMES.DETAIL_TRANS_BOOK, {
             transBook: item
           })
+        },
+        handleLongPress: () => {
+          ActionSheetIOS.showActionSheetWithOptions({
+            options: ["Huỷ", "Xoá sổ GD", "Sửa sổ GD"],
+            destructiveButtonIndex: 1,
+            cancelButtonIndex: 0,
+          },
+            buttonIndex => {
+              switch (buttonIndex) {
+                case 1:
+                  ActionSheetIOS.showActionSheetWithOptions({
+                    options: ["Huỷ", "Xoá"],
+                    destructiveButtonIndex: 1,
+                    cancelButtonIndex: 0,
+                    message: "Bạn có chắc chắn muốn xoá sổ giao dịch cùng tất cả các giao dịch trong sổ không?"
+                  },
+                    buttonIndex => {
+                      if (buttonIndex === 1) {
+                        return transBooksCollection
+                          .doc(item.id)
+                          .delete()
+                          .then(() => loadTransBooks())
+                      }
+                    })
+                  break;
+                case 2:
+                  navigation.navigate(NAMES.EDIT_TRANS_BOOK, { transBook: item })
+                  break;
+                default:
+                  break;
+              }
+            })
         }
       }))
     })
@@ -64,12 +96,13 @@ const TransactionBooks = () => {
           commonStyles.flexHorizontalCenter,
           {
             position: "absolute",
-            bottom: 8
+            bottom: 16
           }
         ]}
       >
         <Button
           onPress={handlePressCreateBook}
+          style={buttonStyle.shadowBorder}
         >
           {"Tạo sổ giao dịch"}
         </Button>

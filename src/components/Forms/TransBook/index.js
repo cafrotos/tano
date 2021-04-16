@@ -6,7 +6,7 @@ import FormItem from "components/FormItem";
 import Space from "components/Space";
 import React, { useEffect } from "react";
 import { View } from "react-native";
-import { getFormatNumber } from "utils";
+import { formatNumber } from "utils";
 import SelectIcon from "./SelectIcon";
 
 export default ({
