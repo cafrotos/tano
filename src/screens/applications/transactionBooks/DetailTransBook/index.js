@@ -17,6 +17,7 @@ import moment from "moment";
 import _ from "lodash";
 import { useEffect } from "react/cjs/react.development";
 import ButtonEditTransBook from "./ButtonEditTransBook";
+import { getFormatNumber } from "utils";
 
 const DetailTransBook = () => {
   const navigation = useNavigation()
@@ -40,6 +41,7 @@ const DetailTransBook = () => {
       ))
       .map(data => ({
         title: data[0].date,
+        totalAmount: getFormatNumber("vi-VN", _.sumBy(data, (item) => Number(item.amount || 0))),
         data
       }))
   })
@@ -82,10 +84,11 @@ const DetailTransBook = () => {
         keyExtractor={(item, index) => item + index}
         renderItem={TransItem}
         stickySectionHeadersEnabled={true}
-        renderSectionHeader={({ section: { title } }) => (
+        renderSectionHeader={({ section: { title, totalAmount } }) => (
           <ListItem
             title={title}
             disabled={true}
+            accessoryRight={() => <Text category="c1">{totalAmount}</Text>}
           />
         )}
         renderSectionFooter={() => <Divider style={{ height: 8, backgroundColor: "transparent" }} />}

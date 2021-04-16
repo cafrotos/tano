@@ -14,7 +14,7 @@ export default () => {
         commonStyles.flexHorizontalEvenly,
       ]}
     >
-      <Item icon="pie-chart-2" label={"Báo cáo"} />
+      <Item icon="pie-chart-2" label={"Báo cáo"} onPress={() => navigation.navigate(NAMES.REPORTS)} />
       <Item icon="layers" label={"Kế hoạch"} />
       <Item icon="award" label={"Thành tích"} />
       <Item icon="plus" label={"Giao dịch"} onPress={() => navigation.navigate(NAMES.CREATE_TRANSACTION)} />

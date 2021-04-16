@@ -25,7 +25,6 @@ const Stack = ({
   onRenderScreens
 }) => {
   const MainStack = useMemo(() => createStackNavigator(), []);
-  const renderScreens = useMemo(() => onRenderScreens(MainStack.Screen), [MainStack])
 
   return (
     <MainStack.Navigator
@@ -54,7 +53,7 @@ const Stack = ({
         ...screenOptions,
       }}
     >
-      {renderScreens}
+      {onRenderScreens(MainStack.Screen)}
     </MainStack.Navigator>
   )
 }

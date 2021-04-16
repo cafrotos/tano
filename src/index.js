@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, { useEffect, useState, createContext } from 'react';
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, IconRegistry, Spinner } from '@ui-kitten/components';
+import { ApplicationProvider, IconRegistry, Modal, Spinner } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
@@ -15,8 +15,9 @@ import { MaterialCommunityIconsPack, MaterialIconsPack } from 'components/3rdIco
 const MainContext = getContext(CONTEXTS.MAIN)
 
 export default () => {
-  const [appState, setAppState] = useState({})
-  const [loadingUserProfile, setLoadingUserProfile] = useState(true)
+  const [appState, setAppState] = useState({
+    loading: true
+  })
 
   const updateAppState = (_value) => setAppState(_appState => ({
     ..._appState,
@@ -29,9 +30,9 @@ export default () => {
 
   const handleChangeAuth = (user) => {
     updateAppState({
+      loading: false,
       user
     })
-    setLoadingUserProfile(false)
   }
 
   return (
@@ -50,20 +51,24 @@ export default () => {
             }
             style={{ height: "100%" }}
           >
-            {
-              loadingUserProfile ? (
+            <MainContext.Provider
+              value={{
+                ...appState,
+                updateAppState
+              }}
+            >
+              <Screens />
+              <Modal
+                visible={appState.loading}
+                backdropStyle={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  width: "100%",
+                  height: "100%"
+                }}
+              >
                 <Spinner size="large" status="info" />
-              ) : (
-                <MainContext.Provider
-                  value={{
-                    ...appState,
-                    updateAppState
-                  }}
-                >
-                  <Screens />
-                </MainContext.Provider>
-              )
-            }
+              </Modal>
+            </MainContext.Provider>
           </KeyboardAvoidingView>
         </SafeAreaView>
       </ApplicationProvider>

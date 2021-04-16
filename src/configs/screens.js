@@ -20,5 +20,9 @@ export const NAMES = {
   CREATE_TRANS_BOOK: "Tạo sổ GD",
   EDIT_TRANS_BOOK: "Sửa thông tin sổ GD",
   // Cài đặt
-  SETTINGS: "Cài đặt"
+  SETTINGS: "Cài đặt",
+  // Analysis
+  ANALYSIS: "Phân tích",
+  REPORTS: "Báo cáo",
+
 }

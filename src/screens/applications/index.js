@@ -2,6 +2,7 @@ import { Text } from '@ui-kitten/components';
 import BlankHeader from 'components/BlankHeader';
 import { NAMES } from 'configs/screens';
 import React from 'react';
+import reports from './reports';
 import createTransaction from './createTransaction';
 import Home from './Home';
 import Icons from './Icons';
@@ -31,7 +32,8 @@ const screens = [
     }
   },
   Icons,
-  Settings
+  Settings,
+  reports
 ]
 
 export default (Screen) => (

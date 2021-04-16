@@ -1,5 +1,6 @@
-import { Icon, Text, useTheme } from "@ui-kitten/components";
+import { Button, Icon, Text, useTheme } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
+import { renderIcon } from "components";
 import Space from "components/Space";
 import React from "react";
 import { View } from "react-native";
@@ -13,12 +14,12 @@ export default ({
   return (
     <View
       style={[
-        commonStyles.flexHorizontalMiddle,
-        commonStyles.flexHorizontalCenter,
+        commonStyles.flexVerticalMiddle,
+        commonStyles.flexVerticalCenter,
         {
-          height: 100,
           backgroundColor: themes["color-primary-500"],
-          paddingBottom: 20
+          paddingBottom: 12,
+          paddingTop: 4
         }
       ]}
     >
@@ -41,13 +42,25 @@ export default ({
             commonStyles.textColorWhite,
             {
               fontSize: 40,
-              fontWeight: "400"
+              fontWeight: "400",
+              marginBottom: 12
             }
           ]}
         >
           {getFormatNumber("vi-VN", total || 0)}
         </Text>
       </Space>
+      <Button
+        appearance="outline"
+        status="control"
+        accessoryLeft={renderIcon({ name: "pie-chart-2" })}
+        size="small"
+        style={{
+          borderRadius: 40
+        }}
+      >
+        {"Báo cáo"}
+      </Button>
     </View>
   )
 }

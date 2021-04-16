@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ImageBackground, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import background from 'assets/images/bg.jpg'
 import { Button, Text } from '@ui-kitten/components';
@@ -10,12 +9,25 @@ import { useNavigation } from '@react-navigation/native';
 import { NAMES } from 'configs/screens';
 import { renderIcon } from 'components';
 import { loginWithFacebook } from 'services/firebase/auth';
+import { CONTEXTS } from 'configs';
+import { getContext } from 'utils';
+
+const MainContext = getContext(CONTEXTS.MAIN)
 
 export default () => {
+  const { updateAppState } = useContext(MainContext)
   const navigation = useNavigation();
 
   const handlePressEnterPhone = () => navigation.navigate(NAMES.ENTER_PHONE)
-  const handleLoginWithFacebook = () => loginWithFacebook()
+  const handleLoginWithFacebook = async () => {
+    updateAppState({
+      loading: true
+    })
+    await loginWithFacebook()
+    updateAppState({
+      loading: false
+    })
+  }
   const handleLoginWithGoogle = () => navigation.navigate(NAMES.ENTER_PHONE)
 
   return (
@@ -48,12 +60,12 @@ export default () => {
           >
             {"Đăng nhập với Facebook"}
           </Button>
-          <Button
+          {/* <Button
             accessoryLeft={renderIcon({ name: "google" })}
             onPress={handleLoginWithGoogle}
           >
             {"Đăng nhập với Google"}
-          </Button>
+          </Button> */}
           <Button onPress={handlePressEnterPhone}>
             {"Nhập Số Điện Thoại"}
           </Button>
