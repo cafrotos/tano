@@ -1,26 +1,33 @@
-import { TRANS_TYPE } from "configs";
-import firestore from "services/firebase/firestore";
+import { COLLECTION_NAMES, TRANS_TYPE } from "configs";
 import { docsDataToArray } from "utils";
-import transBooksCollection from "./transBooks";
+import transBooksCollection, { getTransBooks } from "./transBooks";
 import transGroupsCollection from "./transGroups";
-
-const transactionCollection = firestore.collection("transactions");
-
-export default transactionCollection
+import _ from "lodash";
 
 /**
- * 
+ * @param {string} transBookId
  * @param {import("repositories").cbQuery} cbQuery 
  */
-export const getTransactions = async (cbQuery) => {
+export const getTransactions = async (transBookId, cbQuery) => {
+  const getTransactions = async () => {
+    if (transBookId) {
+      const docs = await (
+        cbQuery === "function" ?
+          cbQuery(transBooksCollection().doc(transBookId).collection(COLLECTION_NAMES.TRANSACTIONS)) :
+          transBooksCollection().doc(transBookId).collection(COLLECTION_NAMES.TRANSACTIONS).get()
+      )
+      return docsDataToArray(docs)
+    }
+    const transBooks = await getTransBooks();
+    const groupTransaction = await Promise.all(transBooks.map(async ({ id }) => {
+      const docs = await cbQuery(transBooksCollection().doc(id).collection(COLLECTION_NAMES.TRANSACTIONS))
+      return docsDataToArray(docs)
+    }))
+    return _.flatMap(groupTransaction)
+  }
   try {
-    const data = await (
-      typeof cbQuery === "function" ?
-        cbQuery(transactionCollection) :
-        transactionCollection.get()
-    )
+    const transaction = await getTransactions()
 
-    const transaction = docsDataToArray(data)
     return await Promise.all(transaction.map(async transaction => {
       const _transGroup = await transGroupsCollection.doc(transaction.transGroup).get();
       return {
@@ -34,26 +41,43 @@ export const getTransactions = async (cbQuery) => {
 }
 
 export const createTransaction = async (data) => {
+  const transBook = await transBooksCollection()
+    .doc(data.transBook)
+    .get()
+
+  const dataUpdateTransBook = {
+    amount: transBook.data().amount,
+    amountIn: transBook.data().amountIn,
+    amountOut: transBook.data().amountOut
+  }
   if (data.type === TRANS_TYPE.OUTPUT.value) {
+    Object.assign(dataUpdateTransBook, {
+      amount: dataUpdateTransBook.amount - Number(data.amount),
+      amountOut: dataUpdateTransBook.amount + Number(data.amount),
+    })
     Object.assign(data, {
       amount: 0 - Number(data.amount)
     })
   }
-  const transBook = await transBooksCollection
-    .doc(data.transBook)
-    .get()
-  console.log(Number(transBook.data().amount || 0), Number(transBook.data().amount || 0) + data.amount, data.amount)
+  else {
+    Object.assign(dataUpdateTransBook, {
+      amount: dataUpdateTransBook.amount + Number(data.amount),
+      amountOut: dataUpdateTransBook.amount + Number(data.amount),
+    })
+  }
+
   const [transaction] = await Promise.all([
-    transactionCollection.add({
-      ...data,
-      amount: Number(data.amount),
-      date: data.date || new Date()
-    }),
-    transBooksCollection
+    transBooksCollection()
       .doc(data.transBook)
-      .update({
-        amount: Number(transBook.data().amount || 0) + data.amount
-      })
+      .collection(COLLECTION_NAMES.TRANSACTIONS)
+      .add({
+        ...data,
+        amount: Number(data.amount),
+        date: data.date || new Date()
+      }),
+    transBooksCollection()
+      .doc(data.transBook)
+      .update(dataUpdateTransBook)
   ])
   return transaction
 }

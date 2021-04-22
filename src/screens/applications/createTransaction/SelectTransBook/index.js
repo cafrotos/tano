@@ -1,7 +1,6 @@
 import { Divider, Layout, List } from "@ui-kitten/components";
 import React, { useCallback } from "react";
 
-import { _mockDetailReport } from "configs/mockups"
 import TransBookItem from "components/TransBookItem";
 import { useFocusEffect, useNavigation } from "@react-navigation/core";
 import { NAMES } from "configs/screens";

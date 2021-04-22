@@ -32,12 +32,13 @@ const SelectGroup = () => {
   }, [])
 
   return (
-    <TopTabs>
-      <Layout
-        title={TRANS_TYPE.OUTPUT.title}
-        level="1"
-        style={{ height: "100%" }}
-      >
+    <Layout
+      level="1"
+      style={{
+        height: "100%"
+      }}
+    >
+      <TopTabs>
         <List
           refreshControl={
             <RefreshControl
@@ -48,13 +49,8 @@ const SelectGroup = () => {
           data={transGroups.dataSource[TRANS_TYPE.OUTPUT.value]}
           renderItem={ListItemGroup}
         />
-      </Layout>
-      <Layout
-        title={TRANS_TYPE.INPUT.title}
-        level="1"
-        style={{ height: "100%" }}
-      >
         <List
+          title={TRANS_TYPE.INPUT.title}
           refreshControl={
             <RefreshControl
               refreshing={transGroups.loading}
@@ -63,8 +59,8 @@ const SelectGroup = () => {
           data={transGroups.dataSource[TRANS_TYPE.INPUT.value]}
           renderItem={ListItemGroup}
         />
-      </Layout>
-    </TopTabs>
+      </TopTabs>
+    </Layout>
   )
 }
 

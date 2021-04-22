@@ -1,4 +1,8 @@
 export const NAMES = {
+  // Lần đầu sử dụng app
+  ONBOARDING: "Mở đầu",
+  SELECT_PLAN: "Chọn kế hoạch",
+  DETAIL_PLAN: "Mô tả chi tiết kế hoạch",
   // Chưa có user
   START: "Bắt đầu",
   ENTER_PHONE: "Nhập số điện thoại",
@@ -8,6 +12,7 @@ export const NAMES = {
   // Đăng nhập thành công
   HOME: "Màn hình chính",
   ICON: "Biểu tượng",
+  FIRST_TRANSBOOK: "Tạo sổ giao dịch đầu tiên",
   // Nhóm tạo giao dịch
   CREATE_TRANSACTION: "Tạo giao dịch",
   INPUT_MONEY: "Nhập số tiền",

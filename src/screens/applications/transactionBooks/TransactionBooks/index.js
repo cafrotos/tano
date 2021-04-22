@@ -1,8 +1,7 @@
-import { Button, Divider, Layout, List } from "@ui-kitten/components";
+import { Divider, Layout, List } from "@ui-kitten/components";
 import React, { useCallback } from "react";
 import TotalAmount from "components/TotalAmount";
 
-import { _mockDetailReport } from "configs/mockups"
 import TransBookItem from "components/TransBookItem";
 import { useFocusEffect, useNavigation } from "@react-navigation/core";
 import { NAMES } from "configs/screens";
@@ -12,6 +11,7 @@ import useLoadState from "services/hooks/useLoadState";
 import _ from "lodash";
 import { ActionSheetIOS, RefreshControl, View } from "react-native";
 import { buttonStyle, commonStyles } from "assets/styles";
+import { TanoButtonSubmit } from "components/TanoButton";
 
 const TransactionBooks = () => {
   const navigation = useNavigation()
@@ -79,6 +79,7 @@ const TransactionBooks = () => {
     >
       <TotalAmount
         total={transBooks.dataSource?.total}
+        showReportButton={true}
       />
       <List
         refreshControl={
@@ -91,22 +92,12 @@ const TransactionBooks = () => {
         ItemSeparatorComponent={Divider}
         renderItem={TransBookItem}
       />
-      <View
-        style={[
-          commonStyles.flexHorizontalCenter,
-          {
-            position: "absolute",
-            bottom: 16
-          }
-        ]}
+      <TanoButtonSubmit
+        onPress={handlePressCreateBook}
+        style={buttonStyle.shadowBorder}
       >
-        <Button
-          onPress={handlePressCreateBook}
-          style={buttonStyle.shadowBorder}
-        >
-          {"Tạo sổ giao dịch"}
-        </Button>
-      </View>
+        {"Tạo sổ giao dịch"}
+      </TanoButtonSubmit>
     </Layout>
   )
 }

@@ -1,17 +1,15 @@
 import { useRoute } from "@react-navigation/core";
-import { Datepicker, Input, Text } from "@ui-kitten/components";
+import { Input, Text } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
-import { renderIcon } from "components";
 import FormItem from "components/FormItem";
 import Space from "components/Space";
 import React, { useEffect } from "react";
 import { View } from "react-native";
-import { formatNumber } from "utils";
 import SelectIcon from "./SelectIcon";
 
 export default ({
   form,
-  onSelectIcon
+  onSelectIcon,
 }) => {
   const { params } = useRoute()
 
@@ -52,11 +50,16 @@ export default ({
         /> */}
         <SelectIcon
           onSelectIcon={onSelectIcon}
+          defaultValue={{
+            name: "credit-card"
+          }}
+          
         />
       </FormItem>
       <FormItem
         form={form}
         name="name"
+        label={"Tên sổ GD"}
         rules={[
           {
             required: true,
@@ -65,7 +68,7 @@ export default ({
         ]}
       >
         <Input
-          placeholder={"Tên sổ"}
+          placeholder={"Tên sổ GD"}
         />
       </FormItem>
       {/* <FormItem
@@ -82,6 +85,7 @@ export default ({
       <FormItem
         form={form}
         name="description"
+        label={"Mô tả"}
       >
         <Input
           multiline

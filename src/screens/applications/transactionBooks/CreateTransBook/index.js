@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/core";
-import { Button, Layout } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import TransBook from "components/Forms/TransBook";
 import { NAMES } from "configs/screens";
@@ -7,7 +7,7 @@ import React from "react";
 import { ScrollView, View, Alert } from "react-native";
 import useForm from "services/hooks/useForm";
 import transBooksCollection from "repositories/transBooks"
-import TanoButton from "components/TanoButton";
+import TanoButton, { TanoButtonSubmit } from "components/TanoButton";
 
 const CreateTransBook = () => {
   const navigation = useNavigation();
@@ -22,13 +22,15 @@ const CreateTransBook = () => {
 
   const handleSubmit = async (formData) => {
     try {
-      await transBooksCollection.add({
+      await transBooksCollection().add({
         ...formData,
-        amount: 0
+        amount: 0,
+        amountIn: 0,
+        amountOut: 0
       })
       navigation.goBack()
     } catch (error) {
-      console.log(error)
+      console.log("=====>", error)
     }
   }
 
@@ -50,22 +52,9 @@ const CreateTransBook = () => {
           onSelectIcon={handleSelectIcon}
         />
       </ScrollView>
-      <View
-        style={[
-          commonStyles.flexHorizontalCenter,
-          commonStyles.flexHorizontalMiddle,
-          {
-            position: "absolute",
-            bottom: 4
-          }
-        ]}
-      >
-        <TanoButton
-          onPress={form.submit(handleSubmit)}
-        >
-          {"Lưu"}
-        </TanoButton>
-      </View>
+      <TanoButtonSubmit
+        onPress={form.submit(handleSubmit)}
+      />
     </Layout>
   )
 }

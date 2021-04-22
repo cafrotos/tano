@@ -2,11 +2,11 @@ import { useNavigation } from "@react-navigation/core";
 import { Layout } from "@ui-kitten/components";
 import { buttonStyle, commonStyles } from "assets/styles";
 import Transaction from "components/Forms/Transaction";
-import TanoButton from "components/TanoButton";
+import TanoButton, { TanoButtonSubmit } from "components/TanoButton";
 import { NAMES } from "configs/screens";
 import React from "react";
 import { ScrollView, View } from "react-native";
-import transactionCollection, { createTransaction } from "repositories/transactions";
+import { createTransaction } from "repositories/transactions";
 import useForm from "services/hooks/useForm";
 import styles from "./styles"
 
@@ -54,20 +54,9 @@ export default () => {
           }}
         />
       </ScrollView>
-      <View
-        style={[
-          commonStyles.flexHorizontalCenter,
-          commonStyles.flexHorizontalMiddle,
-          styles.saveButtonWrapper
-        ]}
-      >
-        <TanoButton
-          onPress={form.submit(handleSubmit)}
-          style={buttonStyle.shadowBorder}
-        >
-          {"Lưu"}
-        </TanoButton>
-      </View>
+      <TanoButtonSubmit
+        onPress={form.submit(handleSubmit)}
+      />
     </Layout>
   )
 }

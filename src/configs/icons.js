@@ -1,6 +1,744 @@
 import { ICON_PACKS } from "configs";
 
-export default [
+export const EVA_ICONS = [
+  {
+    "name": "activity"
+  },
+  {
+    "name": "alert-circle"
+  },
+  {
+    "name": "alert-triangle"
+  },
+  {
+    "name": "archive"
+  },
+  {
+    "name": "arrow-back"
+  },
+  {
+    "name": "arrow-circle-down"
+  },
+  {
+    "name": "arrow-circle-left"
+  },
+  {
+    "name": "arrow-circle-right"
+  },
+  {
+    "name": "arrow-circle-up"
+  },
+  {
+    "name": "arrow-down"
+  },
+  {
+    "name": "arrow-downward"
+  },
+  {
+    "name": "arrow-forward"
+  },
+  {
+    "name": "arrow-ios-back"
+  },
+  {
+    "name": "arrow-ios-downward"
+  },
+  {
+    "name": "arrow-ios-forward"
+  },
+  {
+    "name": "arrow-ios-upward"
+  },
+  {
+    "name": "arrow-left"
+  },
+  {
+    "name": "arrow-right"
+  },
+  {
+    "name": "arrow-up"
+  },
+  {
+    "name": "arrow-upward"
+  },
+  {
+    "name": "arrowhead-down"
+  },
+  {
+    "name": "arrowhead-left"
+  },
+  {
+    "name": "arrowhead-right"
+  },
+  {
+    "name": "arrowhead-up"
+  },
+  {
+    "name": "at"
+  },
+  {
+    "name": "attach-2"
+  },
+  {
+    "name": "attach"
+  },
+  {
+    "name": "award"
+  },
+  {
+    "name": "backspace"
+  },
+  {
+    "name": "bar-chart-2"
+  },
+  {
+    "name": "bar-chart"
+  },
+  {
+    "name": "battery"
+  },
+  {
+    "name": "behance"
+  },
+  {
+    "name": "bell-off"
+  },
+  {
+    "name": "bell"
+  },
+  {
+    "name": "bluetooth"
+  },
+  {
+    "name": "book-open"
+  },
+  {
+    "name": "book"
+  },
+  {
+    "name": "bookmark"
+  },
+  {
+    "name": "briefcase"
+  },
+  {
+    "name": "browser"
+  },
+  {
+    "name": "brush"
+  },
+  {
+    "name": "bulb"
+  },
+  {
+    "name": "calendar"
+  },
+  {
+    "name": "camera"
+  },
+  {
+    "name": "car"
+  },
+  {
+    "name": "cast"
+  },
+  {
+    "name": "charging"
+  },
+  {
+    "name": "checkmark-circle-2"
+  },
+  {
+    "name": "checkmark-circle"
+  },
+  {
+    "name": "checkmark-square-2"
+  },
+  {
+    "name": "checkmark-square"
+  },
+  {
+    "name": "checkmark"
+  },
+  {
+    "name": "chevron-down"
+  },
+  {
+    "name": "chevron-left"
+  },
+  {
+    "name": "chevron-right"
+  },
+  {
+    "name": "chevron-up"
+  },
+  {
+    "name": "clipboard"
+  },
+  {
+    "name": "clock"
+  },
+  {
+    "name": "close-circle"
+  },
+  {
+    "name": "close-square"
+  },
+  {
+    "name": "close"
+  },
+  {
+    "name": "cloud-download"
+  },
+  {
+    "name": "cloud-upload"
+  },
+  {
+    "name": "code-download"
+  },
+  {
+    "name": "code"
+  },
+  {
+    "name": "collapse"
+  },
+  {
+    "name": "color-palette"
+  },
+  {
+    "name": "color-picker"
+  },
+  {
+    "name": "compass"
+  },
+  {
+    "name": "copy"
+  },
+  {
+    "name": "corner-down-left"
+  },
+  {
+    "name": "corner-down-right"
+  },
+  {
+    "name": "corner-left-down"
+  },
+  {
+    "name": "corner-left-up"
+  },
+  {
+    "name": "corner-right-down"
+  },
+  {
+    "name": "corner-right-up"
+  },
+  {
+    "name": "corner-up-left"
+  },
+  {
+    "name": "corner-up-right"
+  },
+  {
+    "name": "credit-card"
+  },
+  {
+    "name": "crop"
+  },
+  {
+    "name": "cube"
+  },
+  {
+    "name": "diagonal-arrow-left-down"
+  },
+  {
+    "name": "diagonal-arrow-left-up"
+  },
+  {
+    "name": "diagonal-arrow-right-down"
+  },
+  {
+    "name": "diagonal-arrow-right-up"
+  },
+  {
+    "name": "done-all"
+  },
+  {
+    "name": "download"
+  },
+  {
+    "name": "droplet-off"
+  },
+  {
+    "name": "droplet"
+  },
+  {
+    "name": "edit-2"
+  },
+  {
+    "name": "edit"
+  },
+  {
+    "name": "email"
+  },
+  {
+    "name": "expand"
+  },
+  {
+    "name": "external-link"
+  },
+  {
+    "name": "eye-off-2"
+  },
+  {
+    "name": "eye-off"
+  },
+  {
+    "name": "eye"
+  },
+  {
+    "name": "facebook"
+  },
+  {
+    "name": "file-add"
+  },
+  {
+    "name": "file-remove"
+  },
+  {
+    "name": "file-text"
+  },
+  {
+    "name": "file"
+  },
+  {
+    "name": "film"
+  },
+  {
+    "name": "flag"
+  },
+  {
+    "name": "flash-off"
+  },
+  {
+    "name": "flash"
+  },
+  {
+    "name": "flip-2"
+  },
+  {
+    "name": "flip"
+  },
+  {
+    "name": "folder-add"
+  },
+  {
+    "name": "folder-remove"
+  },
+  {
+    "name": "folder"
+  },
+  {
+    "name": "funnel"
+  },
+  {
+    "name": "gift"
+  },
+  {
+    "name": "github"
+  },
+  {
+    "name": "globe-2"
+  },
+  {
+    "name": "globe-3"
+  },
+  {
+    "name": "globe"
+  },
+  {
+    "name": "google"
+  },
+  {
+    "name": "grid"
+  },
+  {
+    "name": "hard-drive"
+  },
+  {
+    "name": "hash"
+  },
+  {
+    "name": "headphones"
+  },
+  {
+    "name": "heart"
+  },
+  {
+    "name": "home"
+  },
+  {
+    "name": "image-2"
+  },
+  {
+    "name": "image"
+  },
+  {
+    "name": "inbox"
+  },
+  {
+    "name": "info"
+  },
+  {
+    "name": "keypad"
+  },
+  {
+    "name": "layers"
+  },
+  {
+    "name": "layout"
+  },
+  {
+    "name": "link-2"
+  },
+  {
+    "name": "link"
+  },
+  {
+    "name": "linkedin"
+  },
+  {
+    "name": "list"
+  },
+  {
+    "name": "lock"
+  },
+  {
+    "name": "log-in"
+  },
+  {
+    "name": "log-out"
+  },
+  {
+    "name": "map"
+  },
+  {
+    "name": "maximize"
+  },
+  {
+    "name": "menu-2"
+  },
+  {
+    "name": "menu-arrow"
+  },
+  {
+    "name": "menu"
+  },
+  {
+    "name": "message-circle"
+  },
+  {
+    "name": "message-square"
+  },
+  {
+    "name": "mic-off"
+  },
+  {
+    "name": "mic"
+  },
+  {
+    "name": "minimize"
+  },
+  {
+    "name": "minus-circle"
+  },
+  {
+    "name": "minus-square"
+  },
+  {
+    "name": "minus"
+  },
+  {
+    "name": "monitor"
+  },
+  {
+    "name": "moon"
+  },
+  {
+    "name": "more-horizontal"
+  },
+  {
+    "name": "more-vertical"
+  },
+  {
+    "name": "move"
+  },
+  {
+    "name": "music"
+  },
+  {
+    "name": "navigation-2"
+  },
+  {
+    "name": "navigation"
+  },
+  {
+    "name": "npm"
+  },
+  {
+    "name": "options-2"
+  },
+  {
+    "name": "options"
+  },
+  {
+    "name": "pantone"
+  },
+  {
+    "name": "paper-plane"
+  },
+  {
+    "name": "pause-circle"
+  },
+  {
+    "name": "people"
+  },
+  {
+    "name": "percent"
+  },
+  {
+    "name": "person-add"
+  },
+  {
+    "name": "person-delete"
+  },
+  {
+    "name": "person-done"
+  },
+  {
+    "name": "person-remove"
+  },
+  {
+    "name": "person"
+  },
+  {
+    "name": "phone-call"
+  },
+  {
+    "name": "phone-missed"
+  },
+  {
+    "name": "phone-off"
+  },
+  {
+    "name": "phone"
+  },
+  {
+    "name": "pie-chart-2"
+  },
+  {
+    "name": "pie-chart"
+  },
+  {
+    "name": "pin"
+  },
+  {
+    "name": "play-circle"
+  },
+  {
+    "name": "plus-circle"
+  },
+  {
+    "name": "plus-square"
+  },
+  {
+    "name": "plus"
+  },
+  {
+    "name": "power"
+  },
+  {
+    "name": "pricetags"
+  },
+  {
+    "name": "printer"
+  },
+  {
+    "name": "question-mark-circle"
+  },
+  {
+    "name": "question-mark"
+  },
+  {
+    "name": "radio-button-off"
+  },
+  {
+    "name": "radio-button-on"
+  },
+  {
+    "name": "radio"
+  },
+  {
+    "name": "recording"
+  },
+  {
+    "name": "refresh"
+  },
+  {
+    "name": "repeat"
+  },
+  {
+    "name": "rewind-left"
+  },
+  {
+    "name": "rewind-right"
+  },
+  {
+    "name": "save"
+  },
+  {
+    "name": "scissors"
+  },
+  {
+    "name": "search"
+  },
+  {
+    "name": "settings-2"
+  },
+  {
+    "name": "settings"
+  },
+  {
+    "name": "shake"
+  },
+  {
+    "name": "share"
+  },
+  {
+    "name": "shield-off"
+  },
+  {
+    "name": "shield"
+  },
+  {
+    "name": "shopping-bag"
+  },
+  {
+    "name": "shopping-cart"
+  },
+  {
+    "name": "shuffle-2"
+  },
+  {
+    "name": "shuffle"
+  },
+  {
+    "name": "skip-back"
+  },
+  {
+    "name": "skip-forward"
+  },
+  {
+    "name": "slash"
+  },
+  {
+    "name": "smartphone"
+  },
+  {
+    "name": "speaker"
+  },
+  {
+    "name": "square"
+  },
+  {
+    "name": "star"
+  },
+  {
+    "name": "stop-circle"
+  },
+  {
+    "name": "sun"
+  },
+  {
+    "name": "swap"
+  },
+  {
+    "name": "sync"
+  },
+  {
+    "name": "text"
+  },
+  {
+    "name": "thermometer-minus"
+  },
+  {
+    "name": "thermometer-plus"
+  },
+  {
+    "name": "thermometer"
+  },
+  {
+    "name": "toggle-left"
+  },
+  {
+    "name": "toggle-right"
+  },
+  {
+    "name": "trash-2"
+  },
+  {
+    "name": "trash"
+  },
+  {
+    "name": "trending-down"
+  },
+  {
+    "name": "trending-up"
+  },
+  {
+    "name": "tv"
+  },
+  {
+    "name": "twitter"
+  },
+  {
+    "name": "umbrella"
+  },
+  {
+    "name": "undo"
+  },
+  {
+    "name": "unlock"
+  },
+  {
+    "name": "upload"
+  },
+  {
+    "name": "video-off"
+  },
+  {
+    "name": "video"
+  },
+  {
+    "name": "volume-down"
+  },
+  {
+    "name": "volume-mute"
+  },
+  {
+    "name": "volume-off"
+  },
+  {
+    "name": "volume-up"
+  },
+  {
+    "name": "wifi-off"
+  },
+  {
+    "name": "wifi"
+  }
+]
+
+export const MATERIAL_COMMUNITY_ICONS = [
   {
     "name": "ab-testing",
     "pack": ICON_PACKS.MATERIAL_COMMUNITY
@@ -21345,4 +22083,9 @@ export default [
     "name": "blank",
     "pack": ICON_PACKS.MATERIAL_COMMUNITY
   }
+]
+
+export default [
+  ...EVA_ICONS,
+  ...MATERIAL_COMMUNITY_ICONS
 ]

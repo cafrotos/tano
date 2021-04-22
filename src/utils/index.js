@@ -4,20 +4,20 @@ import numeral from "numeral"
 
 numeral.register('locale', 'vi-VN', {
   delimiters: {
-      thousands: '.',
-      decimal: ','
+    thousands: '.',
+    decimal: ','
   },
   abbreviations: {
-      thousand: 'K',
-      million: 'M',
-      billion: 'B',
-      trillion: 'KB'
+    thousand: 'K',
+    million: 'M',
+    billion: 'B',
+    trillion: 'KB'
   },
   ordinal: function () {
-      return '.';
+    return '.';
   },
   currency: {
-      symbol: '₫'
+    symbol: '₫'
   }
 });
 
@@ -57,3 +57,10 @@ export const docsDataToArray = (docs) => {
   })
   return array
 }
+
+const setTimeoutPromise = (timeout) => new Promise((resolve, reject) => setTimeout(resolve, timeout, "Timeout"))
+
+export const setAsyncTimeout = async (promiseInstance) => Promise.race([
+  promiseInstance,
+  setTimeoutPromise(3000),
+])

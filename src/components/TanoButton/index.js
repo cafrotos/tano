@@ -1,5 +1,8 @@
 import { Button, Spinner } from "@ui-kitten/components";
+import { buttonStyle, commonStyles } from "assets/styles";
 import React, { useCallback, useState } from "react";
+import { Dimensions, View } from "react-native";
+import { setAsyncTimeout } from "utils";
 
 /**
  * 
@@ -16,7 +19,11 @@ const TanoButton = ({
       return
     }
     setLoading(true)
-    typeof props.onPress === "function" && await props.onPress(event)
+    try {
+      typeof props.onPress === "function" && await setAsyncTimeout(props.onPress(event))
+    } catch (error) {
+      console.log(error)
+    }
     setLoading(false)
   }
 
@@ -27,6 +34,10 @@ const TanoButton = ({
       {...props}
       onPress={handlePress}
       accessoryLeft={loading ? accessoryLeft : props.accessoryLeft}
+      style={[
+        buttonStyle.shadowBorder,
+        props.style
+      ]}
     >
       {children}
     </Button>
@@ -34,3 +45,27 @@ const TanoButton = ({
 }
 
 export default TanoButton
+
+/**
+ * 
+ * @param {import("@ui-kitten/components").ButtonProps} props
+ */
+export const TanoButtonSubmit = (props) => (
+  <View
+    style={[
+      commonStyles.flexHorizontalCenter,
+      commonStyles.flexHorizontalMiddle,
+      {
+        position: "absolute",
+        bottom: 16,
+        width: Dimensions.get("screen").width
+      }
+    ]}
+  >
+    <TanoButton
+      {...props}
+    >
+      {props.children || "Lưu"}
+    </TanoButton>
+  </View>
+)

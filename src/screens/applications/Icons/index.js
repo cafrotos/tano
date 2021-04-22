@@ -1,5 +1,5 @@
 import { useNavigation, useRoute } from "@react-navigation/core";
-import { Button, Layout } from "@ui-kitten/components";
+import { Button, Layout, Spinner } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import { renderIcon } from "components";
 import BlankHeader from "components/BlankHeader";
@@ -8,7 +8,7 @@ import icons from "configs/icons";
 import { NAMES } from "configs/screens";
 import _ from "lodash";
 import React, { useEffect, useState } from "react";
-import { ScrollView } from "react-native";
+import { RefreshControlComponent, ScrollView, View } from "react-native";
 
 const Icons = () => {
   const navigation = useNavigation();
@@ -36,7 +36,7 @@ const Icons = () => {
     }
   }
   const handleRenderIcons = () => {
-    const numberItem = 100
+    const numberItem = 108
     if (_icons.index < icons.length) {
       setIcons({
         index: _icons.index + numberItem,
@@ -80,7 +80,8 @@ const Icons = () => {
         style={[
           commonStyles.flexHorizontalEvenly,
           {
-            flexWrap: "wrap"
+            flexWrap: "wrap",
+            height: "100%"
           }
         ]}
       >
@@ -88,6 +89,13 @@ const Icons = () => {
           _icons.dataSource
         }
       </Layout>
+      {
+        _icons.index < icons.length ? (
+          <View style={[commonStyles.flexHorizontalCenter]}>
+            <Spinner status="info" size="large" />
+          </View>
+        ) : null
+      }
     </ScrollView>
   )
 }

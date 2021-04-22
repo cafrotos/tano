@@ -1,4 +1,4 @@
-import { Icon, Text } from '@ui-kitten/components';
+import { Button, Icon, Text } from '@ui-kitten/components';
 import VerifyCode from 'components/Forms/VerifyCode';
 import Space from 'components/Space';
 import TanoButton from 'components/TanoButton';
@@ -25,8 +25,7 @@ export default () => {
   const handleSubmit = async ({ code }) => {
     if (confirmation?.confirm) {
       try {
-        const response = await confirmation.confirm(code)
-        console.log(response)
+        await confirmation.confirm(code)
       } catch (error) {
         console.log(error)
       }
@@ -60,7 +59,7 @@ export default () => {
               <Text>
                 {"Cô/chú không nhận được mã?"}
               </Text>
-              <TanoButton
+              <Button
                 size="tiny"
                 appearance="ghost"
                 onPress={handleResendCode}
@@ -68,7 +67,7 @@ export default () => {
                 {
                   () => <Text style={styles.textButton}>{"Gửi lại"}</Text>
                 }
-              </TanoButton>
+              </Button>
             </Space>
           ) :
             null

@@ -3,6 +3,8 @@ import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
 
 const instance = auth()
 
+instance.setLanguageCode("vi")
+
 export default instance
 
 export const signInWithPhone = (phone) => instance.signInWithPhoneNumber(

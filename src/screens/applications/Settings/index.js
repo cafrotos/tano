@@ -1,15 +1,26 @@
 import { Button } from "@ui-kitten/components";
 import BlankHeader from "components/BlankHeader";
 import Stack from "components/Stack";
+import { CONTEXTS } from "configs";
 import { NAMES } from "configs/screens";
-import React from "react";
+import React, { useContext } from "react";
 import auth from "services/firebase/auth";
+import { getContext } from "utils";
+
+const MainContext = getContext(CONTEXTS.MAIN)
 
 const Settings = () => {
+  const { updateAppState } = useContext(MainContext)
+
+  const handleLogout = () => {
+    updateAppState(null)
+    auth.signOut()
+  }
+
   return (
     <>
       <Button
-        onPress={() => auth.signOut()}
+        onPress={handleLogout}
       >
         {"Đăng xuất"}
       </Button>

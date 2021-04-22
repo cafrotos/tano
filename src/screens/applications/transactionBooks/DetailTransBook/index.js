@@ -2,7 +2,6 @@ import { Button, Divider, ListItem, Text } from "@ui-kitten/components";
 import React, { useCallback } from "react";
 import TotalAmount from "components/TotalAmount";
 
-import { _mockDetailTransBook } from "configs/mockups"
 import TransItem from "components/TransItem";
 import { useFocusEffect, useNavigation, useRoute } from "@react-navigation/core";
 import { NAMES } from "configs/screens";
@@ -18,6 +17,7 @@ import _ from "lodash";
 import { useEffect } from "react/cjs/react.development";
 import ButtonEditTransBook from "./ButtonEditTransBook";
 import { formatNumber } from "utils";
+import { TanoButtonSubmit } from "components/TanoButton";
 
 const DetailTransBook = () => {
   const navigation = useNavigation()
@@ -26,24 +26,25 @@ const DetailTransBook = () => {
     onGetState: () => getTransBookByDoc(params?.transBook?.id)
   })
   const [transactions, , loadTransactions] = useLoadState({
-    onGetState: () => getTransactions((transCol) => transCol
-      .where("transBook", "==", params?.transBook?.id)
+    onGetState: () => getTransactions(params?.transBook?.id, (transCol) => transCol
       .orderBy("date", "desc")
       .get()),
-    mapping: (dataSource) => Object
-      .values(_.groupBy(
-        dataSource
-          .map(item => ({
-            ...item,
-            date: moment(new Date(item.date?.seconds * 1000)).format("LL")
-          })),
-        "date"
-      ))
-      .map(data => ({
-        title: data[0].date,
-        totalAmount: formatNumber(_.sumBy(data, (item) => Number(item.amount || 0))),
-        data
-      }))
+    mapping: (dataSource) => {
+      return Object
+        .values(_.groupBy(
+          dataSource
+            .map(item => ({
+              ...item,
+              date: moment(new Date(item.date?.seconds * 1000)).format("LL")
+            })),
+          "date"
+        ))
+        .map(data => ({
+          title: data[0].date,
+          totalAmount: formatNumber(_.sumBy(data, (item) => Number(item.amount || 0))),
+          data
+        }))
+    }
   })
 
   useEffect(() => {
@@ -94,22 +95,11 @@ const DetailTransBook = () => {
         renderSectionFooter={() => <Divider style={{ height: 8, backgroundColor: "transparent" }} />}
         ListFooterComponent={() => <Divider style={{ height: 64, backgroundColor: "transparent" }} />}
       />
-      <View
-        style={[
-          commonStyles.flexHorizontalCenter,
-          {
-            position: "absolute",
-            bottom: 16
-          }
-        ]}
+      <TanoButtonSubmit
+        onPress={handlePressCreateTrans}
       >
-        <Button
-          onPress={handlePressCreateTrans}
-          style={buttonStyle.shadowBorder}
-        >
-          {"Tạo giao dịch"}
-        </Button>
-      </View>
+        {"Tạo giao dịch"}
+      </TanoButtonSubmit>
     </>
   )
 }

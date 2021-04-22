@@ -51,7 +51,7 @@ const FormItem = ({
     }
     if(children?.props?.defaultValue) {
       form.setFiedlsValue({
-        [valuePropsName]: children.props.defaultValue
+        [name]: children.props.defaultValue
       })
     }
   }, [])

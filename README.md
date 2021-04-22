@@ -155,3 +155,20 @@ Kết luận:
   - Đã học được thêm kiến thức gì
   - Kết quả thực tiễn đạt được của ứng dụng
   - Tài liệu tham khảo
+
+
+
+Báo cáo theo:
+  tuần: barchart theo ngày, piechart theo tuần
+  tháng: barchart 4/5 tuần 1 cột, piechart theo tháng
+  quý: barchart 1 tháng 1 cột, piechart theo quý
+  năm: barchart 1 quý 1 cột, piechảt theo năm
+
+
+- trình bày về quy trình xây dựng ứng dụng quản lý tài chính
+- trình bày về phương pháp áp dụng các phương pháp quản lý tài chính cho ứng dụng quản lý tài chính cá nhân.
+  - Các phương pháp bao gồm phương pháp 50/20/30, phương pháp JARS(6 hũ tiền)
+  - Mô tả về ứng dụng:
+    - Quản lý tài chính cá nhân là việc mà mỗi cá nhân phải thực hiện để lập ngân sách, tiết kiệm và chi tiêu các nguồn tiền theo thời gian và có tính toán rủi ro tài chính hoặc các sự kiện cần sử dụng nguồn tiền trong tương lai. => việc quản lý tài chính là rất cần thiết
+    - Đã có những ứng dụng hỗ trợ cho việc ghi chép về các khoản giao dịch tài chính cụ thể, tuy nhiên phần lớn là chỉ có mục đích ghi chép, chưa áp dụng phương pháp quản lý cụ thể => khoá luận giải quyết vấn đề.
+    

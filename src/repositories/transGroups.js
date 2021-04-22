@@ -1,7 +1,8 @@
+import { COLLECTION_NAMES } from "configs";
 import firestore from "services/firebase/firestore"
 import { docsDataToArray } from "utils";
 
-const  transGroupsCollection = firestore.collection("transGroups") 
+const transGroupsCollection = firestore.collection(COLLECTION_NAMES.TRANSGROUPS)
 
 /**
  * 
@@ -40,7 +41,7 @@ export const getTransGroupsHierarchy = async (cbQuery) => {
   }
   const transGroupsDocs = await (
     typeof cbQuery === "function" ?
-    cbQuery(transGroupsCollection) :
+      cbQuery(transGroupsCollection) :
       transGroupsCollection.get()
   );
   return addDisplayProperties(docsDataToArray(transGroupsDocs))

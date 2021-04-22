@@ -1,55 +1,128 @@
-import { ICON_PACKS, TRANS_TYPE } from "configs";
+import { ICON_PACKS, PLAN_GROUPS, TRANS_TYPE } from "configs";
 import _ from "lodash";
-import moment from "moment";
 
-export const _mockDetailReport = {
-  total: 2000000,
-  transactionBooks: [
-    {
-      icon: {
-        name: "archive"
-      },
-      description: "Tiền ăn chi tiêu hằng ngày",
-      amount: 1500000,
-      title: "Tiền mặt"
+export const _mockupPlans = [
+  {
+    title: "Phương pháp 6 hũ tiền (JARS)",
+    name: "JARS",
+    description: "Phương pháp 6 hũ tiền có thể giúp kiểm soát tài chính của gia đình mình một cách thông thái với việc phân chia tài chính hợp lý với 6 chiếc hũ riêng biệt.",
+    icon: {
+      name: "cube"
     },
-    {
-      icon: {
-        name: "credit-card"
+    groups: [
+      {
+        title: "NEC (Quỹ thiết yếu)",
+        value: 0.55,
+        name: PLAN_GROUPS.NEC,
+        description: "NEC giúp bạn đảm bảo nhu cầu thiết yếu, sinh hoạt hàng ngày của cuộc sống như ăn uống, sinh hoạt, chi trả hóa đơn và mua sắm cần thiết."
       },
-      description: "Nhận lương và chi tiêu online",
-      amount: 500000,
-      title: "Techcombank"
+      {
+        title: "LTS (Quỹ tiết kiệm dài hạn)",
+        value: 0.1,
+        name: PLAN_GROUPS.SAVE,
+        description: "LTS giúp bạn đảm bảo những mục tiêu dài hạn như mua nhà, mua xe, hoặc sử dụng cho mục đích trong tương lai."
+      },
+      {
+        title: "EDU (Quỹ giáo dục)",
+        value: 0.1,
+        name: PLAN_GROUPS.EDU,
+        description: "EDU giúp bạn đầu tư cho bản thân, nhằm nâng cao trình độ và kiến thức góp phần tăng thu nhập chung của bạn."
+      },
+      {
+        title: "PLAY (Quỹ hưởng thụ)",
+        value: 0.1,
+        name: PLAN_GROUPS.PLAY,
+        description: "PLAY giúp bạn chi trả cho các mục đích giải trí, mua sắm xa xỉ, bạn bè, ..."
+      },
+      {
+        title: "FFA (Quỹ tự do tài chính)",
+        value: 0.1,
+        name: PLAN_GROUPS.FFA,
+        description: "FFA có thể coi như quỹ đầu tư cho mục đích khác, nhằm đem lại lợi nhuận cho mình như việc tiết kiệm, hoặc đầu tư chứng khoán, ... Chú ý chỉ dùng quỹ này cho mục đích đầu tư."
+      },
+      {
+        title: "GIVE (Quỹ từ thiện)",
+        value: 0.05,
+        name: PLAN_GROUPS.GIVE,
+        description: "GIVE là quỹ được sử dụng để giúp đỡ người khác như bạn bè, cộng đồng."
+      },
+    ]
+  },
+  {
+    title: "Phương pháp 50/20/30",
+    name: "50/20/30",
+    description: "Phương pháp đơn giản và hiệu quả để quản lý nguồn tiền bằng cách chia thành 3 nhóm chi chủ yếu với tối đa chi phí bạn có thể bỏ ra dựa trên nguồn tiền của mình",
+    icon: {
+      name: "bar-chart"
     },
-  ]
-}
+    groups: [
+      {
+        title: "NEC (Quỹ thiết yếu)",
+        value: 0.5,
+        name: PLAN_GROUPS.NEC,
+        description: "NEC giúp bạn đảm bảo nhu cầu thiết yếu, sinh hoạt hàng ngày của cuộc sống như ăn uống, sinh hoạt, chi trả hóa đơn và mua sắm cần thiết."
+      },
+      {
+        title: "SAVE (Quỹ tiết kiệm)",
+        value: 0.2,
+        name: PLAN_GROUPS.SAVE,
+        description: "SAVE giúp bạn đảm bảo những mục tiêu dài hạn như mua nhà, mua xe, hoặc sử dụng cho mục đích trong tương lai."
+      },
+      {
+        title: "NEED (Quỹ hưởng thụ)",
+        value: 0.3,
+        name: PLAN_GROUPS.NEED,
+        description: "PLAY giúp bạn chi trả cho các mục đích giải trí, mua sắm xa xỉ, bạn bè, ..."
+      },
+    ]
+  }
+]
 
-export const _mockDetailTransBook = {
-  total: -550000,
-  transactions: [
-    {
-      group: {
-        title: "Ăn uống",
-        icon: {
-          name: "home"
-        }
-      },
-      description: "Ăn lẩu buffet hải sản",
-      amount: -500000,
-      date: moment().add(-1, "day")
-    },
-    {
-      group: {
-        title: "Xe cộ",
-        icon: {
-          name: "car"
-        }
-      },
-      description: "Đổ xăng",
-      amount: -50000,
-      date: moment().add(-2, "day")
-    },
-  ]
+export const _mockupTransGroupColors = {
+  "Bạn bè & Người yêu": "#5b6d5b",
+  "Bảo hiểm": "#ca8a8b",
+  "Di chuyển": "#e2bcb7",
+  "Bảo dưỡng": "#f6e6e4",
+  "Gửi xe": "#fbe0c4",
+  "Taxi": "#8ab6d6",
+  "Xăng dầu": "#2978b5",
+  "Du lịch": "#0061a8",
+  "Gia đình": "#845460",
+  "Con cái": "#ead3cb",
+  "Dịch vụ gia đình": "#bdc7c9",
+  "Sửa chữa nhà cửa": "#2b4f60",
+  "Vật nuôi": "#f8f5f1",
+  "Giáo dục": "#f8a488",
+  "Sách": "#5aa897",
+  "Giải trí": "#45526c",
+  "Phim ảnh": "#f7f3e9",
+  "Trò chơi": "#a3d2ca",
+  "Hoá đơn & Tiện ích": "#5eaaa8",
+  "Hoá đơn gas": "#f05945",
+  "Hoá đơn TV": "#3a6351",
+  "Hoá đơn Internet": "#f2edd7",
+  "Hoá đơn nước": "#e48257",
+  "Hoá đơn điện": "#393232",
+  "Hoá đơn điện thoại": "#cc7351",
+  "Thuê nhà": "#e08f62",
+  "Mua sắm": "#ded7b1",
+  "Mua giày dép": "#9dab86",
+  "Mua phụ kiện": "#c5d7bd",
+  "Mua quần áo": "#9fb8ad",
+  "Mua thiết bị điện tử": "#383e56",
+  "Quà tặng & Quyên góp": "#fb743e",
+  "Sức khoẻ": "#ef4f4f",
+  "Khám chữa bệnh": "#ee9595",
+  "Thuốc": "#ffcda3",
+  "Thể thao": "#74c7b8",
+  "Ăn uống": "#999b84",
+  "Cà phê": "#d8ac9c",
+  "Nhà hàng": "#efd9d1",
+  "Các chi phí khác": "#f4eeed",
+  "Bán đồ": "#fcdada",
+  "Lương": "#5c969e",
+  "Thưởng": "#ffa5a5",
+  "Thu nhập khác": "#3d7ea6",
 }
 
 export const _mockTransGroups = [
@@ -59,7 +132,8 @@ export const _mockTransGroups = [
     },
     title: "Bạn bè & Người yêu",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED],
   },
   {
     icon: {
@@ -67,7 +141,8 @@ export const _mockTransGroups = [
     },
     title: "Bảo hiểm",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -75,7 +150,8 @@ export const _mockTransGroups = [
     },
     title: "Di chuyển",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -84,6 +160,7 @@ export const _mockTransGroups = [
     },
     title: "Bảo dưỡng",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -92,6 +169,7 @@ export const _mockTransGroups = [
     },
     title: "Gửi xe",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -100,6 +178,7 @@ export const _mockTransGroups = [
     },
     title: "Taxi",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -108,6 +187,7 @@ export const _mockTransGroups = [
     },
     title: "Xăng dầu",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -115,7 +195,8 @@ export const _mockTransGroups = [
     },
     title: "Du lịch",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -124,7 +205,8 @@ export const _mockTransGroups = [
     },
     title: "Gia đình",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -133,6 +215,7 @@ export const _mockTransGroups = [
     },
     title: "Con cái",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -140,6 +223,7 @@ export const _mockTransGroups = [
     },
     title: "Dịch vụ gia đình",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -148,6 +232,7 @@ export const _mockTransGroups = [
     },
     title: "Sửa chữa nhà cửa",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -156,6 +241,7 @@ export const _mockTransGroups = [
     },
     title: "Vật nuôi",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -164,7 +250,8 @@ export const _mockTransGroups = [
     },
     title: "Giáo dục",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.EDU, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -173,6 +260,7 @@ export const _mockTransGroups = [
     },
     title: "Sách",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.EDU, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -181,7 +269,8 @@ export const _mockTransGroups = [
     },
     title: "Giải trí",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -189,6 +278,7 @@ export const _mockTransGroups = [
     },
     title: "Phim ảnh",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -197,6 +287,7 @@ export const _mockTransGroups = [
     },
     title: "Trò chơi",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -205,7 +296,8 @@ export const _mockTransGroups = [
     },
     title: "Hoá đơn & Tiện ích",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -214,6 +306,7 @@ export const _mockTransGroups = [
     },
     title: "Hoá đơn gas",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -222,6 +315,7 @@ export const _mockTransGroups = [
     },
     title: "Hoá đơn TV",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -230,6 +324,7 @@ export const _mockTransGroups = [
     },
     title: "Hoá đơn Internet",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -237,6 +332,7 @@ export const _mockTransGroups = [
     },
     title: "Hoá đơn nước",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -244,6 +340,7 @@ export const _mockTransGroups = [
     },
     title: "Hoá đơn điện",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -251,6 +348,7 @@ export const _mockTransGroups = [
     },
     title: "Hoá đơn điện thoại",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -259,6 +357,7 @@ export const _mockTransGroups = [
     },
     title: "Thuê nhà",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -266,7 +365,8 @@ export const _mockTransGroups = [
     },
     title: "Mua sắm",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -275,6 +375,7 @@ export const _mockTransGroups = [
     },
     title: "Mua giày dép",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -283,6 +384,7 @@ export const _mockTransGroups = [
     },
     title: "Mua phụ kiện",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -291,6 +393,7 @@ export const _mockTransGroups = [
     },
     title: "Mua quần áo",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -298,6 +401,7 @@ export const _mockTransGroups = [
     },
     title: "Mua thiết bị điện tử",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -305,16 +409,8 @@ export const _mockTransGroups = [
     },
     title: "Quà tặng & Quyên góp",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
-  },
-  {
-    icon: {
-      name: "money",
-      pack: ICON_PACKS.MATERIAL
-    },
-    title: "Rút tiền",
-    type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.GIVE, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -323,7 +419,8 @@ export const _mockTransGroups = [
     },
     title: "Sức khoẻ",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.NEC, PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -332,6 +429,7 @@ export const _mockTransGroups = [
     },
     title: "Khám chữa bệnh",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -340,6 +438,7 @@ export const _mockTransGroups = [
     },
     title: "Thuốc",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -348,6 +447,7 @@ export const _mockTransGroups = [
     },
     title: "Thể thao",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -356,7 +456,8 @@ export const _mockTransGroups = [
     },
     title: "Ăn uống",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.NEC]
   },
   {
     icon: {
@@ -365,6 +466,7 @@ export const _mockTransGroups = [
     },
     title: "Cà phê",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -373,6 +475,7 @@ export const _mockTransGroups = [
     },
     title: "Nhà hàng",
     type: TRANS_TYPE.OUTPUT.value,
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {
@@ -381,7 +484,8 @@ export const _mockTransGroups = [
     },
     title: "Các chi phí khác",
     type: TRANS_TYPE.OUTPUT.value,
-    children: []
+    children: [],
+    groups: [PLAN_GROUPS.PLAY, PLAN_GROUPS.NEED]
   },
   {
     icon: {

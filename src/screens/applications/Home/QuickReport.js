@@ -11,8 +11,6 @@ import { getTransBooks } from "repositories/transBooks";
 import useLoadState from "services/hooks/useLoadState";
 import styles from "./styles";
 
-const _mockTotalCash = 100000
-
 export default () => {
   const navigation = useNavigation()
   const [transBooks, , loadTransBooks] = useLoadState({

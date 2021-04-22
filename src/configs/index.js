@@ -17,7 +17,8 @@ export const REALM_PATH = "com.cafrotos.kltn.tano"
 
 export const ICON_PACKS = {
   MATERIAL_COMMUNITY: "materialcommunity",
-  MATERIAL: "material"
+  MATERIAL: "material",
+  EVA: "eva"
 }
 
 export const TRANS_TYPE = {
@@ -30,4 +31,24 @@ export const TRANS_TYPE = {
     value: "input"
   },
   LOAN: "loan"
+}
+
+export const COLLECTION_NAMES = {
+  TRANSBOOKS: "transBooks",
+  TRANSACTIONS: "transactions",
+  USERS: "users",
+  TRANSGROUPS: "transGroups",
+  PLANS: "plans"
+}
+
+export const PLAN_GROUPS = {
+  // Plan JARS
+  SAVE: "SAVE",
+  NEC: "NEC",
+  EDU: "EDU",
+  PLAY: "PLAY",
+  FFA: "FFA",
+  GIVE: "GIVE",
+  // Plan 50/20/30
+  NEED: "NEED"
 }

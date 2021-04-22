@@ -9,7 +9,8 @@ import { View } from "react-native";
 import { formatNumber } from "utils";
 
 export default ({
-  total
+  total,
+  showReportButton
 }) => {
   const themes = useTheme();
   const navigation = useNavigation()
@@ -53,18 +54,22 @@ export default ({
           {formatNumber(total || 0)}
         </Text>
       </Space>
-      <Button
-        appearance="outline"
-        status="control"
-        accessoryLeft={renderIcon({ name: "pie-chart-2" })}
-        size="small"
-        style={{
-          borderRadius: 40
-        }}
-        onPress={() => navigation.navigate(NAMES.REPORTS)}
-      >
-        {"Báo cáo"}
-      </Button>
+      {
+        showReportButton ? (
+          <Button
+            appearance="outline"
+            status="control"
+            accessoryLeft={renderIcon({ name: "pie-chart-2" })}
+            size="small"
+            style={{
+              borderRadius: 40
+            }}
+            onPress={() => navigation.navigate(NAMES.REPORTS)}
+          >
+            {"Báo cáo"}
+          </Button>
+        ) : null
+      }
     </View>
   )
 }

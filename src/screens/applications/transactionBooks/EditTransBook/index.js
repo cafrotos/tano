@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 import { ScrollView, View } from "react-native";
 import useForm from "services/hooks/useForm";
 import transBooksCollection from "repositories/transBooks"
-import TanoButton from "components/TanoButton";
+import TanoButton, { TanoButtonSubmit } from "components/TanoButton";
 import Space from "components/Space";
 
 const EditTransBook = () => {
@@ -37,7 +37,7 @@ const EditTransBook = () => {
 
   const handleSubmit = async (formData) => {
     try {
-      await transBooksCollection
+      await transBooksCollection()
         .doc(params?.transBook?.id)
         .update(formData)
       navigation.goBack()
@@ -64,22 +64,9 @@ const EditTransBook = () => {
           onSelectIcon={handleSelectIcon}
         />
       </ScrollView>
-      <View
-        style={[
-          commonStyles.flexHorizontalCenter,
-          commonStyles.flexHorizontalMiddle,
-          {
-            position: "absolute",
-            bottom: 4
-          }
-        ]}
-      >
-        <TanoButton
-          onPress={form.submit(handleSubmit)}
-        >
-          {"Lưu"}
-        </TanoButton>
-      </View>
+      <TanoButtonSubmit
+        onPress={form.submit(handleSubmit)}
+      />
     </Layout>
   )
 }

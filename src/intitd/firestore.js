@@ -1,3 +1,4 @@
+import auth from "services/firebase/auth"
 import { _mockTransGroups } from "configs/mockups"
 import transGroupsCollection from "repositories/transGroups"
 
@@ -70,4 +71,6 @@ const initialTransGroupsChildren = async (transGroupsNoChildren) => {
 }
 
 // Excute
-initialTransGroups();
+if (auth.currentUser) {
+  initialTransGroups();
+}

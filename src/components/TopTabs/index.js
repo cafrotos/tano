@@ -25,6 +25,10 @@ export default ({
         <TabView
           selectedIndex={selectedIndex}
           onSelect={index => setSelectedIndex(index)}
+          style={{
+            height: "100%",
+            paddingBottom: 16
+          }}
         >
           {
             Children.map(children, (child, index) => (

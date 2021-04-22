@@ -7,7 +7,8 @@ import { View } from "react-native";
 
 export default ({
   onSelectIcon,
-  value
+  value,
+  defaultValue
 }) => {
   return (
     <View
@@ -21,9 +22,10 @@ export default ({
       ]}
     >
       <Button
-        accessoryLeft={renderIcon(value || { name: "question-mark" })}
+        accessoryLeft={renderIcon(value || defaultValue)}
         onPress={onSelectIcon}
         appearance="outline"
+        status="basic"
         style={{
           borderRadius: 50,
           height: 50,

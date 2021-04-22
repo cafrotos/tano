@@ -2,32 +2,18 @@ import { useFocusEffect } from "@react-navigation/core";
 import { NAMES } from "configs/screens";
 import _ from "lodash";
 import moment from "moment";
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { RefreshControl, ScrollView } from "react-native";
 import { getTransactions } from "repositories/transactions";
 import useLoadState from "services/hooks/useLoadState";
-import { formatNumber } from "utils";
+import PaymentLimitChart from "./PaymentLimitChart";
 import TransBarchart from "./TransBarchart";
+import TransCirclechar from "./TransCirclechar";
 
-const chartConfig = {
-  backgroundGradientFrom: "#fff",
-  backgroundGradientFromOpacity: 0,
-  backgroundGradientTo: "#fff",
-  backgroundGradientToOpacity: 0,
-  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-  labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-  useShadowColorFromDataset: false, // optional
-  barPercentage: 0.75,
-  decimalPlaces: 0,
-  strokeWidth: 2,
-  fillShadowGradientOpacity: 0.6,
-  formatYLabel: (yLabel) => formatNumber(yLabel, "0,0 a $")
-};
 
 const Reports = () => {
   const [transactions, , loadTransactions] = useLoadState({
-    onGetState: () => getTransactions((transCol) => transCol
-      // .where("transBook", "==", params?.transBook?.id)
+    onGetState: () => getTransactions(null, (transCol) => transCol
       .orderBy("date", "asc")
       .get()),
   })
@@ -37,22 +23,17 @@ const Reports = () => {
       transactions.dataSource
         .map(item => ({
           ...item,
-          date: moment(new Date(item.date?.seconds * 1000)).format("L")
+          date: moment(new Date(item.date?.seconds * 1000)),
+          label: moment(new Date(item.date?.seconds * 1000)).format("w")
         })),
-      "date"
+      "label"
     ))
     .map(data => ({
-      negative: _.sumBy(
-        data
-          .filter(item => Number(item.amount) < 0),
-        item => Number(item.amount)
-      ),
-      positive: _.sumBy(
-        data
-          .filter(item => Number(item.amount) > 0),
-        item => Number(item.amount)
-      ),
-      label: data[0].date.split("/").slice(0, -1).join("/")
+      negative: data
+        .filter(item => Number(item.amount) < 0),
+      positive: data
+        .filter(item => Number(item.amount) > 0),
+      label: `${data[0].date.startOf("w").format("DD")}-${data[0].date.endOf("w").format("DD")}`
     })), [transactions])
 
   useFocusEffect(
@@ -75,6 +56,8 @@ const Reports = () => {
       }
     >
       <TransBarchart transactions={transByDay} />
+      <TransCirclechar transactions={transactions.dataSource} />
+      <PaymentLimitChart transactions={transactions.dataSource} />
     </ScrollView>
   )
 }
