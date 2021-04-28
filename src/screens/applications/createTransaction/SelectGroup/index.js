@@ -11,6 +11,7 @@ import TopTabs from "components/TopTabs";
 import { TRANS_TYPE } from "configs";
 import { useNavigation } from "@react-navigation/core";
 import { RefreshControl } from "react-native";
+import TanoLayout from "components/TanoLayout";
 
 
 const SelectGroup = () => {
@@ -32,12 +33,7 @@ const SelectGroup = () => {
   }, [])
 
   return (
-    <Layout
-      level="1"
-      style={{
-        height: "100%"
-      }}
-    >
+    <TanoLayout>
       <TopTabs>
         <List
           refreshControl={
@@ -60,7 +56,7 @@ const SelectGroup = () => {
           renderItem={ListItemGroup}
         />
       </TopTabs>
-    </Layout>
+    </TanoLayout>
   )
 }
 

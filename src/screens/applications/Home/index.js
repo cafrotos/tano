@@ -1,6 +1,7 @@
 import { Layout } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Space from "components/Space";
+import TanoLayout from "components/TanoLayout";
 import { CONTEXTS } from "configs";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -14,8 +15,7 @@ const MainContext = getContext(CONTEXTS.MAIN)
 
 export default () => {
   return (
-    <Layout
-      level="1"
+    <TanoLayout
       style={[
         commonStyles.mainWrapper,
         styles.mainWrapper,
@@ -29,6 +29,6 @@ export default () => {
         <QuickReport />
         <Menu />
       </Space>
-    </Layout>
+    </TanoLayout>
   )
 }

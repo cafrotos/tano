@@ -32,20 +32,32 @@ export default ({
 
   return (
     <>
-      <Text category="s1" style={{ fontSize: 20, marginLeft: 24, paddingVertical: 16 }}>
-        {"Biểu đồ danh mục chi"}
-      </Text>
-      <Circlechart
-        data={payments}
-        accessor="amount"
-      />
-      <Text category="s1" style={{ fontSize: 20, marginLeft: 24, paddingVertical: 16 }}>
-        {"Biểu đồ danh mục thu"}
-      </Text>
-      <Circlechart
-        data={refunds}
-        accessor="amount"
-      />
+      {
+        payments?.length ? (
+          <>
+            <Text category="s1" style={{ fontSize: 20, marginLeft: 24, paddingVertical: 16 }}>
+              {"Biểu đồ danh mục chi"}
+            </Text>
+            <Circlechart
+              data={payments}
+              accessor="amount"
+            />
+          </>
+        ) : null
+      }
+      {
+        refunds.length ? (
+          <>
+            <Text category="s1" style={{ fontSize: 20, marginLeft: 24, paddingVertical: 16 }}>
+              {"Biểu đồ danh mục thu"}
+            </Text>
+            <Circlechart
+              data={refunds}
+              accessor="amount"
+            />
+          </>
+        ) : null
+      }
     </>
   )
 }

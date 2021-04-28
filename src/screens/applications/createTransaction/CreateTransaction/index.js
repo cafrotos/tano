@@ -3,6 +3,7 @@ import { Layout } from "@ui-kitten/components";
 import { buttonStyle, commonStyles } from "assets/styles";
 import Transaction from "components/Forms/Transaction";
 import TanoButton, { TanoButtonSubmit } from "components/TanoButton";
+import TanoLayout from "components/TanoLayout";
 import { NAMES } from "configs/screens";
 import React from "react";
 import { ScrollView, View } from "react-native";
@@ -31,12 +32,7 @@ export default () => {
   }
 
   return (
-    <Layout level="1"
-      style={{
-        height: "100%",
-        position: "relative"
-      }}
-    >
+    <TanoLayout>
       <ScrollView
         style={{
           padding: 4 * 4,
@@ -57,6 +53,6 @@ export default () => {
       <TanoButtonSubmit
         onPress={form.submit(handleSubmit)}
       />
-    </Layout>
+    </TanoLayout>
   )
 }

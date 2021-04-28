@@ -18,6 +18,7 @@ import { useEffect } from "react/cjs/react.development";
 import ButtonEditTransBook from "./ButtonEditTransBook";
 import { formatNumber } from "utils";
 import { TanoButtonSubmit } from "components/TanoButton";
+import TanoLayout from "components/TanoLayout";
 
 const DetailTransBook = () => {
   const navigation = useNavigation()
@@ -70,7 +71,7 @@ const DetailTransBook = () => {
   })
 
   return (
-    <>
+    <TanoLayout>
       <TotalAmount
         total={transBook.dataSource?.amount || 0}
       />
@@ -100,7 +101,7 @@ const DetailTransBook = () => {
       >
         {"Tạo giao dịch"}
       </TanoButtonSubmit>
-    </>
+    </TanoLayout>
   )
 }
 

@@ -71,10 +71,10 @@ export default ({
         {/**
          * @fixme đổi lại khi hoàn thành InputMoney
          */}
-        {/* <InputMoney
+        <InputMoney
           onPress={onPressInputMoney}
-        /> */}
-        <Input
+        />
+        {/* <Input
           onFormat={handleFormat}
           onChangeValue={handleChange}
           textAlign="center"
@@ -83,7 +83,7 @@ export default ({
             padding: 16
           }}
           selectionTail={2}
-        />
+        /> */}
       </FormItem>
       {/**
        * @fixme move rule to configs

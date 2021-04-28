@@ -1,4 +1,5 @@
 import { Layout, Text } from "@ui-kitten/components";
+import TanoLayout from "components/TanoLayout";
 import React from "react";
 
 import useCalc from "services/hooks/useCalc";
@@ -8,10 +9,8 @@ export default () => {
   const { string, handlePressPad } = useCalc();
 
   return (
-    <Layout
-      level="1"
+    <TanoLayout
       style={{
-        height: "100%",
         justifyContent: "space-between"
       }}
     >
@@ -32,6 +31,6 @@ export default () => {
       >
         <Numpad onPress={handlePressPad} />
       </Layout>
-    </Layout>
+    </TanoLayout>
   )
 }

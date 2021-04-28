@@ -13,16 +13,9 @@ export default ({
   return (
     <StackedBar
       data={{
-        labels: labels || ["NEC", "LTS", "EDU", "PLAY", "FFA", "GIVE"],
+        labels: labels || [],
         legend: ["Đã chi", "Còn lại", "Vượt mức"],
-        data: data || [
-          [120, 0, 60],
-          [30, 30, 0],
-          [30, 30, 0],
-          [30, 30, 0],
-          [30, 30, 0],
-          [30, 30, 0],
-        ],
+        data: data || [],
         barColors: [themes["color-basic-400"], themes["color-success-400"], themes["color-danger-400"]]
       }}
       width={Dimensions.get("screen").width}

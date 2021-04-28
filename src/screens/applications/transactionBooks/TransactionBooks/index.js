@@ -12,6 +12,7 @@ import _ from "lodash";
 import { ActionSheetIOS, RefreshControl, View } from "react-native";
 import { buttonStyle, commonStyles } from "assets/styles";
 import { TanoButtonSubmit } from "components/TanoButton";
+import TanoLayout from "components/TanoLayout";
 
 const TransactionBooks = () => {
   const navigation = useNavigation()
@@ -71,12 +72,7 @@ const TransactionBooks = () => {
   const handlePressCreateBook = () => navigation.navigate(NAMES.CREATE_TRANS_BOOK)
 
   return (
-    <Layout
-      level="1"
-      style={{
-        height: "100%"
-      }}
-    >
+    <TanoLayout>
       <TotalAmount
         total={transBooks.dataSource?.total}
         showReportButton={true}
@@ -98,7 +94,7 @@ const TransactionBooks = () => {
       >
         {"Tạo sổ giao dịch"}
       </TanoButtonSubmit>
-    </Layout>
+    </TanoLayout>
   )
 }
 

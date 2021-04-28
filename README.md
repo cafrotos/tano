@@ -146,7 +146,10 @@ Các phần liên quan
   - Các ứng dụng đã phát triển để giải quyết vấn đề đó, ưu nhược điểm
   - Các công nghệ có thể sử dụng, => chọn 1 và lý do
 
-Quy trình xây dựng ứng dụng
+Quy trình xây dựng ứng dụng => 
+  - Hệ thống gồm những thành phần gì
+  - Hệ thống có chức năng gì
+  - Các thành phần tương tác với nhau ntn (tương tác với các api thành phần ntn, các adapter pattern)
 
 Triển khai thực nghiệm(ko có, hoặc unit test, đội tester)
 
@@ -156,7 +159,7 @@ Kết luận:
   - Kết quả thực tiễn đạt được của ứng dụng
   - Tài liệu tham khảo
 
-
+- Cần có kết luận sau mỗi chương
 
 Báo cáo theo:
   tuần: barchart theo ngày, piechart theo tuần

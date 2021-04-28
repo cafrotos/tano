@@ -4,6 +4,7 @@ import { commonStyles } from "assets/styles";
 import { renderIcon } from "components";
 import BlankHeader from "components/BlankHeader";
 import Stack from "components/Stack";
+import TanoLayout from "components/TanoLayout";
 import icons from "configs/icons";
 import { NAMES } from "configs/screens";
 import _ from "lodash";
@@ -67,36 +68,38 @@ const Icons = () => {
   const handleScrollEnd = _.debounce(handleRenderIcons, 100)
 
   return (
-    <ScrollView
-      onScroll={({ nativeEvent }) => {
-        if (isCloseToBottom(nativeEvent)) {
-          handleScrollEnd();
-        }
-      }}
-      scrollEventThrottle={100}
-    >
-      <Layout
-        level="1"
-        style={[
-          commonStyles.flexHorizontalEvenly,
-          {
-            flexWrap: "wrap",
-            height: "100%"
+    <TanoLayout>
+      <ScrollView
+        onScroll={({ nativeEvent }) => {
+          if (isCloseToBottom(nativeEvent)) {
+            handleScrollEnd();
           }
-        ]}
+        }}
+        scrollEventThrottle={100}
       >
+        <Layout
+          level="1"
+          style={[
+            commonStyles.flexHorizontalEvenly,
+            {
+              flexWrap: "wrap",
+              height: "100%"
+            }
+          ]}
+        >
+          {
+            _icons.dataSource
+          }
+        </Layout>
         {
-          _icons.dataSource
+          _icons.index < icons.length ? (
+            <View style={[commonStyles.flexHorizontalCenter]}>
+              <Spinner status="info" size="large" />
+            </View>
+          ) : null
         }
-      </Layout>
-      {
-        _icons.index < icons.length ? (
-          <View style={[commonStyles.flexHorizontalCenter]}>
-            <Spinner status="info" size="large" />
-          </View>
-        ) : null
-      }
-    </ScrollView>
+      </ScrollView>
+    </TanoLayout>
   )
 }
 

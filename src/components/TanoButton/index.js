@@ -57,7 +57,7 @@ export const TanoButtonSubmit = (props) => (
       commonStyles.flexHorizontalMiddle,
       {
         position: "absolute",
-        bottom: 16,
+        bottom: 32,
         width: Dimensions.get("screen").width
       }
     ]}

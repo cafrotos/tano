@@ -9,13 +9,12 @@ import useForm from "services/hooks/useForm";
 import transBooksCollection from "repositories/transBooks"
 import TanoButton, { TanoButtonSubmit } from "components/TanoButton";
 import Space from "components/Space";
+import TanoLayout from "components/TanoLayout";
 
 const EditTransBook = () => {
   const { params } = useRoute()
   const navigation = useNavigation();
   const form = useForm()
-
-  console.log(params)
 
   useEffect(() => {
     if (params?.transBook) {
@@ -47,12 +46,7 @@ const EditTransBook = () => {
   }
 
   return (
-    <Layout
-      level="1"
-      style={{
-        height: "100%",
-      }}
-    >
+    <TanoLayout>
       <ScrollView
         style={{
           padding: 4 * 4,
@@ -67,7 +61,7 @@ const EditTransBook = () => {
       <TanoButtonSubmit
         onPress={form.submit(handleSubmit)}
       />
-    </Layout>
+    </TanoLayout>
   )
 }
 

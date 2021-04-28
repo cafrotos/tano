@@ -36,7 +36,9 @@ export default () => {
       <Button
         size="large"
         style={styles.logoutButton}
-        accessoryLeft={renderIcon({ name: "settings", fill: "#ffffff" })}
+        status="control"
+        appearance="ghost"
+        accessoryLeft={renderIcon({ name: "settings" })}
         onPress={() => navigation.navigate(NAMES.SETTINGS)}
       />
     </View>

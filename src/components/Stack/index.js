@@ -1,8 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { Icon } from "@ui-kitten/components";
-import { commonStyles } from "assets/styles";
-import { renderIcon } from "components";
-import themes from "configs/themes";
+import { Icon, useTheme } from "@ui-kitten/components";
 import React, { useMemo } from "react";
 import { Platform, View } from "react-native";
 
@@ -25,13 +22,14 @@ const Stack = ({
   onRenderScreens
 }) => {
   const MainStack = useMemo(() => createStackNavigator(), []);
+  const themes = useTheme()
 
   return (
     <MainStack.Navigator
       {...navigatorOptions}
       screenOptions={{
         headerBackTitleVisible: false,
-        headerTintColor: '#000000',
+        headerTintColor: themes["text-basic-color"],
         headerBackImage: ({ tintColor }) => (
           <View
             style={{
@@ -50,6 +48,7 @@ const Stack = ({
         ),
         // headerBackTitle: `${"Quay lại"}`,
         headerTitleAlign: "center",
+        headerStatusBarHeight: Platform.OS === "ios" ? 48 : 0,
         ...screenOptions,
       }}
     >

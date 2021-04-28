@@ -1,5 +1,6 @@
 import { ICON_PACKS, PLAN_GROUPS, TRANS_TYPE } from "configs";
 import _ from "lodash";
+import moment from "moment";
 
 export const _mockupPlans = [
   {
@@ -554,4 +555,74 @@ export const _mockTransGroups = [
   //   title: "Trả nợ",
   //   type: TRANS_TYPE.LOAN,
   // },
+]
+
+export const _mockupSelectTimes = [
+  {
+    icon: {
+      pack: ICON_PACKS.MATERIAL_COMMUNITY,
+      name: "calendar-week"
+    },
+    name: "Tuần",
+    formatRange: (date) => ({
+      start: moment(date).startOf("w").toDate(),
+      end: moment(date).endOf("w").toDate()
+    }),
+    formatChart: "DD",
+    format: "w",
+    title: (date) => `${moment(date).startOf("w").format("DD/MM")} - ${moment(date).endOf("w").format("DD/MM")}`,
+    getLabel: (date) => `${date.format("DD")}`
+  },
+  {
+    icon: {
+      pack: ICON_PACKS.MATERIAL_COMMUNITY,
+      name: "calendar-month"
+    },
+    name: "Tháng",
+    formatRange: (date) => ({
+      start: moment(date).startOf("M").toDate(),
+      end: moment(date).endOf("M").toDate()
+    }),
+    formatChart: "w",
+    format: "M",
+    title: (date) => `${moment(date).format("MM")}`,
+    getLabel: (date) => `${date.startOf("w").format("DD")} - ${date.endOf("w").format("DD")}`
+  },
+  {
+    icon: {
+      pack: ICON_PACKS.MATERIAL_COMMUNITY,
+      name: "calendar-text"
+    },
+    name: "Quý",
+    formatRange: (date) => ({
+      start: moment(date).startOf("Q").toDate(),
+      end: moment(date).endOf("Q").toDate()
+    }),
+    formatChart: "M",
+    format: "Q",
+    title: (date) => `${moment(date).format("Q")}`,
+    getLabel: (date) => `${date.format("M")}`
+  },
+  {
+    icon: {
+      pack: ICON_PACKS.MATERIAL_COMMUNITY,
+      name: "calendar-blank"
+    },
+    name: "Năm",
+    formatRange: (date) => ({
+      start: moment(date).startOf("YYYY").toDate(),
+      end: moment(date).endOf("YYYY").toDate()
+    }),
+    formatChart: "Q",
+    format: "YYYY",
+    title: (date) => `${moment(date).format("YYYY")}`,
+    getLabel: (date) => `${date.format("Q")}`
+  },
+  // {
+  //   icon: {
+  //     pack: ICON_PACKS.MATERIAL_COMMUNITY,
+  //     name: "infinity"
+  //   },
+  //   name: "Tất cả"
+  // }
 ]

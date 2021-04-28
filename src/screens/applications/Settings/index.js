@@ -1,6 +1,7 @@
 import { Button } from "@ui-kitten/components";
 import BlankHeader from "components/BlankHeader";
 import Stack from "components/Stack";
+import TanoLayout from "components/TanoLayout";
 import { CONTEXTS } from "configs";
 import { NAMES } from "configs/screens";
 import React, { useContext } from "react";
@@ -18,13 +19,13 @@ const Settings = () => {
   }
 
   return (
-    <>
+    <TanoLayout>
       <Button
         onPress={handleLogout}
       >
         {"Đăng xuất"}
       </Button>
-    </>
+    </TanoLayout>
   )
 }
 

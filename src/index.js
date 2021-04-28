@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
-import React, { useEffect, useState, createContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry, Modal, Spinner } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Screens from 'screens';
 import themes from 'configs/themes'
@@ -14,6 +14,9 @@ import { KeyboardAvoidingView, Platform } from 'react-native';
 import { MaterialCommunityIconsPack, MaterialIconsPack } from 'components/3rdIcon';
 import { collections } from 'services/firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import evaMapping from 'configs/evaMapping';
+import SplashScreen from 'react-native-splash-screen';
+
 const MainContext = getContext(CONTEXTS.MAIN)
 
 export default () => {
@@ -53,12 +56,16 @@ export default () => {
           isPlanning: !userData?.plan,
           user
         }))
+        .then(() => {
+          SplashScreen.hide()
+        })
     }
     else {
       updateAppState({
         loading: false,
         user
       })
+      SplashScreen.hide()
     }
   }
   const handleSetOnbarding = async () => {
@@ -78,36 +85,37 @@ export default () => {
       <ApplicationProvider
         {...eva}
         theme={{ ...eva.light, ...themes }}
+        customMapping={evaMapping}
       >
-        <SafeAreaView style={{ height: "100%" }}>
-          <KeyboardAvoidingView
-            behavior={
-              Platform.OS === "android" ?
-                null :
-                "padding"
-            }
-            style={{ height: "100%" }}
+        <KeyboardAvoidingView
+          behavior={
+            Platform.OS === "android" ?
+              null :
+              "padding"
+          }
+          style={{
+            flex: 1
+          }}
+        >
+          <MainContext.Provider
+            value={{
+              ...appState,
+              updateAppState
+            }}
           >
-            <MainContext.Provider
-              value={{
-                ...appState,
-                updateAppState
+            <Screens />
+            <Modal
+              visible={appState.loading}
+              backdropStyle={{
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                width: "100%",
+                height: "100%"
               }}
             >
-              <Screens />
-              <Modal
-                visible={appState.loading}
-                backdropStyle={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  width: "100%",
-                  height: "100%"
-                }}
-              >
-                <Spinner size="large" status="info" />
-              </Modal>
-            </MainContext.Provider>
-          </KeyboardAvoidingView>
-        </SafeAreaView>
+              <Spinner size="large" status="info" />
+            </Modal>
+          </MainContext.Provider>
+        </KeyboardAvoidingView>
       </ApplicationProvider>
     </SafeAreaProvider >
   )

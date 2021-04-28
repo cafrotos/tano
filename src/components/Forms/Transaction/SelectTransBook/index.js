@@ -34,7 +34,7 @@ export default ({
           borderColor: status === "danger" ?
             themes["color-danger-400"] :
             themes["color-basic-400"],
-          backgroundColor: themes["color-basic-200"]
+          backgroundColor: themes["color-basic-100"]
         }}
       />
       {

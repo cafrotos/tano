@@ -4,7 +4,8 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   mainWrapper: {
-    backgroundColor: themes["color-primary-500"]
+    backgroundColor: themes["color-primary-500"],
+    paddingTop: BASE_SIZE * 12,
   },
   touchableReportWrapper: {
     backgroundColor: "#ffffff",

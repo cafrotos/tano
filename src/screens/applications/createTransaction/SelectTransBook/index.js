@@ -8,6 +8,7 @@ import { getTransBooks } from "repositories/transBooks";
 import useLoadState from "services/hooks/useLoadState";
 import _ from "lodash";
 import { RefreshControl } from "react-native";
+import TanoLayout from "components/TanoLayout";
 
 const SelectTransBook = () => {
   const navigation = useNavigation()
@@ -30,12 +31,7 @@ const SelectTransBook = () => {
   );
 
   return (
-    <Layout
-      level="1"
-      style={{
-        height: "100%"
-      }}
-    >
+    <TanoLayout>
       <List
         refreshControl={
           <RefreshControl
@@ -47,7 +43,7 @@ const SelectTransBook = () => {
         ItemSeparatorComponent={Divider}
         renderItem={TransBookItem}
       />
-    </Layout>
+    </TanoLayout>
   )
 }
 

@@ -24,7 +24,7 @@ const InputMoney = ({
         }}
       >
         <Layout
-          level="2"
+          level="1"
           style={[
             commonStyles.flexHorizontalMiddle,
             commonStyles.flexHorizontalCenter,

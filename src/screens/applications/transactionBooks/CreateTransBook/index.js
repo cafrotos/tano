@@ -8,6 +8,7 @@ import { ScrollView, View, Alert } from "react-native";
 import useForm from "services/hooks/useForm";
 import transBooksCollection from "repositories/transBooks"
 import TanoButton, { TanoButtonSubmit } from "components/TanoButton";
+import TanoLayout from "components/TanoLayout";
 
 const CreateTransBook = () => {
   const navigation = useNavigation();
@@ -35,12 +36,7 @@ const CreateTransBook = () => {
   }
 
   return (
-    <Layout
-      level="1"
-      style={{
-        height: "100%",
-      }}
-    >
+    <TanoLayout>
       <ScrollView
         style={{
           padding: 4 * 4,
@@ -55,7 +51,7 @@ const CreateTransBook = () => {
       <TanoButtonSubmit
         onPress={form.submit(handleSubmit)}
       />
-    </Layout>
+    </TanoLayout>
   )
 }
 

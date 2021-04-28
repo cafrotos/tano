@@ -1,5 +1,6 @@
 import { useRoute } from "@react-navigation/core";
 import { Layout } from "@ui-kitten/components";
+import TanoLayout from "components/TanoLayout";
 import { NAMES } from "configs/screens";
 import React, { useEffect } from "react";
 import SearchInput from "./SearchInput";
@@ -12,14 +13,9 @@ const SearchGroup = () => {
   }, [params])
 
   return (
-    <Layout
-      level="1"
-      style={{
-        height: "100%"
-      }}
-    >
-
-    </Layout>
+    <TanoLayout>
+      
+    </TanoLayout>
   )
 }
 

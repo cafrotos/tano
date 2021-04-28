@@ -1,5 +1,5 @@
 import { useFocusEffect, useNavigation } from "@react-navigation/core";
-import { Icon, Text } from "@ui-kitten/components";
+import { Icon, Text, useTheme } from "@ui-kitten/components";
 import { commonStyles } from "assets/styles";
 import Amount from "components/Amount";
 import Space from "components/Space";
@@ -13,6 +13,7 @@ import styles from "./styles";
 
 export default () => {
   const navigation = useNavigation()
+  const themes = useTheme()
   const [transBooks, , loadTransBooks] = useLoadState({
     onGetState: getTransBooks,
     mapping: (dataSource) => _.sumBy(dataSource, (value) => Number(value.amount || 0))
@@ -49,7 +50,7 @@ export default () => {
           >
             <Icon
               name="bar-chart-outline"
-              fill="#303030"
+              fill={themes["text-basic-color"]}
               style={commonStyles.icon}
             />
             <Text>
